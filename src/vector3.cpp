@@ -1,38 +1,5 @@
-#pragma once
-
-#include "size.hh"
-#include <iostream>
-
-class Vector {
-
-private:
-
-    double size[SIZE];     //Tablica wektora
-
-public:
-
-    Vector();
-
-    Vector(double [SIZE]);
-
-    Vector operator + (const Vector &v);
-
-    Vector operator - (const Vector &v);
-
-    Vector operator * (const double &tmp);
-
-    Vector operator / (const double &tmp);
-
-    const double &operator [] (int index) const;
-
-    double &operator [] (int index);
-
-};
-
-std::ostream &operator << (std::ostream &out, Vector const &tmp);
-
-std::istream &operator >> (std::istream &in, Vector &tmp);
-
+#include "Vector3.hh"
+// typedef Vector <3> Vector3;
 /******************************************************************************
  |  Konstruktor klasy Vector.                                                 |
  |  Argumenty:                                                                |
@@ -40,7 +7,8 @@ std::istream &operator >> (std::istream &in, Vector &tmp);
  |  Zwraca:                                                                   |
  |      Tablice wypelniona wartoscia 0.                                       |
  */
-Vector::Vector() {
+template<>
+Vector3::Vector() {
     for (int i = 0; i < SIZE; ++i) {
         size[i] = 0;
     }
@@ -54,8 +22,8 @@ Vector::Vector() {
  |  Zwraca:                                                                   |
  |      Tablice wypelniona wartosciami podanymi w argumencie.                 |
  */
-
-Vector::Vector(double tmp[SIZE]) {
+template<>
+Vector3::Vector(double tmp[SIZE]) {
     for (int i = 0; i < SIZE; ++i) {
         size[i] = tmp[i];
     }
@@ -71,14 +39,14 @@ Vector::Vector(double tmp[SIZE]) {
  |      Sume dwoch skladnikow przekazanych jako wskaznik                      |
  |      na parametr.                                                          |
  */
-Vector Vector::operator + (const Vector &v) {
+template<>
+Vector3 Vector3::operator + ( Vector3 &v) {
     Vector result;
     for (int i = 0; i < SIZE; ++i) {
         result[i] = size[i] += v[i];
     }
     return result;
 }
-
 
 /******************************************************************************
  |  Realizuje odejmowanie dwoch wektorow.                                     |
@@ -89,7 +57,8 @@ Vector Vector::operator + (const Vector &v) {
  |      Roznice dwoch skladnikow przekazanych jako wskaznik                   |
  |      na parametr.                                                          |
  */
-Vector Vector::operator - (const Vector &v) {
+template<>
+Vector3 Vector3::operator - ( Vector3 &v) {
     Vector result;
     for (int i = 0; i < SIZE; ++i) {
         result[i] = size[i] -= v[i];
@@ -107,8 +76,8 @@ Vector Vector::operator - (const Vector &v) {
  |      Iloczyn dwoch skladnikow przekazanych jako wskaznik                   |
  |      na parametr.                                                          |
  */
-
-Vector Vector::operator * (const double &tmp) {
+template<>
+Vector3 Vector3::operator * (const double &tmp) {
     Vector result;
     for (int i = 0; i < SIZE; ++i) {
         result[i] = size[i] *= tmp;
@@ -126,44 +95,18 @@ Vector Vector::operator * (const double &tmp) {
  |      Iloraz dwoch skladnikow przekazanych jako wskaznik                    |
  |      na parametr.                                                          |
  */
-
-Vector Vector::operator / (const double &tmp) {
+template<>
+Vector3 Vector3::operator / (const double &tmp) {
     Vector result;
-
+    if(tmp != 0){
     for (int i = 0; i < SIZE; ++i) {
         result[i] = size[i] / tmp;
+    }}
+    else{
+        throw std::invalid_argument("Division by 0");
     }
-
     return result;
 }
-
-
-/******************************************************************************
- |  Funktor wektora.                                                          |
- |  Argumenty:                                                                |
- |      index - index wektora.                                                |
- |  Zwraca:                                                                   |
- |      Wartosc wektora w danym miejscu tablicy jako stala.                   |
- */
-const double &Vector::operator [] (int index) const {
-    if (index < 0 || index >= SIZE) {
-        std::cerr << "Error: Wektor jest poza zasiegiem!" << std::endl;
-    } // lepiej byłoby rzucić wyjątkiem stdexcept
-    return size[index];
-}
-
-
-/******************************************************************************
- |  Funktor wektora.                                                          |
- |  Argumenty:                                                                |
- |      index - index wektora.                                                |
- |  Zwraca:                                                                   |
- |      Wartosc wektora w danym miejscu tablicy.                              |
- */
-double &Vector::operator[](int index) {
-    return const_cast<double &>(const_cast<const Vector *>(this)->operator[](index));
-}
-
 
 /******************************************************************************
  |  Przeciazenie operatora <<                                                 |
@@ -171,11 +114,13 @@ double &Vector::operator[](int index) {
  |      out - strumien wejsciowy,                                             |
  |      tmp - wektor.                                                         |
  */
-std::ostream &operator << (std::ostream &out, Vector const &tmp) {
-    for (int i = 0; i < SIZE; ++i) {
-        out << "[ " << tmp[i] << " ]\n";
-    }
-    return out;
+std::ostream& operator << ( std::ostream &stream, Vector3 const &tmp){
+
+    stream << std::setw(16) << std::fixed << std::setprecision(10) << tmp[0]
+           << std::setw(16) << std::fixed << std::setprecision(10) << tmp[1]
+           << std::setw(16) << std::fixed << std::setprecision(10) << tmp[2];
+
+    return stream;
 }
 
 
@@ -185,10 +130,33 @@ std::ostream &operator << (std::ostream &out, Vector const &tmp) {
  |      in - strumien wyjsciowy,                                              |
  |      tmp - wektor.                                                         |
  */
-std::istream &operator >> (std::istream &in, Vector &tmp) {
+std::istream &operator >> (std::istream &in, Vector3 &tmp) {
     for (int i = 0; i < SIZE; ++i) {
         in >> tmp[i];
     }
     std::cout << std::endl;
     return in;
 }
+
+//Przeciazennie ktore sprawdza czy dane wektory sa rowne
+template<>
+bool Vector3::operator == ( const Vector3 tmp) const {
+    if(abs(this->size[0] - tmp[0]) <= MIN_DIFF && abs(this->size[1] - tmp[1]) <= MIN_DIFF && abs(this->size[2] - tmp[2]) <= MIN_DIFF){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+// Przeciazenie sprawdzajace czy wektory sa rozne
+template<>
+bool Vector3::operator != (const Vector3 tmp) const{
+    if(abs(this->size[0] - tmp[0]) > MIN_DIFF || abs(this->size[1] == tmp[1]) > MIN_DIFF || abs(this->size[2] == tmp[2]) > MIN_DIFF){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+

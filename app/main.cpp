@@ -14,9 +14,17 @@
 
 #include "exampleConfig.h"
 #include "example.h"
-#include "vector.hh"
+#include "Vector3.hh"
+#include "Prostokat.hh"
 #include "matrix.hh"
-#include "../inc/lacze_do_gnuplota.hh"
+#include "../include/lacze_do_gnuplota.hh"
+
+using namespace std;
+
+// template <typename T, typename U>
+// void Wymnoz( T Arg1, U (&Arg2_Tab)[4]){
+//   for(U &Mnoznik : Arg2_Tab) Mnoznik = Arg1 * Mnoznik;
+// }
 
 /*!
  * Simple main program that demontrates how access
@@ -25,89 +33,8 @@
  * EDIT: dodane kreowanie wektorow i macierzy plus obsluga lacza do gnuplota
  */
 
-#define DL_KROTKI_BOK  100
-#define DL_DLUGI_BOK   150
-
-/*!
- * Przyklad zapisu wspolrzednych zbioru punktow do strumienia wyjściowego.
- * Dane sa odpowiednio sformatowane, tzn. przyjęto notację stałoprzecinkową
- * z dokładnością do 10 miejsca po przecinku. Szerokość wyświetlanego pola 
- * to 16 miejsc, sposób wyrównywania - do prawej strony.
- * \param[in] StrmWy - strumien wyjsciowy, do ktorego maja zostac zapisane
- *                     kolejne wspolrzedne.
- * \param[in] Przesuniecie - ten parameter jest tylko po to, aby pokazać
- *                          mozliwosc zmiany wspolrzednych i prostokata
- *                          i zmiane jego polorzenia na okienku graficznym
- *                         rysownym przez gnuplota.
- * \retval true - gdy operacja zapisu powiodła się,
- * \retval false - w przypadku przeciwnym.
- */
-void PrzykladZapisuWspolrzednychDoStrumienia( std::ostream&     StrmWy, 
-                                              double       Przesuniecie
-                                            )
-{
-   //---------------------------------------------------------------
-   // To tylko przyklad !!!
-   // W programie nalezy uzywać pojęcia wektora, a nie oddzielnych 
-   // zmiennych do reprezentowania wspolrzednych!
-   //
-  double  x1, y1, x2, y2, x3, y3, x4, y4; 
-
-  x1 = y1 = 10;
-  x2 = x1 + DL_DLUGI_BOK;  y2 = y1;
-  x3 = x2;  y3 = y2 + DL_KROTKI_BOK;
-  x4 = x3 - DL_DLUGI_BOK; y4 = y3;
-
-
-  StrmWy << std::setw(16) << std::fixed << std::setprecision(10) << x1+Przesuniecie 
-         << std::setw(16) << std::fixed << std::setprecision(10) << y1+Przesuniecie << std::endl;
-  StrmWy << std::setw(16) << std::fixed << std::setprecision(10) << x2+Przesuniecie 
-         << std::setw(16) << std::fixed << std::setprecision(10) << y2+Przesuniecie << std::endl;
-  StrmWy << std::setw(16) << std::fixed << std::setprecision(10) << x3+Przesuniecie 
-         << std::setw(16) << std::fixed << std::setprecision(10) << y3+Przesuniecie << std::endl;
-  StrmWy << std::setw(16) << std::fixed << std::setprecision(10) << x4+Przesuniecie 
-         << std::setw(16) << std::fixed << std::setprecision(10) << y4+Przesuniecie << std::endl;
-  StrmWy << std::setw(16) << std::fixed << std::setprecision(10) << x1+Przesuniecie 
-         << std::setw(16) << std::fixed << std::setprecision(10) << y1+Przesuniecie << std::endl; 
-                             // Jeszcze raz zapisujemy pierwszy punkt,
-                             // aby gnuplot narysowal zamkniętą linię.
-}
-
-
-
-/*!
- * Przyklad zapisu wspolrzednych zbioru punktow do pliku, z ktorego
- * dane odczyta program gnuplot i narysuje je w swoim oknie graficznym.
- * \param[in] sNazwaPliku - nazwa pliku, do którego zostana zapisane
- *                          wspolrzędne punktów.
- * \param[in] Przesuniecie - ten parameter jest tylko po to, aby pokazać
- *                          mozliwosc zmiany wspolrzednych i prostokata
- *                          i zmiane jego polorzenia na okienku graficznym
- *                         rysownym przez gnuplota.
- * \retval true - gdy operacja zapisu powiodła się,
- * \retval false - w przypadku przeciwnym.
- */
-bool PrzykladZapisuWspolrzednychDoPliku( const char  *sNazwaPliku,
-                                         double       Przesuniecie
-                                       )
-{
-  std::ofstream  StrmPlikowy;
-
-  StrmPlikowy.open(sNazwaPliku);
-  if (!StrmPlikowy.is_open())  {
-    std::cerr << ":(  Operacja otwarcia do zapisu \"" << sNazwaPliku << "\"" << std::endl
-	 << ":(  nie powiodla sie." << std::endl;
-    return false;
-  }
-
-  PrzykladZapisuWspolrzednychDoStrumienia(StrmPlikowy, Przesuniecie);
-
-  StrmPlikowy.close();
-  return !StrmPlikowy.fail();
-}
-
 int main() {
-  std::cout << "Project Rotation 2D based on C++ Boiler Plate v"
+  std::cout << "Project Rotation 3D based on C++ Boiler Plate v"
             << PROJECT_VERSION_MAJOR /*duże zmiany, najczęściej brak kompatybilności wstecz */
             << "."
             << PROJECT_VERSION_MINOR /* istotne zmiany */
@@ -116,23 +43,27 @@ int main() {
             << "."
             << PROJECT_VERSION_TWEAK /* zmiany estetyczne itd. */
             << std::endl;
-  // std::system("cat ../LICENSE");
-  // do zadania Rotacja 2D
-  std::cout << "Vector:" << std::endl;
-  Vector tmpV1 = Vector();
-  std::cout << "Vector - konstruktor bezparametryczny:\n" << tmpV1 << std::endl;
-  double argumentsV[] = {1.0, 2.0};
-  Vector tmpV2 = Vector(argumentsV);
-  std::cout << "Vector - konstruktor parametryczny:\n" << tmpV2 << std::endl;
 
-  std::cout << "Matrix:" << std::endl;
-  Matrix tmpM1 = Matrix();
-  std::cout << "Matrix - konstruktor bezparametryczny:\n" << tmpM1 << std::endl;
-  double argumentsM[][SIZE] = {{1.0, 2.0},{3.0, 4.0}};
-  Matrix tmpM2 = Matrix(argumentsM);
-  std::cout << "Matrix - konstruktor parametryczny:\n" << tmpM2 << std::endl;
+  double arg1[] = {100,100,150};
+  double arg2[] = {50,100,150};
+  double arg3[] = {100,25,150};
+  double arg4[] = {50,25,150};
+  double arg5[] = {100,25,75};
+  double arg6[] = {50,25,75};
+  double arg7[] = {100,100,75};
+  double arg8[] = {50,100,75};
+  Vector3 vec1 = Vector3(arg1);
+  Vector3 vec2 = Vector3(arg2);
+  Vector3 vec3 = Vector3(arg3);
+  Vector3 vec4 = Vector3(arg4);
+  Vector3 vec5 = Vector3(arg5);
+  Vector3 vec6 = Vector3(arg6);
+  Vector3 vec7 = Vector3(arg7);
+  Vector3 vec8 = Vector3(arg8);
+  Vector3 arguments1[] = { vec1, vec2, vec3, vec4, vec5, vec6, vec7, vec8};
+  Prostokat pro = Prostokat(arguments1);
 
-    PzG::LaczeDoGNUPlota  Lacze;  // Ta zmienna jest potrzebna do wizualizacji
+  PzG::LaczeDoGNUPlota  Lacze;  // Ta zmienna jest potrzebna do wizualizacji
                                 // rysunku prostokata
 
    //-------------------------------------------------------
@@ -152,25 +83,113 @@ int main() {
    //  znajduje się na wspólnej płaszczyźnie. Z tego powodu powoduj
    //  jako wspolrzedne punktow podajemy tylko x,y.
    //
-  Lacze.ZmienTrybRys(PzG::TR_2D);
+  Lacze.ZmienTrybRys(PzG::TR_3D);
+  Lacze.UstawZakresX(-300,300);
+  Lacze.UstawZakresY(-300,300);
+  Lacze.UstawZakresZ(-300,300);
+  pro.Save("../datasets/prostokat.dat");
+  Lacze.Rysuj();
 
-  PrzykladZapisuWspolrzednychDoStrumienia(std::cout,0);
-  if (!PrzykladZapisuWspolrzednychDoPliku("../datasets/prostokat.dat",0)) return 1;
-  Lacze.Rysuj(); // <- Tutaj gnuplot rysuje, to co zapisaliśmy do pliku
-  std::cout << "Naciśnij ENTER, aby kontynuowac" << std::endl;
-  std::cin.ignore(100000,'\n');
-   //----------------------------------------------------------
-   // Ponownie wypisuje wspolrzedne i rysuje prostokąt w innym miejscu.
-   //
-  PrzykladZapisuWspolrzednychDoStrumienia(std::cout,50);
-  if (!PrzykladZapisuWspolrzednychDoPliku("../datasets/prostokat.dat",50)) return 1;
-  Lacze.Rysuj(); // <- Tutaj gnuplot rysuje, to co zapisaliśmy do pliku
-  std::cout << "Naciśnij ENTER, aby kontynuowac" << std::endl;
-  std::cin.ignore(100000,'\n');
+  cout << "Beginning" << endl;
+  double temp1, temp2, temp3, howm;
+  char choice;
+  if(SIZE == 2){
+  pro.lenght2();
+  temp1 = pro.blen;
+  temp2 = pro.slen;
+  temp3 = pro.high;}
+  Vector3 tmp;
+  
+  cout << "m - menu" << endl;
+  cout << "o - turn" << endl;
+  cout << "t - same turning" << endl;
+  cout << "s - check length" << endl;
+  cout << "r - display rotation matrix" << endl;
+  cout << "w - cords" << endl;
+  cout << "p - move" << endl;
+  cout << "k - end" << endl;
 
-  // Z bazy projektu-wydmuszki Boiler Plate C++:
-  // Bring in the dummy class from the example source,
-  // just to show that it is accessible from main.cpp.
+  while (choice != 'k'){
+    cout << "Your choice?  (m-menu) >" << endl;
+    cin >> choice;
+
+    switch( choice ){
+      case 'o': 
+        cout << "Choose axle ( 'x' 'y' 'z') " << endl;
+        cin >> pro;
+        cout << "Choose how many times to turn rectangle: ";
+        cin >> howm;
+
+        // pro.turning(pro, "../datasets/prostokat.dat", ang, howm, Lacze, which);
+        for(int i = 0; i < howm-1; ++i ){
+        pro = pro * pro.matrixtmp;
+        pro.Save("../datasets/prostokat.dat");
+        }
+        // std::cout << pro << std::endl;
+        pro.Save("../datasets/prostokat.dat");
+        Lacze.Rysuj();
+
+        if(SIZE == 2){
+        pro.showres(temp1,temp2, temp3);
+        cout << endl;}
+        else if(SIZE == 3){
+          pro.showres3D();
+          cout << endl;
+        }
+      break;
+      case 't':
+        cout << "Turn once again" << endl;
+        pro = pro * pro.matrixtmp;
+        pro.Save("../datasets/prostokat.dat");
+        Lacze.Rysuj();
+        break;
+      case 'r':
+        cout << "Display rotation matrix" << endl;
+        cout << pro.matrixtmp << endl;
+        break;
+      case 's':
+        cout << "Checking the length of sides" << endl;
+        pro.showres3D();
+        break;
+      case 'p': 
+        cout << "Vector to move: ";
+        cin >> tmp;
+        pro.moving(tmp,"../datasets/prostokat.dat", Lacze);
+
+        if(SIZE == 2){
+          pro.showres(temp1,temp2, temp3);
+          cout << endl;}
+        else if(SIZE == 3){
+          pro.showres3D();
+          cout << endl;
+        }
+      break;
+
+      case 'w': 
+        cout << "Cooridantes" << endl;
+        cout << pro << endl;
+        break;
+      case 'm': 
+        cout << "m - menu" << endl;
+        cout << "o - turn" << endl;
+        cout << "t - same turning" << endl;
+        cout << "s - check length" << endl;
+        cout << "r - display rotation matrix" << endl;
+        cout << "w - cords" << endl;
+        cout << "p - move" << endl;
+        cout << "k - end" << endl;
+      break;
+
+      case 'k': 
+        cout << "The end" << endl;
+      break;
+
+      default:
+        cout << "Wrong Option" << endl;
+      break;
+    }
+  }
+
   Dummy d = Dummy();
   return d.doSomething() ? 0 : -1;
 }
