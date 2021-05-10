@@ -3,6 +3,7 @@
 
 CMakeFiles/main.dir/app/main.cpp.o
  ../include/Prostokat.hh
+ ../include/Vector2.hh
  ../include/Vector3.hh
  ../include/example.h
  ../include/matrix.hh

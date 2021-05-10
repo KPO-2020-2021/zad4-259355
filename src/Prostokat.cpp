@@ -307,7 +307,7 @@ void Prostokat::showres3D(){
 //Funkcja przyjmujaca kat o ktory obracamy prostokat wokol punktu (0,0)
 //Zmienia wartosci wspolrzednych prostokata o dany kata
 
-void Prostokat::turn(double const ang, char which, Matrix3 matrtmp){
+void Prostokat::turn(double const ang, char which, Matrix3 &matrtmp){
     Matrix3 matrixx,matrixy,matrixz;
     if(SIZE != 3){
         matrixx.toradians();

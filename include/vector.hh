@@ -17,17 +17,53 @@ public:
 
     // typedef Vector Vector3;
 
-    Vector();
+    Vector(){
+    for (int i = 0; i < SIZE; ++i) {
+        size[i] = 0;
+    }
+    };
 
-    Vector(double [SIZE]);
+    Vector(double tmp[SIZE]){
+    for (int i = 0; i < SIZE; ++i) {
+        size[i] = tmp[i];
+    }
+    };
 
-    Vector operator + ( Vector &v);
+    Vector operator + ( Vector &v){
+    Vector result;
+    for (int i = 0; i < SIZE; ++i) {
+        result[i] = size[i] += v[i];
+    }
+    return result;
+    };
 
-    Vector operator - ( Vector &v);
+    Vector operator - ( Vector &v){
+    Vector result;
+    for (int i = 0; i < SIZE; ++i) {
+        result[i] = size[i] -= v[i];
+    }
+    return result;
+    };
 
-    Vector operator * (const double &tmp);
+    Vector operator * (const double &tmp){
+    Vector result;
+    for (int i = 0; i < SIZE; ++i) {
+        result[i] = size[i] *= tmp;
+    }
+    return result;
+    };
 
-    Vector operator / (const double &tmp);
+    Vector operator / (const double &tmp){
+    Vector result;
+    if(tmp != 0){
+    for (int i = 0; i < SIZE; ++i) {
+        result[i] = size[i] / tmp;
+    }}
+    else{
+        throw std::invalid_argument("Division by 0");
+    }
+    return result;
+    };
 
     /******************************************************************************
  |  Funktor wektora.                                                          |
@@ -65,6 +101,11 @@ public:
 std::ostream &operator << (std::ostream &stream, Vector<double,3> const &tmp);
 
 std::istream &operator >> (std::istream &in, Vector<double,3> &tmp);
+
+std::ostream &operator << (std::ostream &stream, Vector<double,2> const &tmp);
+
+std::istream &operator >> (std::istream &in, Vector<double,2> &tmp);
+
 
 
 

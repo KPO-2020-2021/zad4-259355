@@ -24,6 +24,10 @@ unistd.h
 fstream
 -
 
+../include/Vector2.hh
+vector.hh
+../include/vector.hh
+
 ../include/Vector3.hh
 vector.hh
 ../include/vector.hh
@@ -41,6 +45,8 @@ size.hh
 ../include/size.hh
 Vector3.hh
 ../include/Vector3.hh
+Vector2.hh
+../include/Vector2.hh
 iostream
 -
 math.h
@@ -69,4 +75,8 @@ iomanip
 /home/adam/Programowanie_Obiektowe/zad4-259355/src/Prostokat.cpp
 Prostokat.hh
 /home/adam/Programowanie_Obiektowe/zad4-259355/src/Prostokat.hh
+
+/home/adam/Programowanie_Obiektowe/zad4-259355/src/matrix3.cpp
+matrix3.hh
+/home/adam/Programowanie_Obiektowe/zad4-259355/src/matrix3.hh
 

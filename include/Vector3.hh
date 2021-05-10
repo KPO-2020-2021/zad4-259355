@@ -3,19 +3,7 @@
 
 #include "vector.hh"
 
-typedef Vector<double, SIZE> Vector3;
-
-template<>
-Vector3 Vector3::operator + ( Vector3 &v);
-
-template<>
-Vector3 Vector3::operator - ( Vector3 &v);
-
-template<>
-Vector3 Vector3::operator * (const double &tmp);
-
-template<>
-Vector3 Vector3::operator / (const double &tmp);
+typedef Vector<double, 3> Vector3;
 
 template<>
 bool Vector3::operator == (const Vector3 tmp) const ;

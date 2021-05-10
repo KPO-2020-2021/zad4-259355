@@ -24,6 +24,10 @@ unistd.h
 fstream
 -
 
+../include/Vector2.hh
+vector.hh
+../include/vector.hh
+
 ../include/Vector3.hh
 vector.hh
 ../include/vector.hh
@@ -37,6 +41,8 @@ size.hh
 ../include/size.hh
 Vector3.hh
 ../include/Vector3.hh
+Vector2.hh
+../include/Vector2.hh
 iostream
 -
 math.h

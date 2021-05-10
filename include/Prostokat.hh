@@ -56,7 +56,7 @@ class Prostokat {
     
   const Vector3 &operator () (unsigned int row) const;
 
-  void turn(double const ang, char which, Matrix3 matrtmp);
+  void turn(double const ang, char which, Matrix3 &matrtmp);
 
   void turning(Prostokat &pro, const char *sNazwaPliku, double const ang, double const howm, PzG::LaczeDoGNUPlota Lacze, char which);
 

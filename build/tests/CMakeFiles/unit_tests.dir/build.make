@@ -94,6 +94,8 @@ unit_tests_EXTERNAL_OBJECTS = \
 "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o" \
 "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/matrix3.cpp.o" \
 "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/vector3.cpp.o" \
+"/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/vector2.cpp.o" \
+"/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/matrix2.cpp.o" \
 "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/Prostokat.cpp.o"
 
 unit_tests: tests/CMakeFiles/unit_tests.dir/dummy.cpp.o
@@ -102,6 +104,8 @@ unit_tests: CMakeFiles/program.dir/src/example.cpp.o
 unit_tests: CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o
 unit_tests: CMakeFiles/program.dir/src/matrix3.cpp.o
 unit_tests: CMakeFiles/program.dir/src/vector3.cpp.o
+unit_tests: CMakeFiles/program.dir/src/vector2.cpp.o
+unit_tests: CMakeFiles/program.dir/src/matrix2.cpp.o
 unit_tests: CMakeFiles/program.dir/src/Prostokat.cpp.o
 unit_tests: tests/CMakeFiles/unit_tests.dir/build.make
 unit_tests: tests/CMakeFiles/unit_tests.dir/link.txt

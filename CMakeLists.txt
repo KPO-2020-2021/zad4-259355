@@ -42,6 +42,8 @@ set(SOURCES          # All .cpp files in src/
     src/lacze_do_gnuplota
     src/matrix3.cpp
     src/vector3.cpp
+    src/vector2.cpp
+    src/matrix2.cpp
     src/Prostokat.cpp
 )
 set(TESTFILES        # All .cpp files in tests/

@@ -80,6 +80,8 @@ main_EXTERNAL_OBJECTS = \
 "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o" \
 "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/matrix3.cpp.o" \
 "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/vector3.cpp.o" \
+"/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/vector2.cpp.o" \
+"/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/matrix2.cpp.o" \
 "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/Prostokat.cpp.o"
 
 main: CMakeFiles/main.dir/app/main.cpp.o
@@ -87,6 +89,8 @@ main: CMakeFiles/program.dir/src/example.cpp.o
 main: CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o
 main: CMakeFiles/program.dir/src/matrix3.cpp.o
 main: CMakeFiles/program.dir/src/vector3.cpp.o
+main: CMakeFiles/program.dir/src/vector2.cpp.o
+main: CMakeFiles/program.dir/src/matrix2.cpp.o
 main: CMakeFiles/program.dir/src/Prostokat.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt

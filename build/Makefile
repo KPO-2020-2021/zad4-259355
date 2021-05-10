@@ -645,6 +645,33 @@ src/lacze_do_gnuplota.cpp.s:
 	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.s
 .PHONY : src/lacze_do_gnuplota.cpp.s
 
+src/matrix2.o: src/matrix2.cpp.o
+
+.PHONY : src/matrix2.o
+
+# target to build an object file
+src/matrix2.cpp.o:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/matrix2.cpp.o
+.PHONY : src/matrix2.cpp.o
+
+src/matrix2.i: src/matrix2.cpp.i
+
+.PHONY : src/matrix2.i
+
+# target to preprocess a source file
+src/matrix2.cpp.i:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/matrix2.cpp.i
+.PHONY : src/matrix2.cpp.i
+
+src/matrix2.s: src/matrix2.cpp.s
+
+.PHONY : src/matrix2.s
+
+# target to generate assembly for a file
+src/matrix2.cpp.s:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/matrix2.cpp.s
+.PHONY : src/matrix2.cpp.s
+
 src/matrix3.o: src/matrix3.cpp.o
 
 .PHONY : src/matrix3.o
@@ -671,6 +698,33 @@ src/matrix3.s: src/matrix3.cpp.s
 src/matrix3.cpp.s:
 	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/matrix3.cpp.s
 .PHONY : src/matrix3.cpp.s
+
+src/vector2.o: src/vector2.cpp.o
+
+.PHONY : src/vector2.o
+
+# target to build an object file
+src/vector2.cpp.o:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/vector2.cpp.o
+.PHONY : src/vector2.cpp.o
+
+src/vector2.i: src/vector2.cpp.i
+
+.PHONY : src/vector2.i
+
+# target to preprocess a source file
+src/vector2.cpp.i:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/vector2.cpp.i
+.PHONY : src/vector2.cpp.i
+
+src/vector2.s: src/vector2.cpp.s
+
+.PHONY : src/vector2.s
+
+# target to generate assembly for a file
+src/vector2.cpp.s:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/vector2.cpp.s
+.PHONY : src/vector2.cpp.s
 
 src/vector3.o: src/vector3.cpp.o
 
@@ -752,9 +806,15 @@ help:
 	@echo "... src/lacze_do_gnuplota.o"
 	@echo "... src/lacze_do_gnuplota.i"
 	@echo "... src/lacze_do_gnuplota.s"
+	@echo "... src/matrix2.o"
+	@echo "... src/matrix2.i"
+	@echo "... src/matrix2.s"
 	@echo "... src/matrix3.o"
 	@echo "... src/matrix3.i"
 	@echo "... src/matrix3.s"
+	@echo "... src/vector2.o"
+	@echo "... src/vector2.i"
+	@echo "... src/vector2.s"
 	@echo "... src/vector3.o"
 	@echo "... src/vector3.i"
 	@echo "... src/vector3.s"

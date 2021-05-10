@@ -7,7 +7,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/adam/Programowanie_Obiektowe/zad4-259355/src/Prostokat.cpp" "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/Prostokat.cpp.o"
   "/home/adam/Programowanie_Obiektowe/zad4-259355/src/example.cpp" "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/example.cpp.o"
   "/home/adam/Programowanie_Obiektowe/zad4-259355/src/lacze_do_gnuplota.cpp" "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o"
+  "/home/adam/Programowanie_Obiektowe/zad4-259355/src/matrix2.cpp" "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/matrix2.cpp.o"
   "/home/adam/Programowanie_Obiektowe/zad4-259355/src/matrix3.cpp" "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/matrix3.cpp.o"
+  "/home/adam/Programowanie_Obiektowe/zad4-259355/src/vector2.cpp" "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/vector2.cpp.o"
   "/home/adam/Programowanie_Obiektowe/zad4-259355/src/vector3.cpp" "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/vector3.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

@@ -3,6 +3,7 @@
 
 CMakeFiles/program.dir/src/Prostokat.cpp.o
  ../include/Prostokat.hh
+ ../include/Vector2.hh
  ../include/Vector3.hh
  ../include/lacze_do_gnuplota.hh
  ../include/matrix.hh
@@ -17,13 +18,27 @@ CMakeFiles/program.dir/src/example.cpp.o
 CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o
  ../include/lacze_do_gnuplota.hh
  /home/adam/Programowanie_Obiektowe/zad4-259355/src/lacze_do_gnuplota.cpp
+CMakeFiles/program.dir/src/matrix2.cpp.o
+ ../include/Vector2.hh
+ ../include/Vector3.hh
+ ../include/matrix.hh
+ ../include/matrix2.hh
+ ../include/size.hh
+ ../include/vector.hh
+ /home/adam/Programowanie_Obiektowe/zad4-259355/src/matrix2.cpp
 CMakeFiles/program.dir/src/matrix3.cpp.o
+ ../include/Vector2.hh
  ../include/Vector3.hh
  ../include/matrix.hh
  ../include/matrix3.hh
  ../include/size.hh
  ../include/vector.hh
  /home/adam/Programowanie_Obiektowe/zad4-259355/src/matrix3.cpp
+CMakeFiles/program.dir/src/vector2.cpp.o
+ ../include/Vector2.hh
+ ../include/size.hh
+ ../include/vector.hh
+ /home/adam/Programowanie_Obiektowe/zad4-259355/src/vector2.cpp
 CMakeFiles/program.dir/src/vector3.cpp.o
  ../include/Vector3.hh
  ../include/size.hh

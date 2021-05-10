@@ -121,9 +121,9 @@ int main() {
         cin >> howm;
 
         // pro.turning(pro, "../datasets/prostokat.dat", ang, howm, Lacze, which);
-        for(int i = 0; i < howm-1; ++i ){
+        for(int i = 0; i < howm; ++i ){
         pro = pro * pro.matrixtmp;
-        pro.Save("../datasets/prostokat.dat");
+        // pro.Save("../datasets/prostokat.dat");
         }
         // std::cout << pro << std::endl;
         pro.Save("../datasets/prostokat.dat");
