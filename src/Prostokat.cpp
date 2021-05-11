@@ -101,6 +101,7 @@ Prostokat Prostokat::operator * (const Matrix3 &matrix){
             // result(i,2) = matrix(0,2) * this->pro[i][0] + matrix(1,2) *  this->pro[i][1] + matrix(2,2) * this->pro[i][2];
     }
     // }
+    result.matrixtmp = this->matrixtmp;
     return result;
 }
 
@@ -183,7 +184,9 @@ std::istream& operator >> ( std::istream &stream, Prostokat &pr){
 char tmp;
 double num;
 double arg[][SIZE] = {{1,0,0}, {0,1,0}, {0,0,1}};
-Matrix3 matrixtmp = Matrix3(arg);
+pr.matrixtmp = Matrix3(arg);
+// Matrix3 matrixtm = Matrix3(arg);
+std::cout << pr.matrixtmp << "to >>" << std::endl;
     while(tmp != '.'){
         stream >> tmp;
         if(tmp == '.'){
@@ -194,13 +197,13 @@ Matrix3 matrixtmp = Matrix3(arg);
         stream >> num;
         switch (tmp){
             case 'x':
-                pr.turn(num,tmp,matrixtmp);
+                pr.turn(num,tmp);
                 break;
             case 'y':
-                pr.turn(num,tmp,matrixtmp);
+                pr.turn(num,tmp);
                 break;
             case 'z':
-                pr.turn(num,tmp,matrixtmp);
+                pr.turn(num,tmp);
                 break;
             case '.':
                 break;
@@ -307,7 +310,7 @@ void Prostokat::showres3D(){
 //Funkcja przyjmujaca kat o ktory obracamy prostokat wokol punktu (0,0)
 //Zmienia wartosci wspolrzednych prostokata o dany kata
 
-void Prostokat::turn(double const ang, char which, Matrix3 &matrtmp){
+void Prostokat::turn(double const ang, char which){
     Matrix3 matrixx,matrixy,matrixz;
     if(SIZE != 3){
         matrixx.toradians();
@@ -318,30 +321,23 @@ void Prostokat::turn(double const ang, char which, Matrix3 &matrtmp){
             matrixx.angle = ang;
             matrixx.toradians();
             *this = *this * matrixx.after_x();
-            // this->matrixtmp = matrix.after_x() * this->matrixtmp;
-            matrtmp = matrixx.after_x() * matrtmp;
-            // std::cout << this->matrixtmp << std::endl;
+            this->matrixtmp = matrixx.after_x() * this->matrixtmp;
         }
         else if( which == 'y'){
             matrixy.angle = ang;
             matrixy.toradians();
-            // std::cout << matrix.after_y() << std::endl;
-            // std::cout << this->matrixtmp << std::endl;
             *this = *this * matrixy.after_y();
-            // this->matrixtmp = matrix.after_y() * this->matrixtmp;
-            matrtmp = matrixy.after_y() * matrtmp;
+            this->matrixtmp = matrixy.after_y() * this->matrixtmp;
         }
         else if( which == 'z'){
             matrixz.angle = ang;
             matrixz.toradians();
             *this = *this * matrixz.after_z();
-            // this->matrixtmp = matrix.after_z() * this->matrixtmp;
-            matrtmp = matrixz.after_x() * matrtmp;
+            this->matrixtmp = matrixz.after_z() * this->matrixtmp;
         }
         else{
             std::cout << "Wrong option operation dumped" << std::endl;
     }} 
-    this->matrixtmp = matrtmp; 
 }
 
 //Funkcja zapisu wspolrzednych bokow do pliku
@@ -367,12 +363,12 @@ bool Prostokat::Save(const char *sNazwaPliku)
 
 void Prostokat::turning(Prostokat &pro, const char *sNazwaPliku, double const ang, double const howm, PzG::LaczeDoGNUPlota Lacze, char which)
 {
-double arg[][SIZE] = {{1,0,0}, {0,1,0}, {0,0,1}};
-Matrix3 matrixtmp = Matrix3(arg);
+// double arg[][SIZE] = {{1,0,0}, {0,1,0}, {0,0,1}};
+// Matrix3 matrixtm = Matrix3(arg);
   if(howm < 5){
     for(int i = 0; i < howm; ++i){
         for(int k = 0; k < abs(ang); ++k){
-            pro.turn(ang/abs(ang), which, matrixtmp);
+            pro.turn(ang/abs(ang), which);
             pro.Save(sNazwaPliku);
             usleep(4000);
             Lacze.Rysuj(); 
@@ -381,7 +377,7 @@ Matrix3 matrixtmp = Matrix3(arg);
         }
     }
   else{
-      pro.turn(ang, which, matrixtmp);
+      pro.turn(ang, which);
       pro.Save(sNazwaPliku);
       Lacze.Rysuj();
   }

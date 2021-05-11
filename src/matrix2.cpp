@@ -21,8 +21,8 @@ bool Matrix2::operator == ( const Matrix2 tmp) const {
 }
 
 std::istream &operator>>(std::istream &in, Matrix2 &mat) {
-    for (int i = 0; i < SIZE; ++i) {
-        for (int j = 0; j < SIZE; ++j) {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 2; ++j) {
             in >> mat(i, j);
         }
     }
@@ -30,8 +30,8 @@ std::istream &operator>>(std::istream &in, Matrix2 &mat) {
 }
 
 std::ostream &operator<<(std::ostream &out, const Matrix2 &mat) {
-    for (int i = 0; i < SIZE; ++i) {
-        for (int j = 0; j < SIZE; ++j) {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 2; ++j) {
             out << "| " << mat(i, j) << " | "; //warto ustalic szerokosc wyswietlania dokladnosci liczb
         }
         std::cout << std::endl;

@@ -62,6 +62,7 @@ int main() {
   Vector3 vec8 = Vector3(arg8);
   Vector3 arguments1[] = { vec1, vec2, vec3, vec4, vec5, vec6, vec7, vec8};
   Prostokat pro = Prostokat(arguments1);
+  
 
   PzG::LaczeDoGNUPlota  Lacze;  // Ta zmienna jest potrzebna do wizualizacji
                                 // rysunku prostokata
@@ -90,6 +91,8 @@ int main() {
   pro.Save("../datasets/prostokat.dat");
   Lacze.Rysuj();
 
+
+  
   cout << "Beginning" << endl;
   double temp1, temp2, temp3, howm;
   char choice;
@@ -99,6 +102,8 @@ int main() {
   temp2 = pro.slen;
   temp3 = pro.high;}
   Vector3 tmp;
+  char axle = '_';
+  int  anglee = 0;
   
   cout << "m - menu" << endl;
   cout << "o - turn" << endl;
@@ -114,14 +119,42 @@ int main() {
     cin >> choice;
 
     switch( choice ){
-      case 'o': 
+      case 'o':{ 
+      double arg[][SIZE] = {{1,0,0}, {0,1,0}, {0,0,1}};
+      pro.matrixtmp = Matrix3(arg);
+      
         cout << "Choose axle ( 'x' 'y' 'z') " << endl;
-        cin >> pro;
+        while(axle != '.'){
+          cin >> axle;
+            if(axle == '.'){
+              break;
+            }
+          cin >> anglee;
+        switch (axle){
+            case 'x':
+                pro.turn(anglee,axle);
+                break;
+            case 'y':
+                pro.turn(anglee,axle);
+                break;
+            case 'z':
+                pro.turn(anglee,axle);
+                break;
+            case '.':
+                break;
+            default:
+                std::cerr << "Wrong Option, try again" << std::endl;
+                break;
+        }
+        }
+
         cout << "Choose how many times to turn rectangle: ";
         cin >> howm;
 
         // pro.turning(pro, "../datasets/prostokat.dat", ang, howm, Lacze, which);
-        for(int i = 0; i < howm; ++i ){
+        for(int i = 0; i < howm-1; ++i ){
+        cout << pro.matrixtmp << "to w mainie" << endl;
+        cout << pro << endl;
         pro = pro * pro.matrixtmp;
         // pro.Save("../datasets/prostokat.dat");
         }
@@ -135,7 +168,7 @@ int main() {
         else if(SIZE == 3){
           pro.showres3D();
           cout << endl;
-        }
+        }}
       break;
       case 't':
         cout << "Turn once again" << endl;
