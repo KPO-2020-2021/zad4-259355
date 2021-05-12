@@ -56,7 +56,13 @@ std::ostream &operator<<(std::ostream &out, const Matrix3 &mat) {
 }
 
 
-//Metoda inicjujaca macierz obrotu wartosciami trygonometrycznymi danego kata 
+/*********************************************************************************
+//  |  Metody inicjujace odpowiednie macierze obrotu dla danych osi (x,y,z)      |
+//  |  Argumenty:                                                                |
+//  |      Brak argumentow.                                                      |
+//  |  Zwraca:                                                                   |
+//  |      Macierz wypelniona odpowiednimi wartosciami obrotu
+*/
 template<>
 Matrix3 Matrix3::after_z(){
 

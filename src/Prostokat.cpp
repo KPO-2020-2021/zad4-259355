@@ -55,7 +55,7 @@ double &Prostokat::operator()(unsigned int row, unsigned int column) {
 
 
 /******************************************************************************
- |  Funktor macierzy                                                          |
+ |  Funktor Vectora                                                           |
  |  Argumenty:                                                                |
  |      row - numer wiersza.                                                  |
  |      column - numer kolumny.                                               |
@@ -65,7 +65,7 @@ double &Prostokat::operator()(unsigned int row, unsigned int column) {
 const Vector3 &Prostokat::operator () (unsigned int row) const {
 
     if (row >= NOPOINTS) {
-        throw std::out_of_range("Error: Macierz jest poza zasiegiem");
+        throw std::out_of_range("Error: Vector jest poza zasiegiem");
     }
 
     // if (column >= SIZE) {
@@ -81,11 +81,11 @@ const Vector3 &Prostokat::operator () (unsigned int row) const {
 const double &Prostokat::operator () (unsigned int row, unsigned int column) const {
 
     if (row >= NOPOINTS) {
-        throw std::out_of_range("Error: Macierz jest poza zasiegiem");
+        throw std::out_of_range("Error: Prostopadloscian jest poza zasiegiem");
     }
 
     if (column >= SIZE) {
-        throw std::out_of_range("Error: Macierz jest poza zasiegiem");
+        throw std::out_of_range("Error: Prostopadloscian jest poza zasiegiem");
     }
 
     return pro[row][column];
@@ -179,42 +179,6 @@ for (int i = 0; i < NOPOINTS; ++i){
     return stream;
 }
 
-std::istream& operator >> ( std::istream &stream, Prostokat &pr){
-
-char tmp;
-double num;
-double arg[][SIZE] = {{1,0,0}, {0,1,0}, {0,0,1}};
-pr.matrixtmp = Matrix3(arg);
-// Matrix3 matrixtm = Matrix3(arg);
-std::cout << pr.matrixtmp << "to >>" << std::endl;
-    while(tmp != '.'){
-        stream >> tmp;
-        if(tmp == '.'){
-            break;
-        }
-        if(stream.fail())
-            return stream;
-        stream >> num;
-        switch (tmp){
-            case 'x':
-                pr.turn(num,tmp);
-                break;
-            case 'y':
-                pr.turn(num,tmp);
-                break;
-            case 'z':
-                pr.turn(num,tmp);
-                break;
-            case '.':
-                break;
-            default:
-                std::cerr << "Wrong Option, try again" << std::endl;
-                break;
-        }
-    }
-    return stream;
-}
-
 //Funkcja przyjmujaca odpowiednio temp1 - dlugosc dluzszego boku oraz temp2 - dlugosc krotszego boku trojkata (na poczatku)
 //Porownuje ona dlugosci bokow po operacji przesuniecia i obrotu
 
@@ -257,8 +221,13 @@ void Prostokat::showres(double const temp1, double const temp2, double const tem
    }}
 }
 
-
-
+/*********************************************************************************
+//  |   Metoda wyswietlania i porownywania dlugosci bokow prostopadloscianu      |
+//  |  Argumenty:                                                                |
+//  |      Brak argumentow.                                                      |
+//  |  Zwraca:                                                                   |
+//  |      Prostokat wypelnione wartoscia 0. 
+*/
 void Prostokat::showres3D(){
 
     std::cout << std::setw(8) << std::fixed << std::setprecision(7);

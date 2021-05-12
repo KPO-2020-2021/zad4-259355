@@ -1,5 +1,6 @@
 /home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/rebuild_cache.dir
 /home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/test.dir
+/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/doc.dir
 /home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/edit_cache.dir
 /home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/NightlyMemCheck.dir
 /home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/main.dir

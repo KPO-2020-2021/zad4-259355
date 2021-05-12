@@ -44,6 +44,7 @@ int main() {
             << PROJECT_VERSION_TWEAK /* zmiany estetyczne itd. */
             << std::endl;
 
+
   double arg1[] = {100,100,150};
   double arg2[] = {50,100,150};
   double arg3[] = {100,25,150};

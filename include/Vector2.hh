@@ -5,6 +5,11 @@
 
 typedef Vector<double, 2> Vector2;
 
+//Definicje metod szczegolnych gdy dzialamy na wektorach2D
+//Przeciazenie operatora porownania
+//Przeciazenie operatora roznych
+//Przeciazenie operatora wejscia i wyjscia
+
 template<>
 bool Vector2::operator == (const Vector2 tmp) const ;
 

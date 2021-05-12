@@ -8,6 +8,15 @@
 #include <cstdlib>
 #include <stdexcept>
 
+
+/**
+ * \brief Klasa Macierzy
+ * 
+ * Klasa pozwalajaca operowac na argumentach macierzy
+ * Klasa jest szablonem ktory dziala dla macierzy2D i macierzy3D
+ * Szablon przyjmuje wartości <typ danych, rozmiar macierzy>
+ * 
+ */
 template<typename type, unsigned int table_size>
 class Matrix {
 
@@ -15,28 +24,33 @@ private:
     type value[table_size][table_size];               // Wartosci macierzy
 
 public:
-    double angle; 
+    double angle; /**< kat obrotu prostopadloscianu */
 
+
+    //Konstruktor macierzy
     Matrix(double tmp[SIZE][SIZE]){
     for (int i = 0; i < SIZE; ++i) {
         for (int j = 0; j < SIZE; ++j) {
             value[i][j] = tmp[i][j];
-        }
-    }
-    }                                      // Konstruktor klasy
+        }}}                                      
 
+    //Konstruktor klasy macierzy
+    //Wypelnia macierz zerami
     Matrix(){
     for (int i = 0; i < SIZE; ++i) {
         for (int j = 0; j < SIZE; ++j) {
             value[i][j] = 0;
         }
     }
-    };                               // Konstruktor klasy
+    };                               
 
     Vector2 operator * (Vector2 tmp) const;         // Operator mnożenia przez wektor
 
     Vector3 operator * (Vector3 tmp) const;         // Operator mnożenia przez wektor
 
+    //Przeciazenie operatora dodawania dwoch macierzy
+    //Argumenty tmp - macierz
+    //Zwraca result - wynik dodawania
     Matrix operator + (Matrix tmp){
     Matrix result;
     for (int i = 0; i < SIZE; ++i) {
@@ -47,6 +61,9 @@ public:
     return result;
     };
 
+    //Metoda obliczajaca wyznacznik macierz
+    //Brak Argumentow
+    //Zwraca wyznacznik
     double determinant(){
     double ratio;
     int i,j,k;
@@ -63,13 +80,10 @@ public:
 
                 for(k=0;k<SIZE;k++)
                 {
-                    // std::cout << *this << std::endl;
                     this->value[j][k] = this->value[j][k] - ratio*this->value[i][k];
                 }
             }
         }
-    // std::cout << *this << std::endl;
-    // std::cout << this->value[0][0] << " i " << this->value[0][1] << " i " << this->value[1][1] << std::endl;
     double deter = 1;
     for( i = 0; i < SIZE; ++i){
         deter *= this->value[i][i];
@@ -78,12 +92,16 @@ public:
     return deter;
 };
 
-    Matrix after_x();
+    //Metoda inicjacji macierzy wartosciami obrotu o os x
+    Matrix after_x();   
 
-    Matrix after_y();
+    //Metoda inicjacji macierzy wartosciami obrotu o os y
+    Matrix after_y();   
 
-    Matrix after_z();
+    //Metoda inicjacji macierzy wartosciami obrotu o os z
+    Matrix after_z();   
 
+    //Metoda zmieniajaca wartosc pola macierzy(angle) z double na radiany
     double toradians(){
 
     this->angle = (this->angle * M_PI)/180;
@@ -92,7 +110,9 @@ public:
 
     // Matrix init(char tmp, double num, Prostokat &pr);
 
-
+    //Operator indeksowania Macierzy 
+    //Argumenty row - ilosc wierszy, column - ilosc kolumn
+    //Zwraca macierz
     double  &operator () (unsigned int row, unsigned int column){
         if (row >= SIZE) {
         throw std::out_of_range("Error: Macierz jest poza zasiegiem");
@@ -118,6 +138,9 @@ public:
     return value[row][column];
     };
 
+    //Przeciazenie operatora mnozenia macierzy razy macierz 
+    //Argumenty sec - macierz
+    //Zwraca tmp - wynik mnozenia
     Matrix operator * (Matrix sec){
     Matrix tmp;
     for( int i = 0; i < SIZE; ++i){
@@ -130,6 +153,8 @@ public:
     return tmp;
     };
 
+    //Przeciazenie porownania dwoch macierzy
+    //Argumenty tmp - macierz
     bool operator == ( const Matrix tmp) const;
 
 };
