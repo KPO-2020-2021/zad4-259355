@@ -1,10 +1,10 @@
 #include "Vector3.hh"
 
-/******************************************************************************
- |  Przeciazenie operatora <<                                                 |
- |  Argumenty:                                                                |
- |      out - strumien wejsciowy,                                             |
- |      tmp - wektor.                                                         |
+/**
+ * Przeciazenie operatora wyjsciowego
+ * @param strumien wejsciowy stream
+ * @param Vector3 const &tmp
+ * @return strumien stream
  */
 std::ostream& operator << ( std::ostream &stream, Vector3 const &tmp){
 
@@ -16,11 +16,11 @@ std::ostream& operator << ( std::ostream &stream, Vector3 const &tmp){
 }
 
 
-/******************************************************************************
- |  Przeciazenie operatora >>                                                 |
- |  Argumenty:                                                                |
- |      in - strumien wyjsciowy,                                              |
- |      tmp - wektor.                                                         |
+/**
+ * Przeciazenie operatora wejsciowy
+ * @param strumien wejsciowy in
+ * @param const Vector3 &tmp
+ * @return strumien in
  */
 std::istream &operator >> (std::istream &in, Vector3 &tmp) {
     for (int i = 0; i < 3; ++i) {
@@ -30,7 +30,11 @@ std::istream &operator >> (std::istream &in, Vector3 &tmp) {
     return in;
 }
 
-//Przeciazennie ktore sprawdza czy dane wektory sa rowne
+/**
+ * Przeciazanei operatora porownania wektorow2D
+ * @param const Vector3 tmp
+ * @return True or False
+ */
 template<>
 bool Vector3::operator == ( const Vector3 tmp) const {
     if(abs(this->size[0] - tmp[0]) <= MIN_DIFF && abs(this->size[1] - tmp[1]) <= MIN_DIFF && abs(this->size[2] - tmp[2]) <= MIN_DIFF){
@@ -41,8 +45,11 @@ bool Vector3::operator == ( const Vector3 tmp) const {
     }
 }
 
-// Przeciazenie sprawdzajace czy wektory sa rozne
-template<>
+/**
+ * Przeciazanei operatora porownania != wektorow2D
+ * @param const Vector3 tmp
+ * @return True or False
+ */template<>
 bool Vector3::operator != (const Vector3 tmp) const{
     if(abs(this->size[0] - tmp[0]) > MIN_DIFF || abs(this->size[1] == tmp[1]) > MIN_DIFF || abs(this->size[2] == tmp[2]) > MIN_DIFF){
         return true;

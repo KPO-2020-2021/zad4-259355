@@ -2,13 +2,11 @@
 
 typedef Matrix<double,2>Matrix2;
 
-/*********************************************************************************
-//  |  Przeciazenie operatora porownania dla macierzy 2D                         |
-//  |  Argumenty:                                                                |
-//  |      Macierz2D (tmp) .                                                     |
-//  |  Zwraca:                                                                   |
-//  |      True or False. 
-*/
+/**
+ * Przeciazenie operatora porownania macierzy const
+ * @param const Macierz2D tmp
+ * @return True or False
+ */
 template<>
 bool Matrix2::operator == ( const Matrix2 tmp) const {
     int k = 0;
@@ -27,13 +25,12 @@ bool Matrix2::operator == ( const Matrix2 tmp) const {
     }
 }
 
-/*********************************************************************************
-//  |  Przeciazenie operatora wpisywania wartosci do macierzy2D                  |
-//  |  Argumenty:                                                                |
-//  |      Strumień wejściowy (in), Macierz2D (mat) .                            |
-//  |  Zwraca:                                                                   |
-//  |      Strumien. 
-*/
+/**
+ * Przeciazenie operatora wejsciowy
+ * @param strumien wejsciowy out
+ * @param const Macierz2D mat
+ * @return strumien in
+ */
 std::istream &operator>>(std::istream &in, Matrix2 &mat) {
     for (int i = 0; i < 2; ++i) {
         for (int j = 0; j < 2; ++j) {
@@ -43,13 +40,12 @@ std::istream &operator>>(std::istream &in, Matrix2 &mat) {
     return in;
 }
 
-/*********************************************************************************
-//  |  Przeciazenie operatora wypisywania wartosci do macierzy2D                 |
-//  |  Argumenty:                                                                |
-//  |      Strumień wyjściowy (out), Macierz2D (mat) .                            |
-//  |  Zwraca:                                                                   |
-//  |      Strumien. 
-*/
+/**
+ * Przeciazenie operatora wyswietlania
+ * @param strumien wejsciowy out
+ * @param const Macierz2D mat
+ * @return strumien out
+ */
 std::ostream &operator<<(std::ostream &out, const Matrix2 &mat) {
     for (int i = 0; i < 2; ++i) {
         for (int j = 0; j < 2; ++j) {
@@ -60,13 +56,11 @@ std::ostream &operator<<(std::ostream &out, const Matrix2 &mat) {
     return out;
 }
 
-/*********************************************************************************
-//  |  Przeciazenie operatora mnozenia wartosci macierzy2D razy wektor2D         |
-//  |  Argumenty:                                                                |
-//  |      Vector2D (tmp).                                                       |
-//  |  Zwraca:                                                                   |
-//  |      Vector2D (result). 
-*/
+/**
+ * Przeciazenie operatora wejsciowy
+ * @param Wektor2D tmp
+ * @return Wektor2D result
+ */
 template<>
 Vector2 Matrix2::operator * (Vector2 tmp) const {
     Vector2 result;

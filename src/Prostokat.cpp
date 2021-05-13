@@ -1,13 +1,13 @@
 #include "Prostokat.hh"
 typedef Matrix<double,SIZE>Matrix3;
 
-// /******************************************************************************
-//  |  Konstruktor klasy Prostokat.                                                 |
-//  |  Argumenty:                                                                |
-//  |      Brak argumentow.                                                      |
-//  |  Zwraca:                                                                   |
-//  |      Prostokat wypelnione wartoscia 0.                                       |
-//  */
+/******************************************************************************
+ |  Konstruktor klasy Prostokat.                                                 |
+ |  Argumenty:                                                                |
+ |      Brak argumentow.                                                      |
+ |  Zwraca:                                                                   |
+ |      Prostokat wypelnione wartoscia 0.                                       |
+ */
 Prostokat::Prostokat() {
     for (int i = 0; i < NOPOINTS; ++i) {
         for(int j = 0; j < SIZE; ++j) {
@@ -17,13 +17,11 @@ Prostokat::Prostokat() {
 }
 
 
-// /******************************************************************************
-//  |  Konstruktor parametryczny klasy Prostokat.                                   |
-//  |  Argumenty:                                                                |
-//  |      tmp - dwuwymiarowa tablica z elementami typu double.                  |
-//  |  Zwraca:                                                                   |
-//  |      Prostokat wypelniona wartosciami podanymi w argumencie.                 |
-//  */
+/**
+ * Metoda przyjmujaca jeden argument pozwalajaca poruszac sie po tablicy wierzcholkow
+ * @param tablica wektorow 3D
+ * @return nothing
+ */ 
 Prostokat::Prostokat(Vector3 tmp[NOPOINTS]) {
     for (int i = 0; i < NOPOINTS; ++i) {
         for(int j = 0; j < SIZE; ++j) {
@@ -32,14 +30,13 @@ Prostokat::Prostokat(Vector3 tmp[NOPOINTS]) {
     }
 }
 
-/******************************************************************************
- |  Funktor macierzy                                                          |
- |  Argumenty:                                                                |
- |      row - numer wiersza.                                                  |
- |      column - numer kolumny.                                               |
- |  Zwraca:                                                                   |
- |      Wartosc macierzy w danym miejscu tablicy.                             |
- */
+/**
+ * Przeciazenie operatora indeksowania pilnujaca czy nie wychodzi poza zakres
+ * Przyjmuje dwa argument: 
+ * @param int numer wiersza
+ * @param int numer kolumny 
+ * @return tablica wierzcholkow
+ */ 
 double &Prostokat::operator()(unsigned int row, unsigned int column) {
 
     if (row >= NOPOINTS) {
@@ -54,14 +51,11 @@ double &Prostokat::operator()(unsigned int row, unsigned int column) {
 }
 
 
-/******************************************************************************
- |  Funktor Vectora                                                           |
- |  Argumenty:                                                                |
- |      row - numer wiersza.                                                  |
- |      column - numer kolumny.                                               |
- |  Zwraca:                                                                   |
- |      Wartosc macierzy w danym miejscu tablicy jako stala.                  |
- */
+/**
+ * Funktor Wektora (const) pilnujacy czy nie wychodzimy poza tablice wektora
+ * @param int numer wiersza
+ * @return wektor
+ */ 
 const Vector3 &Prostokat::operator () (unsigned int row) const {
 
     if (row >= NOPOINTS) {
@@ -76,8 +70,12 @@ const Vector3 &Prostokat::operator () (unsigned int row) const {
     return pro[row];
 }
 
-//Przeciazenie operatora () indeksowania dla prostokata z odpowiednimi zabezpieczeniami
-
+/**
+ * Przeciazenie operatora () (const) indeksowania dla prostokata z odpowiednimi zabezpieczeniami
+ * @param int numer wiersza
+ * @param int numer kolumny 
+ * @return Tablica wierzcholkow
+ */ 
 const double &Prostokat::operator () (unsigned int row, unsigned int column) const {
 
     if (row >= NOPOINTS) {
@@ -91,8 +89,11 @@ const double &Prostokat::operator () (unsigned int row, unsigned int column) con
     return pro[row][column];
 }
 
-//Przeciazenie operatora przyjmująca jako argument macierz i zmieniajaca wartosci wspolrzednych prostokata
-
+/**
+ * Przeciazenie operatora mnozenia wierzcholkow razy macierz  
+ * @param const macierz 3D
+ * @return Prostopadloscian result
+ */ 
 Prostokat Prostokat::operator * (const Matrix3 &matrix){
     Prostokat result;
     for (int i = 0; i < NOPOINTS; ++i){
@@ -105,8 +106,11 @@ Prostokat Prostokat::operator * (const Matrix3 &matrix){
     return result;
 }
 
-//Funkcja przyjmujaca jako argument wektor i zmieniajaca wartosci wspolrzednych prostokata (przesuniecie o wektor)
-
+/**
+ * Funkcja przyjmujaca jako argument wektor i zmieniajaca wartosci wspolrzednych prostokata (przesuniecie o wektor)
+ * @param const Wektor 3D
+ * @return Prostopadloscian 
+ */ 
 Prostokat Prostokat::move(const Vector3 &vec){
     for (int i = 0; i < NOPOINTS; ++i){
         for (int j = 0; j < SIZE; ++j){
@@ -118,8 +122,12 @@ Prostokat Prostokat::move(const Vector3 &vec){
     return *this;
 }
 
-// Funkcja powodujaca animacje przesuniecia prostokata o wektor
-
+/**
+ * Funkcja powodujaca animacje przesuniecia prostokata o wektor
+ * @param referencja Wektor 3D vec
+ * @param const char pointer sNazwaPliku
+ * @param LaczeDoGnuplota 
+ */ 
 void Prostokat::moving(Vector3 &vec, const char *sNazwaPliku, PzG::LaczeDoGNUPlota Lacze){
 
     Vector3 temp;
@@ -133,8 +141,10 @@ void Prostokat::moving(Vector3 &vec, const char *sNazwaPliku, PzG::LaczeDoGNUPlo
     }
 }
 
-//Metoda ktora oblicza wartosci dluzszego (blen) i krotszego (slen) boku prostokata
-
+/**
+ * Metoda ktora oblicza wartosci dluzszego (blen) i krotszego (slen) boku prostokata
+ * @return Prostopadloscian
+ */ 
 Prostokat Prostokat::lenght2(){
 
    this->slen = sqrt(pow(this->pro[0][0] - this->pro[1][0],2) + pow(this->pro[0][1] - this->pro[1][1],2));
@@ -143,6 +153,10 @@ Prostokat Prostokat::lenght2(){
    return *this;
 }
 
+/**
+ * Metoda porownujaca boki prostopadloscianu 
+ * @return Prostopadloscian
+ */ 
  Prostokat Prostokat::lenght3D(){
 
    this->lenght[0][0] = sqrt(pow(this->pro[0][0] - this->pro[2][0],2) + pow(this->pro[0][1] - this->pro[2][1],2) + pow(this->pro[0][2] - this->pro[2][2],2));
@@ -162,9 +176,13 @@ Prostokat Prostokat::lenght2(){
    return *this;
 }
 
-//Przeciazenie operatora przesuniecia bitowego w lewo
-//Pozwala w odpowiedni sposob wyswietlic wspolrzedne prostokata 
-
+/**
+ * Przeciazenie operatora przesuniecia bitowego w lewo
+ * Pozwala w odpowiedni sposob wyswietlic wspolrzedne prostokata  
+ * @param strumien wejsciowy stream
+ * @param referencja const Prostopadloscian Pr
+ * @return strumien wejsciowy stream
+ */ 
 std::ostream& operator << ( std::ostream &stream, const Prostokat &Pr){
 
 for (int i = 0; i < NOPOINTS; ++i){
@@ -179,9 +197,13 @@ for (int i = 0; i < NOPOINTS; ++i){
     return stream;
 }
 
-//Funkcja przyjmujaca odpowiednio temp1 - dlugosc dluzszego boku oraz temp2 - dlugosc krotszego boku trojkata (na poczatku)
-//Porownuje ona dlugosci bokow po operacji przesuniecia i obrotu
-
+/**
+ * Funkcja Void przyjmujaca odpowiednio temp1 - dlugosc dluzszego boku oraz temp2 - dlugosc krotszego boku trojkata (na poczatku)
+ * Porownuje ona dlugosci bokow po operacji przesuniecia i obrotu
+ * @param double const temp1 - dlugosc dluzszego boku
+ * @param double const temp2 - dlugosc krotszego boku 
+ * @param double const temp3 - dlugosc wysokosci
+ */
 void Prostokat::showres(double const temp1, double const temp2, double const temp3){
 
     this->lenght2();
@@ -221,13 +243,10 @@ void Prostokat::showres(double const temp1, double const temp2, double const tem
    }}
 }
 
-/*********************************************************************************
-//  |   Metoda wyswietlania i porownywania dlugosci bokow prostopadloscianu      |
-//  |  Argumenty:                                                                |
-//  |      Brak argumentow.                                                      |
-//  |  Zwraca:                                                                   |
-//  |      Prostokat wypelnione wartoscia 0. 
-*/
+/**
+ * Metoda wyswietlania i porownywania dlugosci bokow prostopadloscianu      
+ * @return Prostopadloscian wypelniony wartoscia 0
+ */
 void Prostokat::showres3D(){
 
     std::cout << std::setw(8) << std::fixed << std::setprecision(7);
@@ -276,9 +295,12 @@ void Prostokat::showres3D(){
    }
 }
 
-//Funkcja przyjmujaca kat o ktory obracamy prostokat wokol punktu (0,0)
-//Zmienia wartosci wspolrzednych prostokata o dany kata
-
+/**
+ * Funkcja Void przyjmujaca kat o ktory obracamy prostokat wokol punktu (0,0)
+ * Zmienia wartosci wspolrzednych prostokata o dany kata 
+ * @param double const ang - kat
+ * @param char which - os 
+ */
 void Prostokat::turn(double const ang, char which){
     Matrix3 matrixx,matrixy,matrixz;
     if(SIZE != 3){
@@ -309,8 +331,11 @@ void Prostokat::turn(double const ang, char which){
     }} 
 }
 
-//Funkcja zapisu wspolrzednych bokow do pliku
-
+/**
+ * Funkcja zapisu wspolrzednych bokow do pliku 
+ * @param const char pointer sNazwaPliku
+ * @return wartosc zwracana funkcji StrmPlikowy.fail()
+ */
 bool Prostokat::Save(const char *sNazwaPliku)
 {
   std::ofstream  StrmPlikowy;
@@ -328,12 +353,17 @@ bool Prostokat::Save(const char *sNazwaPliku)
   return !StrmPlikowy.fail();
 }
 
-//Funkcja wykonujaca animacje obrotu prostokata o dany kat wykonuje sie dla mniej niz 5 powtorzen
-
+/**
+ * Funkcja wykonujaca animacje obrotu prostokata o dany kat wykonuje sie dla mniej niz 5 powtorzen
+ * @param referencja Protokat pro
+ * @param const char pointer sNazwaPlikowy
+ * @param double const ang - kat
+ * @param double const howm - ile razy obrocic
+ * @param LaczeDoGnuplota
+ * @param char which - os
+ */
 void Prostokat::turning(Prostokat &pro, const char *sNazwaPliku, double const ang, double const howm, PzG::LaczeDoGNUPlota Lacze, char which)
 {
-// double arg[][SIZE] = {{1,0,0}, {0,1,0}, {0,0,1}};
-// Matrix3 matrixtm = Matrix3(arg);
   if(howm < 5){
     for(int i = 0; i < howm; ++i){
         for(int k = 0; k < abs(ang); ++k){
@@ -352,11 +382,3 @@ void Prostokat::turning(Prostokat &pro, const char *sNazwaPliku, double const an
   }
 }
 
-// bool operator == (const double temp1,const double temp2){
-//     if(abs(temp1 - temp2) < MIN_DIFF){
-//         return true;
-//     }
-//     else{
-//         return false;
-//     }
-// }

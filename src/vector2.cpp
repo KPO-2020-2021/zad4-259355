@@ -1,10 +1,10 @@
 #include "Vector2.hh"
 
-/******************************************************************************
- |  Przeciazenie operatora <<                                                 |
- |  Argumenty:                                                                |
- |      out - strumien wejsciowy,                                             |
- |      tmp - wektor.                                                         |
+/**
+ * Przeciazenie operatora wyjsciowego
+ * @param strumien wejsciowy stream
+ * @param Vector2 const &tmp
+ * @return strumien stream
  */
 std::ostream& operator << ( std::ostream &stream, Vector2 const &tmp){
 
@@ -15,11 +15,11 @@ std::ostream& operator << ( std::ostream &stream, Vector2 const &tmp){
 }
 
 
-/******************************************************************************
- |  Przeciazenie operatora >>                                                 |
- |  Argumenty:                                                                |
- |      in - strumien wyjsciowy,                                              |
- |      tmp - wektor.                                                         |
+/**
+ * Przeciazenie operatora wejsciowy
+ * @param strumien wejsciowy in
+ * @param const Vector2 &tmp
+ * @return strumien in
  */
 std::istream &operator >> (std::istream &in, Vector2 &tmp) {
     for (int i = 0; i < 2; ++i) {
@@ -29,7 +29,11 @@ std::istream &operator >> (std::istream &in, Vector2 &tmp) {
     return in;
 }
 
-//Przeciazennie ktore sprawdza czy dane wektory sa rowne
+/**
+ * Przeciazanei operatora porownania wektorow2D
+ * @param const Vector2 tmp
+ * @return True or False
+ */
 template<>
 bool Vector2::operator == ( const Vector2 tmp) const {
     if(abs(this->size[0] - tmp[0]) <= MIN_DIFF && abs(this->size[1] - tmp[1]) <= MIN_DIFF){
@@ -40,7 +44,11 @@ bool Vector2::operator == ( const Vector2 tmp) const {
     }
 }
 
-// Przeciazenie sprawdzajace czy wektory sa rozne
+/**
+ * Przeciazanei operatora porownania != wektorow2D
+ * @param const Vector2 tmp
+ * @return True or False
+ */
 template<>
 bool Vector2::operator != (const Vector2 tmp) const{
     if(abs(this->size[0] - tmp[0]) > MIN_DIFF || abs(this->size[1] == tmp[1]) > MIN_DIFF){

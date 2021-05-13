@@ -2,14 +2,11 @@
 
 typedef Matrix<double,3>Matrix3;
 
-// /******************************************************************************
-//  |  Realizuje mnozenie macierzy przez wektor.                                 |
-//  |  Argumenty:                                                                |
-//  |      this - macierz, czyli pierwszy skladnik mnozenia,                     |
-//  |      v - wektor, czyli drugi skladnik mnozenia.                            |
-//  |  Zwraca:                                                                   |
-//  |      Iloczyn dwoch skladnikow przekazanych jako wektor.                    |
-//  */
+/**
+ * Przeciazenie operatora wejsciowy
+ * @param Wektor3D tmp
+ * @return Wektor3D result
+ */
 template<>
 Vector3 Matrix3::operator * (Vector3 tmp) const {
     Vector3 result;
@@ -23,11 +20,11 @@ Vector3 Matrix3::operator * (Vector3 tmp) const {
 
 
 
-/******************************************************************************
- |  Przeciazenie operatora >>                                                 |
- |  Argumenty:                                                                |
- |      in - strumien wyjsciowy,                                              |
- |      mat - macierz.                                                         |
+/**
+ * Przeciazenie operatora wejsciowy
+ * @param strumien wejsciowy out
+ * @param const Macierz3D mat
+ * @return strumien in
  */
 std::istream &operator>>(std::istream &in, Matrix3 &mat) {
     for (int i = 0; i < 3; ++i) {
@@ -39,11 +36,11 @@ std::istream &operator>>(std::istream &in, Matrix3 &mat) {
 }
 
 
-/******************************************************************************
- |  Przeciazenie operatora <<                                                 |
- |  Argumenty:                                                                |
- |      out - strumien wejsciowy,                                             |
- |      mat - macierz.                                                        |
+/**
+ * Przeciazenie operatora wyswietlania
+ * @param strumien wejsciowy out
+ * @param const Macierz3D mat
+ * @return strumien out
  */
 std::ostream &operator<<(std::ostream &out, const Matrix3 &mat) {
     for (int i = 0; i < 3; ++i) {
@@ -55,14 +52,10 @@ std::ostream &operator<<(std::ostream &out, const Matrix3 &mat) {
     return out;
 }
 
-
-/*********************************************************************************
-//  |  Metody inicjujace odpowiednie macierze obrotu dla danych osi (x,y,z)      |
-//  |  Argumenty:                                                                |
-//  |      Brak argumentow.                                                      |
-//  |  Zwraca:                                                                   |
-//  |      Macierz wypelniona odpowiednimi wartosciami obrotu
-*/
+/**
+ * Metoda Matrix3D inicjujaca macierz obrotu o os Oz
+ * @return Prostopadloscian
+ */
 template<>
 Matrix3 Matrix3::after_z(){
 
@@ -76,6 +69,10 @@ Matrix3 Matrix3::after_z(){
     return *this;
 }
 
+/**
+ * Metoda Matrix3D inicjujaca macierz obrotu o os Oy
+ * @return Prostopadloscian
+ */
 template<>
 Matrix3 Matrix3::after_y(){
     
@@ -88,6 +85,10 @@ Matrix3 Matrix3::after_y(){
     return *this;
 }
 
+/**
+ * Metoda Matrix3D inicjujaca macierz obrotu o os Ox
+ * @return Prostopadloscian
+ */
 template<>
 Matrix3 Matrix3::after_x(){
 
@@ -100,7 +101,11 @@ Matrix3 Matrix3::after_x(){
     return *this;
 }
 
-//Przeciazenie operatora porownania macierzy 
+/**
+ * Przeciazenie operatora porownania macierzy const
+ * @param const Macierz3D tmp
+ * @return True or False
+ */
 template<>
 bool Matrix3::operator == ( const Matrix3 tmp) const {
     int k = 0;

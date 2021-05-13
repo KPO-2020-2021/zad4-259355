@@ -1,0 +1,351 @@
+\hypertarget{class_prostokat}{}\doxysection{Prostokat Class Reference}
+\label{class_prostokat}\index{Prostokat@{Prostokat}}
+
+
+Klasa Prostopadloscianu.  
+
+
+
+
+{\ttfamily \#include $<$Prostokat.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_prostokat_ae9b8368105d42c80aac0eaea3eee1195}{Prostokat}} (\mbox{\hyperlink{class_vector}{Vector3}}\mbox{[}N\+O\+P\+O\+I\+N\+TS\mbox{]})
+\item 
+\mbox{\hyperlink{class_prostokat}{Prostokat}} \mbox{\hyperlink{class_prostokat_ada8536502fe08a7164da209156f36f33}{operator$\ast$}} (const \mbox{\hyperlink{class_matrix}{Matrix3}} \&matrix)
+\begin{DoxyCompactList}\small\item\em Przeciazenie operatora mnozenia wierzcholkow prostokata razy macierz. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_prostokat}{Prostokat}} \mbox{\hyperlink{class_prostokat_a275009a29c46b8614fa07e97e5d3331c}{move}} (const \mbox{\hyperlink{class_vector}{Vector3}} \&vec)
+\begin{DoxyCompactList}\small\item\em Metoda przesuniecia prostopadloscianu o wektor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_prostokat_ad5fb7aaebf56bb1442d622b9de3da859}{moving}} (\mbox{\hyperlink{class_vector}{Vector3}} \&vec, const char $\ast$s\+Nazwa\+Pliku, \mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}} Lacze)
+\begin{DoxyCompactList}\small\item\em Animacja przesuniecia. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_prostokat_a7cbd6d4b674a275b89052c3446e4dfa6}\label{class_prostokat_a7cbd6d4b674a275b89052c3446e4dfa6}} 
+\mbox{\hyperlink{class_prostokat}{Prostokat}} \mbox{\hyperlink{class_prostokat_a7cbd6d4b674a275b89052c3446e4dfa6}{operator+}} (const \mbox{\hyperlink{class_vector}{Vector3}} vec2)
+\begin{DoxyCompactList}\small\item\em Przeciazenie operatora dodawania wektora do wierzcholkow prostopadloscianu. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{class_prostokat_a6fb84628d90a95e0374f588fe6b2a7ac}{operator()}} (unsigned int row, unsigned int column)
+\begin{DoxyCompactList}\small\item\em Odpowiednie operatory indeksowania i poruszania sie po wierzcholkach prostopadloscianu. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{class_prostokat_ace880af85e40a45950d4afe8e233e5ef}{operator()}} (unsigned int row, unsigned int column) const
+\begin{DoxyCompactList}\small\item\em Odpowiednie operatory indeksowania i poruszania sie po wierzcholkach prostopadloscianu. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_vector}{Vector3}} \& \mbox{\hyperlink{class_prostokat_a17f22a52616d999c54386f45d961a6a2}{operator()}} (unsigned int row) const
+\begin{DoxyCompactList}\small\item\em Odpowiednie operatory indeksowania i poruszania sie po wierzcholkach prostopadloscianu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_prostokat_a33e792b7eb95c0fab85a599b4bd622af}{turn}} (double const ang, char which)
+\begin{DoxyCompactList}\small\item\em Metoda obrotu prostopadloscianu o dany kat i os. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_prostokat_ac2af6e876ed9e7ecf0db4d222bc2bae8}{turning}} (\mbox{\hyperlink{class_prostokat}{Prostokat}} \&pro, const char $\ast$s\+Nazwa\+Pliku, double const ang, double const howm, \mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}} Lacze, char which)
+\item 
+\mbox{\hyperlink{class_prostokat}{Prostokat}} \mbox{\hyperlink{class_prostokat_a64f00dcbd3a9bbfaf948a35dcb00f904}{lenght2}} ()
+\begin{DoxyCompactList}\small\item\em Metoda obliczajaca dlugosc bokow prostokata2D. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_prostokat}{Prostokat}} \mbox{\hyperlink{class_prostokat_a63516bfa5d694405c7b49d99bd76607c}{lenght3D}} ()
+\begin{DoxyCompactList}\small\item\em Metoda obliczajaca dlugosc bokow prostopadloscianu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_prostokat_a43d95bbe461e6ade437d41a336a2a53e}{Save}} (const char $\ast$s\+Nazwa\+Pliku)
+\begin{DoxyCompactList}\small\item\em Metoda zapisujaca wierzcholki do pliku. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_prostokat_a49fe7789718f64f3cc65809f70ebb548}{showres}} (double const temp1, double const temp2, double const temp3)
+\begin{DoxyCompactList}\small\item\em Metoda wyswietlajaca i porownujaca dlugosci bokow. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_prostokat_a2651f9b4e04ea13b92403bc7ee80d0cc}{showres3D}} ()
+\begin{DoxyCompactList}\small\item\em Metoda wyswietlajaca oraz porownujaca dlugosci bokow prostopadloscianu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_prostokat_abfc8d5c17c8415e887babdb89ede02e6}{blen}}
+\item 
+double \mbox{\hyperlink{class_prostokat_a36de224601e0b8cccea8e0fee2e0eb3b}{slen}}
+\item 
+double \mbox{\hyperlink{class_prostokat_afb353866a4bb8932e7ee7d43e6c288e8}{high}}
+\item 
+double \mbox{\hyperlink{class_prostokat_aa14970fe753e902306f4694d4a5a55d0}{lenght}} \mbox{[}3\mbox{]}\mbox{[}4\mbox{]}
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix3}} \mbox{\hyperlink{class_prostokat_a6140a9f03de806cb47a853893e036a59}{matrixtmp}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa Prostopadloscianu. 
+
+Klasa pozwalajaca operowac na wierzcholkach prostopadloscianu 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_prostokat_ae9b8368105d42c80aac0eaea3eee1195}\label{class_prostokat_ae9b8368105d42c80aac0eaea3eee1195}} 
+\index{Prostokat@{Prostokat}!Prostokat@{Prostokat}}
+\index{Prostokat@{Prostokat}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{Prostokat()}{Prostokat()}}
+{\footnotesize\ttfamily Prostokat\+::\+Prostokat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}}}]{tmp\mbox{[}\+N\+O\+P\+O\+I\+N\+T\+S\mbox{]} }\end{DoxyParamCaption})}
+
+Metoda przyjmujaca jeden argument pozwalajaca poruszac sie po tablicy wierzcholkow 
+\begin{DoxyParams}{Parameters}
+{\em tablica} & wektorow 3D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_prostokat_a64f00dcbd3a9bbfaf948a35dcb00f904}\label{class_prostokat_a64f00dcbd3a9bbfaf948a35dcb00f904}} 
+\index{Prostokat@{Prostokat}!lenght2@{lenght2}}
+\index{lenght2@{lenght2}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{lenght2()}{lenght2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_prostokat}{Prostokat}} Prostokat\+::lenght2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda obliczajaca dlugosc bokow prostokata2D. 
+
+Metoda ktora oblicza wartosci dluzszego (blen) i krotszego (slen) boku prostokata \begin{DoxyReturn}{Returns}
+Prostopadloscian 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_prostokat_a63516bfa5d694405c7b49d99bd76607c}\label{class_prostokat_a63516bfa5d694405c7b49d99bd76607c}} 
+\index{Prostokat@{Prostokat}!lenght3D@{lenght3D}}
+\index{lenght3D@{lenght3D}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{lenght3D()}{lenght3D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_prostokat}{Prostokat}} Prostokat\+::lenght3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda obliczajaca dlugosc bokow prostopadloscianu. 
+
+Metoda porownujaca boki prostopadloscianu \begin{DoxyReturn}{Returns}
+Prostopadloscian 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_prostokat_a275009a29c46b8614fa07e97e5d3331c}\label{class_prostokat_a275009a29c46b8614fa07e97e5d3331c}} 
+\index{Prostokat@{Prostokat}!move@{move}}
+\index{move@{move}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_prostokat}{Prostokat}} Prostokat\+::move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector}{Vector3}} \&}]{vec }\end{DoxyParamCaption})}
+
+
+
+Metoda przesuniecia prostopadloscianu o wektor. 
+
+Funkcja przyjmujaca jako argument wektor i zmieniajaca wartosci wspolrzednych prostokata (przesuniecie o wektor) 
+\begin{DoxyParams}{Parameters}
+{\em const} & Wektor 3D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Prostopadloscian 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_prostokat_ad5fb7aaebf56bb1442d622b9de3da859}\label{class_prostokat_ad5fb7aaebf56bb1442d622b9de3da859}} 
+\index{Prostokat@{Prostokat}!moving@{moving}}
+\index{moving@{moving}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{moving()}{moving()}}
+{\footnotesize\ttfamily void Prostokat\+::moving (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}} \&}]{vec,  }\item[{const char $\ast$}]{s\+Nazwa\+Pliku,  }\item[{\mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}}}]{Lacze }\end{DoxyParamCaption})}
+
+
+
+Animacja przesuniecia. 
+
+Funkcja powodujaca animacje przesuniecia prostokata o wektor 
+\begin{DoxyParams}{Parameters}
+{\em referencja} & Wektor 3D vec \\
+\hline
+{\em const} & char pointer s\+Nazwa\+Pliku \\
+\hline
+{\em Lacze\+Do\+Gnuplota} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_prostokat_a17f22a52616d999c54386f45d961a6a2}\label{class_prostokat_a17f22a52616d999c54386f45d961a6a2}} 
+\index{Prostokat@{Prostokat}!operator()@{operator()}}
+\index{operator()@{operator()}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_vector}{Vector3}} \& Prostokat\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int}]{row }\end{DoxyParamCaption}) const}
+
+
+
+Odpowiednie operatory indeksowania i poruszania sie po wierzcholkach prostopadloscianu. 
+
+Funktor Wektora (const) pilnujacy czy nie wychodzimy poza tablice wektora 
+\begin{DoxyParams}{Parameters}
+{\em int} & numer wiersza \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+wektor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_prostokat_a6fb84628d90a95e0374f588fe6b2a7ac}\label{class_prostokat_a6fb84628d90a95e0374f588fe6b2a7ac}} 
+\index{Prostokat@{Prostokat}!operator()@{operator()}}
+\index{operator()@{operator()}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily double \& Prostokat\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int}]{row,  }\item[{unsigned int}]{column }\end{DoxyParamCaption})}
+
+
+
+Odpowiednie operatory indeksowania i poruszania sie po wierzcholkach prostopadloscianu. 
+
+Przeciazenie operatora indeksowania pilnujaca czy nie wychodzi poza zakres Przyjmuje dwa argument\+: 
+\begin{DoxyParams}{Parameters}
+{\em int} & numer wiersza \\
+\hline
+{\em int} & numer kolumny \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tablica wierzcholkow 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_prostokat_ace880af85e40a45950d4afe8e233e5ef}\label{class_prostokat_ace880af85e40a45950d4afe8e233e5ef}} 
+\index{Prostokat@{Prostokat}!operator()@{operator()}}
+\index{operator()@{operator()}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily const double \& Prostokat\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int}]{row,  }\item[{unsigned int}]{column }\end{DoxyParamCaption}) const}
+
+
+
+Odpowiednie operatory indeksowania i poruszania sie po wierzcholkach prostopadloscianu. 
+
+Przeciazenie operatora () (const) indeksowania dla prostokata z odpowiednimi zabezpieczeniami 
+\begin{DoxyParams}{Parameters}
+{\em int} & numer wiersza \\
+\hline
+{\em int} & numer kolumny \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tablica wierzcholkow 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_prostokat_ada8536502fe08a7164da209156f36f33}\label{class_prostokat_ada8536502fe08a7164da209156f36f33}} 
+\index{Prostokat@{Prostokat}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_prostokat}{Prostokat}} Prostokat\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix3}} \&}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Przeciazenie operatora mnozenia wierzcholkow prostokata razy macierz. 
+
+Przeciazenie operatora mnozenia wierzcholkow razy macierz ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em const} & macierz 3D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Prostopadloscian result 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_prostokat_a43d95bbe461e6ade437d41a336a2a53e}\label{class_prostokat_a43d95bbe461e6ade437d41a336a2a53e}} 
+\index{Prostokat@{Prostokat}!Save@{Save}}
+\index{Save@{Save}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily bool Prostokat\+::\+Save (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s\+Nazwa\+Pliku }\end{DoxyParamCaption})}
+
+
+
+Metoda zapisujaca wierzcholki do pliku. 
+
+Funkcja zapisu wspolrzednych bokow do pliku 
+\begin{DoxyParams}{Parameters}
+{\em const} & char pointer s\+Nazwa\+Pliku \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+wartosc zwracana funkcji Strm\+Plikowy.\+fail() 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_prostokat_a49fe7789718f64f3cc65809f70ebb548}\label{class_prostokat_a49fe7789718f64f3cc65809f70ebb548}} 
+\index{Prostokat@{Prostokat}!showres@{showres}}
+\index{showres@{showres}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{showres()}{showres()}}
+{\footnotesize\ttfamily void Prostokat\+::showres (\begin{DoxyParamCaption}\item[{double const}]{temp1,  }\item[{double const}]{temp2,  }\item[{double const}]{temp3 }\end{DoxyParamCaption})}
+
+
+
+Metoda wyswietlajaca i porownujaca dlugosci bokow. 
+
+Funkcja Void przyjmujaca odpowiednio temp1 -\/ dlugosc dluzszego boku oraz temp2 -\/ dlugosc krotszego boku trojkata (na poczatku) Porownuje ona dlugosci bokow po operacji przesuniecia i obrotu 
+\begin{DoxyParams}{Parameters}
+{\em double} & const temp1 -\/ dlugosc dluzszego boku \\
+\hline
+{\em double} & const temp2 -\/ dlugosc krotszego boku \\
+\hline
+{\em double} & const temp3 -\/ dlugosc wysokosci \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_prostokat_a2651f9b4e04ea13b92403bc7ee80d0cc}\label{class_prostokat_a2651f9b4e04ea13b92403bc7ee80d0cc}} 
+\index{Prostokat@{Prostokat}!showres3D@{showres3D}}
+\index{showres3D@{showres3D}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{showres3D()}{showres3D()}}
+{\footnotesize\ttfamily void Prostokat\+::showres3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda wyswietlajaca oraz porownujaca dlugosci bokow prostopadloscianu. 
+
+Metoda wyswietlania i porownywania dlugosci bokow prostopadloscianu ~\newline
+ \begin{DoxyReturn}{Returns}
+Prostopadloscian wypelniony wartoscia 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_prostokat_a33e792b7eb95c0fab85a599b4bd622af}\label{class_prostokat_a33e792b7eb95c0fab85a599b4bd622af}} 
+\index{Prostokat@{Prostokat}!turn@{turn}}
+\index{turn@{turn}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{turn()}{turn()}}
+{\footnotesize\ttfamily void Prostokat\+::turn (\begin{DoxyParamCaption}\item[{double const}]{ang,  }\item[{char}]{which }\end{DoxyParamCaption})}
+
+
+
+Metoda obrotu prostopadloscianu o dany kat i os. 
+
+Funkcja Void przyjmujaca kat o ktory obracamy prostokat wokol punktu (0,0) Zmienia wartosci wspolrzednych prostokata o dany kata 
+\begin{DoxyParams}{Parameters}
+{\em double} & const ang -\/ kat \\
+\hline
+{\em char} & which -\/ os \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_prostokat_ac2af6e876ed9e7ecf0db4d222bc2bae8}\label{class_prostokat_ac2af6e876ed9e7ecf0db4d222bc2bae8}} 
+\index{Prostokat@{Prostokat}!turning@{turning}}
+\index{turning@{turning}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{turning()}{turning()}}
+{\footnotesize\ttfamily void Prostokat\+::turning (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_prostokat}{Prostokat}} \&}]{pro,  }\item[{const char $\ast$}]{s\+Nazwa\+Pliku,  }\item[{double const}]{ang,  }\item[{double const}]{howm,  }\item[{\mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}}}]{Lacze,  }\item[{char}]{which }\end{DoxyParamCaption})}
+
+Funkcja wykonujaca animacje obrotu prostokata o dany kat wykonuje sie dla mniej niz 5 powtorzen 
+\begin{DoxyParams}{Parameters}
+{\em referencja} & Protokat pro \\
+\hline
+{\em const} & char pointer s\+Nazwa\+Plikowy \\
+\hline
+{\em double} & const ang -\/ kat \\
+\hline
+{\em double} & const howm -\/ ile razy obrocic \\
+\hline
+{\em Lacze\+Do\+Gnuplota} & \\
+\hline
+{\em char} & which -\/ os \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_prostokat_abfc8d5c17c8415e887babdb89ede02e6}\label{class_prostokat_abfc8d5c17c8415e887babdb89ede02e6}} 
+\index{Prostokat@{Prostokat}!blen@{blen}}
+\index{blen@{blen}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{blen}{blen}}
+{\footnotesize\ttfamily double Prostokat\+::blen}
+
+dlugosc dluzszego boku prostopadloscianu \mbox{\Hypertarget{class_prostokat_afb353866a4bb8932e7ee7d43e6c288e8}\label{class_prostokat_afb353866a4bb8932e7ee7d43e6c288e8}} 
+\index{Prostokat@{Prostokat}!high@{high}}
+\index{high@{high}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{high}{high}}
+{\footnotesize\ttfamily double Prostokat\+::high}
+
+dlugosc wysokosci boku prostopadloscianu \mbox{\Hypertarget{class_prostokat_aa14970fe753e902306f4694d4a5a55d0}\label{class_prostokat_aa14970fe753e902306f4694d4a5a55d0}} 
+\index{Prostokat@{Prostokat}!lenght@{lenght}}
+\index{lenght@{lenght}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{lenght}{lenght}}
+{\footnotesize\ttfamily double Prostokat\+::lenght\mbox{[}3\mbox{]}\mbox{[}4\mbox{]}}
+
+tablica dlugosci poszczegolnych krawedz prostopadloscianu \mbox{\Hypertarget{class_prostokat_a6140a9f03de806cb47a853893e036a59}\label{class_prostokat_a6140a9f03de806cb47a853893e036a59}} 
+\index{Prostokat@{Prostokat}!matrixtmp@{matrixtmp}}
+\index{matrixtmp@{matrixtmp}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{matrixtmp}{matrixtmp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix3}} Prostokat\+::matrixtmp}
+
+Macierz obrotu \mbox{\Hypertarget{class_prostokat_a36de224601e0b8cccea8e0fee2e0eb3b}\label{class_prostokat_a36de224601e0b8cccea8e0fee2e0eb3b}} 
+\index{Prostokat@{Prostokat}!slen@{slen}}
+\index{slen@{slen}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{slen}{slen}}
+{\footnotesize\ttfamily double Prostokat\+::slen}
+
+dlugosc krotszego boku prostopadloscianu 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/adam/\+Programowanie\+\_\+\+Obiektowe/zad4-\/259355/include/Prostokat.\+hh\item 
+/home/adam/\+Programowanie\+\_\+\+Obiektowe/zad4-\/259355/src/Prostokat.\+cpp\end{DoxyCompactItemize}

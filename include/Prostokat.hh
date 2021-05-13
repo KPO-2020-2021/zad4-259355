@@ -43,43 +43,39 @@ class Prostokat {
 
   Matrix3 matrixtmp;  /**< Macierz obrotu */
 
-  Prostokat operator * (const Matrix3 &matrix); // Przeciazenie operatora mnozenia wierzcholkow prostokata razy macierz
+  Prostokat operator * (const Matrix3 &matrix); ///< Przeciazenie operatora mnozenia wierzcholkow prostokata razy macierz
 
-  Prostokat move (const Vector3 &vec);  //Metoda przesuniecia prostopadloscianu o wektor
+  Prostokat move (const Vector3 &vec);  ///<Metoda przesuniecia prostopadloscianu o wektor
 
-  void moving(Vector3 &vec, const char *sNazwaPliku, PzG::LaczeDoGNUPlota Lacze); //Animacja przesuniecia
+  void moving(Vector3 &vec, const char *sNazwaPliku, PzG::LaczeDoGNUPlota Lacze); ///<Animacja przesuniecia
 
-  Prostokat operator + (const Vector3 vec2);  //Przeciazenie operatora dodawania wektora do wierzcholkow prostopadloscianu
+  Prostokat operator + (const Vector3 vec2);  ///<Przeciazenie operatora dodawania wektora do wierzcholkow prostopadloscianu
 
-  //Odpowiednie operatory indeksowania i poruszania sie po wierzcholkach prostopadloscianu
+  double  &operator () (unsigned int row, unsigned int column); ///<Odpowiednie operatory indeksowania i poruszania sie po wierzcholkach prostopadloscianu
 
-  double  &operator () (unsigned int row, unsigned int column); 
-
-  const double  &operator () (unsigned int row, unsigned int column) const;
+  const double  &operator () (unsigned int row, unsigned int column) const; ///<Odpowiednie operatory indeksowania i poruszania sie po wierzcholkach prostopadloscianu
     
-  const Vector3 &operator () (unsigned int row) const;
+  const Vector3 &operator () (unsigned int row) const; ///<Odpowiednie operatory indeksowania i poruszania sie po wierzcholkach prostopadloscianu
 
-  //Koniec
-
-  void turn(double const ang, char which);  //Metoda obrotu prostopadloscianu o dany kat i os
+  void turn(double const ang, char which);  ///<Metoda obrotu prostopadloscianu o dany kat i os
 
   void turning(Prostokat &pro, const char *sNazwaPliku, double const ang, double const howm, PzG::LaczeDoGNUPlota Lacze, char which);   //Animacja obrotu Prostokata2D
 
-  Prostokat lenght2();  //Metoda obliczajaca dlugosc bokow prostokata2D
+  Prostokat lenght2();  ///<Metoda obliczajaca dlugosc bokow prostokata2D
 
-  Prostokat lenght3D(); //Metoda obliczajaca dlugosc bokow prostopadloscianu
+  Prostokat lenght3D(); ///<Metoda obliczajaca dlugosc bokow prostopadloscianu
 
-  bool Save(const char *sNazwaPliku); //Metoda zapisujaca wierzcholki do pliku
+  bool Save(const char *sNazwaPliku); ///<Metoda zapisujaca wierzcholki do pliku
   
-  void showres(double const temp1, double const temp2, double const temp3); //Metoda wyswietlajaca i porownujaca dlugosci bokow
+  void showres(double const temp1, double const temp2, double const temp3); ///<Metoda wyswietlajaca i porownujaca dlugosci bokow
   
-  void showres3D(); //Metoda wyswietlajaca oraz porownujaca dlugosci bokow prostopadloscianu
+  void showres3D(); ///<Metoda wyswietlajaca oraz porownujaca dlugosci bokow prostopadloscianu
 
 //   friend bool operator == (const double temp1, const double temp2);
 
 };
 
-std::ostream& operator << ( std::ostream &stream, const Prostokat &Pr); //Operator wyswietlania wierzcholkow
+std::ostream& operator << ( std::ostream &stream, const Prostokat &Pr); ///<Operator wyswietlania wierzcholkow
 
 // bool operator == (const double temp1, const double temp2);
 
