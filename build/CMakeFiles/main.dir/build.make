@@ -82,7 +82,7 @@ main_EXTERNAL_OBJECTS = \
 "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/vector3.cpp.o" \
 "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/vector2.cpp.o" \
 "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/matrix2.cpp.o" \
-"/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/Prostokat.cpp.o"
+"/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/Prostopadl.cpp.o"
 
 main: CMakeFiles/main.dir/app/main.cpp.o
 main: CMakeFiles/program.dir/src/example.cpp.o
@@ -91,7 +91,7 @@ main: CMakeFiles/program.dir/src/matrix3.cpp.o
 main: CMakeFiles/program.dir/src/vector3.cpp.o
 main: CMakeFiles/program.dir/src/vector2.cpp.o
 main: CMakeFiles/program.dir/src/matrix2.cpp.o
-main: CMakeFiles/program.dir/src/Prostokat.cpp.o
+main: CMakeFiles/program.dir/src/Prostopadl.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable main"

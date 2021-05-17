@@ -12,10 +12,11 @@
 #include <fstream>
 #include <string>
 
+#include "scena.hh"
 #include "exampleConfig.h"
 #include "example.h"
 #include "Vector3.hh"
-#include "Prostokat.hh"
+#include "Prostopadl.hh"
 #include "matrix.hh"
 #include "../include/lacze_do_gnuplota.hh"
 
@@ -44,6 +45,7 @@ int main() {
             << PROJECT_VERSION_TWEAK /* zmiany estetyczne itd. */
             << std::endl;
 
+  scena sc;
 
   double arg1[] = {100,100,150};
   double arg2[] = {50,100,150};
@@ -62,51 +64,70 @@ int main() {
   Vector3 vec7 = Vector3(arg7);
   Vector3 vec8 = Vector3(arg8);
   Vector3 arguments1[] = { vec1, vec2, vec3, vec4, vec5, vec6, vec7, vec8};
-  Prostokat pro = Prostokat(arguments1);
-  
+  Prostopadl pro = Prostopadl(arguments1);
+  sc.pro = pro;
+
+  double argm1[] = {15,15,20};
+  double argm2[] = {-10,15,20};
+  double argm3[] = {15,-20,20};
+  double argm4[] = {-10,-20,20};
+  double argm5[] = {15,-20,10};
+  double argm6[] = {-10,-20,10};
+  double argm7[] = {15,15,10};
+  double argm8[] = {-10,15,10};
+  Vector3 vect1 = Vector3(argm1);
+  Vector3 vect2 = Vector3(argm2);
+  Vector3 vect3 = Vector3(argm3);
+  Vector3 vect4 = Vector3(argm4);
+  Vector3 vect5 = Vector3(argm5);
+  Vector3 vect6 = Vector3(argm6);
+  Vector3 vect7 = Vector3(argm7);
+  Vector3 vect8 = Vector3(argm8);
+  Vector3 arguments[] = { vect1, vect2, vect3, vect4, vect5, vect6, vect7, vect8};
+  Prostopadl pro2 = Prostopadl(arguments);
+  sc.pro2 = pro2;
 
   PzG::LaczeDoGNUPlota  Lacze;  // Ta zmienna jest potrzebna do wizualizacji
-                                // rysunku prostokata
+                                // rysunku Prostopadla
 
    //-------------------------------------------------------
-   //  Wspolrzedne wierzcholkow beda zapisywane w pliku "prostokat.dat"
+   //  Wspolrzedne wierzcholkow beda zapisywane w pliku "Prostopadl.dat"
    //  Ponizsze metody powoduja, ze dane z pliku beda wizualizowane
    //  na dwa sposoby:
    //   1. Rysowane jako linia ciagl o grubosci 2 piksele
    //
-  Lacze.DodajNazwePliku("../datasets/prostokat.dat",PzG::RR_Ciagly,2);
+  Lacze.DodajNazwePliku("../datasets/Prostopadl.dat",PzG::RR_Ciagly,2);
+  Lacze.DodajNazwePliku("../datasets/Prostopadl1.dat",PzG::RR_Ciagly,2);
    //
    //   2. Rysowane jako zbior punktow reprezentowanych przez kwadraty,
    //      których połowa długości boku wynosi 2.
    //
-  Lacze.DodajNazwePliku("../datasets/prostokat.dat",PzG::RR_Punktowy,2);
+  Lacze.DodajNazwePliku("../datasets/Prostopadl.dat",PzG::RR_Punktowy,2);
+  Lacze.DodajNazwePliku("../datasets/Prostopadl1.dat",PzG::RR_Punktowy,2);
    //
    //  Ustawienie trybu rysowania 2D, tzn. rysowany zbiór punktów
    //  znajduje się na wspólnej płaszczyźnie. Z tego powodu powoduj
    //  jako wspolrzedne punktow podajemy tylko x,y.
    //
+  // Prostopadl pro;
   Lacze.ZmienTrybRys(PzG::TR_3D);
   Lacze.UstawZakresX(-300,300);
   Lacze.UstawZakresY(-300,300);
   Lacze.UstawZakresZ(-300,300);
-  pro.Save("../datasets/prostokat.dat");
+  const char *file;
+  // sc.pro.Save("../datasets/Prostopadl.dat");
+  sc.pro.Save("../datasets/Prostopadl.dat");
+  sc.pro2.Save("../datasets/Prostopadl1.dat");
   Lacze.Rysuj();
 
 
   
   cout << "Beginning" << endl;
-  double temp1, temp2, temp3, howm;
-  char choice;
-  if(SIZE == 2){
-  pro.lenght2();
-  temp1 = pro.blen;
-  temp2 = pro.slen;
-  temp3 = pro.high;}
-  Vector3 tmp;
-  char axle = '_';
   int  anglee = 0;
+  char choice;
   
   cout << "m - menu" << endl;
+  cout << "c - choose figure" << endl;
   cout << "o - turn" << endl;
   cout << "t - same turning" << endl;
   cout << "s - check length" << endl;
@@ -115,7 +136,52 @@ int main() {
   cout << "p - move" << endl;
   cout << "k - end" << endl;
 
+  cout << "Choose the figure ('1', '2')" << endl;
+    char fig = '_';
+    // cin >> fig;
+    while( fig != '1' && fig != '2'){
+      cin >> fig;
+      switch(fig){
+        case '1':{
+          file = "../datasets/Prostopadl.dat";
+          cout << "you have chosen first one" << endl;
+          pro = sc.pro;
+          break;}
+        case '2':{
+          file = "../datasets/Prostopadl1.dat";
+          cout << "you have chosen second one" << endl;
+          pro = sc.pro2;
+          break;}
+        default:{
+          cout << "Wrong option try again" << endl;
+          break;}
+      }
+    }
+    // if(fig == '1'){
+    //   file = "../datasets/Prostopadl.dat";
+    //   cout << "you have chosen first one" << endl;
+    //   pro = sc.pro;
+    // }
+    // else if(fig == '2'){
+    //   file = "../datasets/Prostopadl1.dat";
+    //   cout << "you have chosen second one" << endl;
+    //   pro = sc.pro2;
+    // }
+
+  double arg[][SIZE] = {{1,0,0}, {0,1,0}, {0,0,1}};
+  sc.pro.matrixtmp = Matrix3(arg);
+  sc.pro2.matrixtmp = Matrix3(arg);
+
   while (choice != 'k'){
+    char axle = '_';
+    double temp1, temp2, temp3, howm;
+    if(SIZE == 2){
+    sc.pro.lenght2();
+    temp1 = sc.pro.blen;
+    temp2 = sc.pro.slen;
+    temp3 = sc.pro.high;}
+    Vector3 tmp;
+
     cout << "Your choice?  (m-menu) >" << endl;
     cin >> choice;
 
@@ -133,39 +199,36 @@ int main() {
           cin >> anglee;
         switch (axle){
             case 'x':
-                pro.turn(anglee,axle);
-                break;
+              pro.turn(anglee,axle);
+              break;
             case 'y':
-                pro.turn(anglee,axle);
-                break;
+              pro.turn(anglee,axle);
+              break;
             case 'z':
-                pro.turn(anglee,axle);
-                break;
+              pro.turn(anglee,axle);
+              break;
             case '.':
-                break;
+              break;
             default:
-                std::cerr << "Wrong Option, try again" << std::endl;
-                break;
+              std::cerr << "Wrong Option, try again" << std::endl;
+              break;
         }
         }
 
         cout << "Choose how many times to turn rectangle: ";
         cin >> howm;
 
-        // pro.turning(pro, "../datasets/prostokat.dat", ang, howm, Lacze, which);
         for(int i = 0; i < howm-1; ++i ){
-        cout << pro.matrixtmp << "to w mainie" << endl;
-        cout << pro << endl;
-        pro = pro * pro.matrixtmp;
-        // pro.Save("../datasets/prostokat.dat");
+          cout << pro.matrixtmp << "to w mainie" << endl;
+          cout << pro << endl;
+          pro = pro * pro.matrixtmp;
         }
-        // std::cout << pro << std::endl;
-        pro.Save("../datasets/prostokat.dat");
+        pro.Save(file);
         Lacze.Rysuj();
 
         if(SIZE == 2){
-        pro.showres(temp1,temp2, temp3);
-        cout << endl;}
+          pro.showres(temp1,temp2, temp3);
+          cout << endl;}
         else if(SIZE == 3){
           pro.showres3D();
           cout << endl;
@@ -174,7 +237,7 @@ int main() {
       case 't':
         cout << "Turn once again" << endl;
         pro = pro * pro.matrixtmp;
-        pro.Save("../datasets/prostokat.dat");
+        pro.Save(file);
         Lacze.Rysuj();
         break;
       case 'r':
@@ -188,7 +251,7 @@ int main() {
       case 'p': 
         cout << "Vector to move: ";
         cin >> tmp;
-        pro.moving(tmp,"../datasets/prostokat.dat", Lacze);
+        pro.moving(tmp,file, Lacze);
 
         if(SIZE == 2){
           pro.showres(temp1,temp2, temp3);
@@ -205,6 +268,7 @@ int main() {
         break;
       case 'm': 
         cout << "m - menu" << endl;
+        cout << "c - choose figure" << endl;
         cout << "o - turn" << endl;
         cout << "t - same turning" << endl;
         cout << "s - check length" << endl;
@@ -216,6 +280,29 @@ int main() {
 
       case 'k': 
         cout << "The end" << endl;
+      break;
+
+      case 'c':
+        cout << "Choose the figure" << endl;
+        fig = '_';
+        while( fig != '1' && fig != '2'){
+          cin >> fig;
+          switch(fig){
+            case '1':{
+              file = "../datasets/Prostopadl.dat";
+              cout << "you have chosen first one" << endl;
+              pro = sc.pro;
+              break;}
+            case '2':{
+              file = "../datasets/Prostopadl1.dat";
+              cout << "you have chosen second one" << endl;
+              pro = sc.pro2;
+              break;}
+            default:{
+              cout << "Wrong option try again" << endl;
+              break;}
+          }
+        }
       break;
 
       default:

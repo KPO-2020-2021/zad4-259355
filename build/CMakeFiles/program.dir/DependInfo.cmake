@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/adam/Programowanie_Obiektowe/zad4-259355/src/Prostokat.cpp" "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/Prostokat.cpp.o"
+  "/home/adam/Programowanie_Obiektowe/zad4-259355/src/Prostopadl.cpp" "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/Prostopadl.cpp.o"
   "/home/adam/Programowanie_Obiektowe/zad4-259355/src/example.cpp" "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/example.cpp.o"
   "/home/adam/Programowanie_Obiektowe/zad4-259355/src/lacze_do_gnuplota.cpp" "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o"
   "/home/adam/Programowanie_Obiektowe/zad4-259355/src/matrix2.cpp" "/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles/program.dir/src/matrix2.cpp.o"

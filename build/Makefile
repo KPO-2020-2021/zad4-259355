@@ -577,32 +577,32 @@ app/main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/app/main.cpp.s
 .PHONY : app/main.cpp.s
 
-src/Prostokat.o: src/Prostokat.cpp.o
+src/Prostopadl.o: src/Prostopadl.cpp.o
 
-.PHONY : src/Prostokat.o
+.PHONY : src/Prostopadl.o
 
 # target to build an object file
-src/Prostokat.cpp.o:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Prostokat.cpp.o
-.PHONY : src/Prostokat.cpp.o
+src/Prostopadl.cpp.o:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Prostopadl.cpp.o
+.PHONY : src/Prostopadl.cpp.o
 
-src/Prostokat.i: src/Prostokat.cpp.i
+src/Prostopadl.i: src/Prostopadl.cpp.i
 
-.PHONY : src/Prostokat.i
+.PHONY : src/Prostopadl.i
 
 # target to preprocess a source file
-src/Prostokat.cpp.i:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Prostokat.cpp.i
-.PHONY : src/Prostokat.cpp.i
+src/Prostopadl.cpp.i:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Prostopadl.cpp.i
+.PHONY : src/Prostopadl.cpp.i
 
-src/Prostokat.s: src/Prostokat.cpp.s
+src/Prostopadl.s: src/Prostopadl.cpp.s
 
-.PHONY : src/Prostokat.s
+.PHONY : src/Prostopadl.s
 
 # target to generate assembly for a file
-src/Prostokat.cpp.s:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Prostokat.cpp.s
-.PHONY : src/Prostokat.cpp.s
+src/Prostopadl.cpp.s:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Prostopadl.cpp.s
+.PHONY : src/Prostopadl.cpp.s
 
 src/example.o: src/example.cpp.o
 
@@ -811,9 +811,9 @@ help:
 	@echo "... app/main.o"
 	@echo "... app/main.i"
 	@echo "... app/main.s"
-	@echo "... src/Prostokat.o"
-	@echo "... src/Prostokat.i"
-	@echo "... src/Prostokat.s"
+	@echo "... src/Prostopadl.o"
+	@echo "... src/Prostopadl.i"
+	@echo "... src/Prostopadl.s"
 	@echo "... src/example.o"
 	@echo "... src/example.i"
 	@echo "... src/example.s"

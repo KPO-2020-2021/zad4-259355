@@ -135,18 +135,18 @@ CMakeFiles/program.dir/src/matrix2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/matrix2.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adam/Programowanie_Obiektowe/zad4-259355/src/matrix2.cpp -o CMakeFiles/program.dir/src/matrix2.cpp.s
 
-CMakeFiles/program.dir/src/Prostokat.cpp.o: CMakeFiles/program.dir/flags.make
-CMakeFiles/program.dir/src/Prostokat.cpp.o: ../src/Prostokat.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/program.dir/src/Prostokat.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/Prostokat.cpp.o -c /home/adam/Programowanie_Obiektowe/zad4-259355/src/Prostokat.cpp
+CMakeFiles/program.dir/src/Prostopadl.cpp.o: CMakeFiles/program.dir/flags.make
+CMakeFiles/program.dir/src/Prostopadl.cpp.o: ../src/Prostopadl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adam/Programowanie_Obiektowe/zad4-259355/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/program.dir/src/Prostopadl.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/Prostopadl.cpp.o -c /home/adam/Programowanie_Obiektowe/zad4-259355/src/Prostopadl.cpp
 
-CMakeFiles/program.dir/src/Prostokat.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/program.dir/src/Prostokat.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adam/Programowanie_Obiektowe/zad4-259355/src/Prostokat.cpp > CMakeFiles/program.dir/src/Prostokat.cpp.i
+CMakeFiles/program.dir/src/Prostopadl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/program.dir/src/Prostopadl.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adam/Programowanie_Obiektowe/zad4-259355/src/Prostopadl.cpp > CMakeFiles/program.dir/src/Prostopadl.cpp.i
 
-CMakeFiles/program.dir/src/Prostokat.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/Prostokat.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adam/Programowanie_Obiektowe/zad4-259355/src/Prostokat.cpp -o CMakeFiles/program.dir/src/Prostokat.cpp.s
+CMakeFiles/program.dir/src/Prostopadl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/Prostopadl.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adam/Programowanie_Obiektowe/zad4-259355/src/Prostopadl.cpp -o CMakeFiles/program.dir/src/Prostopadl.cpp.s
 
 program: CMakeFiles/program.dir/src/example.cpp.o
 program: CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o
@@ -154,7 +154,7 @@ program: CMakeFiles/program.dir/src/matrix3.cpp.o
 program: CMakeFiles/program.dir/src/vector3.cpp.o
 program: CMakeFiles/program.dir/src/vector2.cpp.o
 program: CMakeFiles/program.dir/src/matrix2.cpp.o
-program: CMakeFiles/program.dir/src/Prostokat.cpp.o
+program: CMakeFiles/program.dir/src/Prostopadl.cpp.o
 program: CMakeFiles/program.dir/build.make
 
 .PHONY : program

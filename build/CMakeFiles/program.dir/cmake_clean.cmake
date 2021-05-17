@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/program.dir/src/Prostokat.cpp.o"
+  "CMakeFiles/program.dir/src/Prostopadl.cpp.o"
   "CMakeFiles/program.dir/src/example.cpp.o"
   "CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o"
   "CMakeFiles/program.dir/src/matrix2.cpp.o"

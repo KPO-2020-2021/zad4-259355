@@ -44,7 +44,7 @@ set(SOURCES          # All .cpp files in src/
     src/vector3.cpp
     src/vector2.cpp
     src/matrix2.cpp
-    src/Prostokat.cpp
+    src/Prostopadl.cpp
 )
 set(TESTFILES        # All .cpp files in tests/
     # tests/main.cpp

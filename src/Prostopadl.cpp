@@ -1,14 +1,14 @@
-#include "Prostokat.hh"
+#include "Prostopadl.hh"
 typedef Matrix<double,SIZE>Matrix3;
 
 /******************************************************************************
- |  Konstruktor klasy Prostokat.                                                 |
+ |  Konstruktor klasy Prostopadl.                                                 |
  |  Argumenty:                                                                |
  |      Brak argumentow.                                                      |
  |  Zwraca:                                                                   |
- |      Prostokat wypelnione wartoscia 0.                                       |
+ |      Prostopadl wypelnione wartoscia 0.                                       |
  */
-Prostokat::Prostokat() {
+Prostopadl::Prostopadl() {
     for (int i = 0; i < NOPOINTS; ++i) {
         for(int j = 0; j < SIZE; ++j) {
         pro[i][j] = 0;
@@ -22,7 +22,7 @@ Prostokat::Prostokat() {
  * @param tablica wektorow 3D
  * @return nothing
  */ 
-Prostokat::Prostokat(Vector3 tmp[NOPOINTS]) {
+Prostopadl::Prostopadl(Vector3 tmp[NOPOINTS]) {
     for (int i = 0; i < NOPOINTS; ++i) {
         for(int j = 0; j < SIZE; ++j) {
         pro[i][j] = tmp[i][j];
@@ -37,7 +37,7 @@ Prostokat::Prostokat(Vector3 tmp[NOPOINTS]) {
  * @param int numer kolumny 
  * @return tablica wierzcholkow
  */ 
-double &Prostokat::operator()(unsigned int row, unsigned int column) {
+double &Prostopadl::operator()(unsigned int row, unsigned int column) {
 
     if (row >= NOPOINTS) {
         throw std::out_of_range("Error: Macierz jest poza zasiegiem");
@@ -56,14 +56,14 @@ double &Prostokat::operator()(unsigned int row, unsigned int column) {
  * @param int numer wiersza
  * @return wektor
  */ 
-const Vector3 &Prostokat::operator () (unsigned int row) const {
+const Vector3 &Prostopadl::operator () (unsigned int row) const {
 
     if (row >= NOPOINTS) {
         throw std::out_of_range("Error: Vector jest poza zasiegiem");
     }
 
     // if (column >= SIZE) {
-    //     std::cout << "Error: Prostokat jest poza zasiegiem";
+    //     std::cout << "Error: Prostopadl jest poza zasiegiem";
     //     exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
     // }
 
@@ -71,12 +71,12 @@ const Vector3 &Prostokat::operator () (unsigned int row) const {
 }
 
 /**
- * Przeciazenie operatora () (const) indeksowania dla prostokata z odpowiednimi zabezpieczeniami
+ * Przeciazenie operatora () (const) indeksowania dla Prostopadla z odpowiednimi zabezpieczeniami
  * @param int numer wiersza
  * @param int numer kolumny 
  * @return Tablica wierzcholkow
  */ 
-const double &Prostokat::operator () (unsigned int row, unsigned int column) const {
+const double &Prostopadl::operator () (unsigned int row, unsigned int column) const {
 
     if (row >= NOPOINTS) {
         throw std::out_of_range("Error: Prostopadloscian jest poza zasiegiem");
@@ -94,8 +94,8 @@ const double &Prostokat::operator () (unsigned int row, unsigned int column) con
  * @param const macierz 3D
  * @return Prostopadloscian result
  */ 
-Prostokat Prostokat::operator * (const Matrix3 &matrix){
-    Prostokat result;
+Prostopadl Prostopadl::operator * (const Matrix3 &matrix){
+    Prostopadl result;
     for (int i = 0; i < NOPOINTS; ++i){
             result.pro[i] = matrix * this->pro[i];
             // if( SIZE == 3){
@@ -107,11 +107,11 @@ Prostokat Prostokat::operator * (const Matrix3 &matrix){
 }
 
 /**
- * Funkcja przyjmujaca jako argument wektor i zmieniajaca wartosci wspolrzednych prostokata (przesuniecie o wektor)
+ * Funkcja przyjmujaca jako argument wektor i zmieniajaca wartosci wspolrzednych Prostopadla (przesuniecie o wektor)
  * @param const Wektor 3D
  * @return Prostopadloscian 
  */ 
-Prostokat Prostokat::move(const Vector3 &vec){
+Prostopadl Prostopadl::move(const Vector3 &vec){
     for (int i = 0; i < NOPOINTS; ++i){
         for (int j = 0; j < SIZE; ++j){
         this->pro[i][j] += vec[j];
@@ -123,12 +123,12 @@ Prostokat Prostokat::move(const Vector3 &vec){
 }
 
 /**
- * Funkcja powodujaca animacje przesuniecia prostokata o wektor
+ * Funkcja powodujaca animacje przesuniecia Prostopadla o wektor
  * @param referencja Wektor 3D vec
  * @param const char pointer sNazwaPliku
  * @param LaczeDoGnuplota 
  */ 
-void Prostokat::moving(Vector3 &vec, const char *sNazwaPliku, PzG::LaczeDoGNUPlota Lacze){
+void Prostopadl::moving(Vector3 &vec, const char *sNazwaPliku, PzG::LaczeDoGNUPlota Lacze){
 
     Vector3 temp;
     temp = vec / 100.00 ;
@@ -142,10 +142,10 @@ void Prostokat::moving(Vector3 &vec, const char *sNazwaPliku, PzG::LaczeDoGNUPlo
 }
 
 /**
- * Metoda ktora oblicza wartosci dluzszego (blen) i krotszego (slen) boku prostokata
+ * Metoda ktora oblicza wartosci dluzszego (blen) i krotszego (slen) boku Prostopadla
  * @return Prostopadloscian
  */ 
-Prostokat Prostokat::lenght2(){
+Prostopadl Prostopadl::lenght2(){
 
    this->slen = sqrt(pow(this->pro[0][0] - this->pro[1][0],2) + pow(this->pro[0][1] - this->pro[1][1],2));
    this->blen = sqrt(pow(this->pro[0][0] - this->pro[2][0],2) + pow(this->pro[0][1] - this->pro[2][1],2));
@@ -157,7 +157,7 @@ Prostokat Prostokat::lenght2(){
  * Metoda porownujaca boki prostopadloscianu 
  * @return Prostopadloscian
  */ 
- Prostokat Prostokat::lenght3D(){
+ Prostopadl Prostopadl::lenght3D(){
 
    this->lenght[0][0] = sqrt(pow(this->pro[0][0] - this->pro[2][0],2) + pow(this->pro[0][1] - this->pro[2][1],2) + pow(this->pro[0][2] - this->pro[2][2],2));
    this->lenght[0][1] = sqrt(pow(this->pro[1][0] - this->pro[3][0],2) + pow(this->pro[1][1] - this->pro[3][1],2) + pow(this->pro[1][2] - this->pro[3][2],2)); 
@@ -178,12 +178,12 @@ Prostokat Prostokat::lenght2(){
 
 /**
  * Przeciazenie operatora przesuniecia bitowego w lewo
- * Pozwala w odpowiedni sposob wyswietlic wspolrzedne prostokata  
+ * Pozwala w odpowiedni sposob wyswietlic wspolrzedne Prostopadla  
  * @param strumien wejsciowy stream
  * @param referencja const Prostopadloscian Pr
  * @return strumien wejsciowy stream
  */ 
-std::ostream& operator << ( std::ostream &stream, const Prostokat &Pr){
+std::ostream& operator << ( std::ostream &stream, const Prostopadl &Pr){
 
 for (int i = 0; i < NOPOINTS; ++i){
     if( i%2 == 0 ){
@@ -204,7 +204,7 @@ for (int i = 0; i < NOPOINTS; ++i){
  * @param double const temp2 - dlugosc krotszego boku 
  * @param double const temp3 - dlugosc wysokosci
  */
-void Prostokat::showres(double const temp1, double const temp2, double const temp3){
+void Prostopadl::showres(double const temp1, double const temp2, double const temp3){
 
     this->lenght2();
 
@@ -247,7 +247,7 @@ void Prostokat::showres(double const temp1, double const temp2, double const tem
  * Metoda wyswietlania i porownywania dlugosci bokow prostopadloscianu      
  * @return Prostopadloscian wypelniony wartoscia 0
  */
-void Prostokat::showres3D(){
+void Prostopadl::showres3D(){
 
     std::cout << std::setw(8) << std::fixed << std::setprecision(7);
     this->lenght3D();
@@ -296,12 +296,12 @@ void Prostokat::showres3D(){
 }
 
 /**
- * Funkcja Void przyjmujaca kat o ktory obracamy prostokat wokol punktu (0,0)
- * Zmienia wartosci wspolrzednych prostokata o dany kata 
+ * Funkcja Void przyjmujaca kat o ktory obracamy Prostopadl wokol punktu (0,0)
+ * Zmienia wartosci wspolrzednych Prostopadla o dany kata 
  * @param double const ang - kat
  * @param char which - os 
  */
-void Prostokat::turn(double const ang, char which){
+void Prostopadl::turn(double const ang, char which){
     Matrix3 matrixx,matrixy,matrixz;
     if(SIZE != 3){
         matrixx.toradians();
@@ -336,7 +336,7 @@ void Prostokat::turn(double const ang, char which){
  * @param const char pointer sNazwaPliku
  * @return wartosc zwracana funkcji StrmPlikowy.fail()
  */
-bool Prostokat::Save(const char *sNazwaPliku)
+bool Prostopadl::Save(const char *sNazwaPliku)
 {
   std::ofstream  StrmPlikowy;
 
@@ -354,7 +354,7 @@ bool Prostokat::Save(const char *sNazwaPliku)
 }
 
 /**
- * Funkcja wykonujaca animacje obrotu prostokata o dany kat wykonuje sie dla mniej niz 5 powtorzen
+ * Funkcja wykonujaca animacje obrotu Prostopadla o dany kat wykonuje sie dla mniej niz 5 powtorzen
  * @param referencja Protokat pro
  * @param const char pointer sNazwaPlikowy
  * @param double const ang - kat
@@ -362,7 +362,7 @@ bool Prostokat::Save(const char *sNazwaPliku)
  * @param LaczeDoGnuplota
  * @param char which - os
  */
-void Prostokat::turning(Prostokat &pro, const char *sNazwaPliku, double const ang, double const howm, PzG::LaczeDoGNUPlota Lacze, char which)
+void Prostopadl::turning(Prostopadl &pro, const char *sNazwaPliku, double const ang, double const howm, PzG::LaczeDoGNUPlota Lacze, char which)
 {
   if(howm < 5){
     for(int i = 0; i < howm; ++i){
@@ -381,4 +381,20 @@ void Prostokat::turning(Prostokat &pro, const char *sNazwaPliku, double const an
       Lacze.Rysuj();
   }
 }
+
+bool Prostopadl::operator == (const Prostopadl &Pr){
+    int k = 0;
+    for(int i = 0; i < NOPOINTS; ++i){
+    if(Pr(i) == this->pro[i])
+        k++;
+    }
+    if(k == 8){
+        return true;
+    }
+    else{
+        return false;
+    }
+    }
+
+
 

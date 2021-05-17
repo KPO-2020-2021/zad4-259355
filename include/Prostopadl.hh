@@ -1,5 +1,5 @@
-#ifndef PROSTOKAT_HH
-#define PROSTOKAT_HH
+#ifndef PROSTOPADL_HH
+#define PROSTOPADL_HH
 
 #include "matrix3.hh"
 #include "size.hh"
@@ -19,7 +19,7 @@
  */
  
 
-class Prostokat {
+class Prostopadl {
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
@@ -29,9 +29,9 @@ class Prostokat {
 
   public:
 
-  Prostokat(Vector3 [NOPOINTS]);             //Konstruktor klasy 
+  Prostopadl(Vector3 [NOPOINTS]);             //Konstruktor klasy 
 
-  Prostokat();                               // Konstruktor klasy
+  Prostopadl();                               // Konstruktor klasy
   
   double blen;  /**< dlugosc dluzszego boku prostopadloscianu */
 
@@ -43,13 +43,13 @@ class Prostokat {
 
   Matrix3 matrixtmp;  /**< Macierz obrotu */
 
-  Prostokat operator * (const Matrix3 &matrix); ///< Przeciazenie operatora mnozenia wierzcholkow prostokata razy macierz
+  Prostopadl operator * (const Matrix3 &matrix); ///< Przeciazenie operatora mnozenia wierzcholkow Prostopadla razy macierz
 
-  Prostokat move (const Vector3 &vec);  ///<Metoda przesuniecia prostopadloscianu o wektor
+  Prostopadl move (const Vector3 &vec);  ///<Metoda przesuniecia prostopadloscianu o wektor
 
   void moving(Vector3 &vec, const char *sNazwaPliku, PzG::LaczeDoGNUPlota Lacze); ///<Animacja przesuniecia
 
-  Prostokat operator + (const Vector3 vec2);  ///<Przeciazenie operatora dodawania wektora do wierzcholkow prostopadloscianu
+  Prostopadl operator + (const Vector3 vec2);  ///<Przeciazenie operatora dodawania wektora do wierzcholkow prostopadloscianu
 
   double  &operator () (unsigned int row, unsigned int column); ///<Odpowiednie operatory indeksowania i poruszania sie po wierzcholkach prostopadloscianu
 
@@ -59,11 +59,13 @@ class Prostokat {
 
   void turn(double const ang, char which);  ///<Metoda obrotu prostopadloscianu o dany kat i os
 
-  void turning(Prostokat &pro, const char *sNazwaPliku, double const ang, double const howm, PzG::LaczeDoGNUPlota Lacze, char which);   //Animacja obrotu Prostokata2D
+  void turning(Prostopadl &pro, const char *sNazwaPliku, double const ang, double const howm, PzG::LaczeDoGNUPlota Lacze, char which);   //Animacja obrotu Prostopadla2D
 
-  Prostokat lenght2();  ///<Metoda obliczajaca dlugosc bokow prostokata2D
+  Prostopadl lenght2();  ///<Metoda obliczajaca dlugosc bokow Prostopadla2D
 
-  Prostokat lenght3D(); ///<Metoda obliczajaca dlugosc bokow prostopadloscianu
+  Prostopadl lenght3D(); ///<Metoda obliczajaca dlugosc bokow prostopadloscianu
+
+  bool operator == (const Prostopadl &Pr);
 
   bool Save(const char *sNazwaPliku); ///<Metoda zapisujaca wierzcholki do pliku
   
@@ -75,7 +77,7 @@ class Prostokat {
 
 };
 
-std::ostream& operator << ( std::ostream &stream, const Prostokat &Pr); ///<Operator wyswietlania wierzcholkow
+std::ostream& operator << ( std::ostream &stream, const Prostopadl &Pr); ///<Operator wyswietlania wierzcholkow
 
 // bool operator == (const double temp1, const double temp2);
 

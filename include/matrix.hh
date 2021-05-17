@@ -111,7 +111,7 @@ public:
     return this->angle;
     };
 
-    // Matrix init(char tmp, double num, Prostokat &pr);
+    // Matrix init(char tmp, double num, Prostopadl &pr);
 
     ///<Operator indeksowania Macierzy 
     /**
