@@ -210,8 +210,6 @@ int main() {
         cin >> howm;
 
         for(int i = 0; i < howm-1; ++i ){
-          cout << pro.matrixtmp << "to w mainie" << endl;
-          cout << pro << endl;
           pro = pro * pro.matrixtmp;
         }
         pro.Save(file);
