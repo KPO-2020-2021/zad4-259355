@@ -1,5 +1,4 @@
 #include "Prostopadl.hh"
-typedef Matrix<double,SIZE>Matrix3;
 
 /******************************************************************************
  |  Konstruktor klasy Prostopadl.                                                 |

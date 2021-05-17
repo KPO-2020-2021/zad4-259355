@@ -15,7 +15,7 @@
 #include "scena.hh"
 #include "exampleConfig.h"
 #include "example.h"
-#include "Vector3.hh"
+#include "vector.hh"
 #include "Prostopadl.hh"
 #include "matrix.hh"
 #include "../include/lacze_do_gnuplota.hh"
@@ -47,6 +47,7 @@ int main() {
 
   scena sc;
 
+
   double arg1[] = {100,100,150};
   double arg2[] = {50,100,150};
   double arg3[] = {100,25,150};
@@ -63,7 +64,7 @@ int main() {
   Vector3 vec6 = Vector3(arg6);
   Vector3 vec7 = Vector3(arg7);
   Vector3 vec8 = Vector3(arg8);
-  Vector3 arguments1[] = { vec1, vec2, vec3, vec4, vec5, vec6, vec7, vec8};
+  Vector3 arguments1[] = { vec1, vec2, vec3, vec4, vec5, vec6, vec7, vec8}; /**< inicjacja prostopadloscianu nr 1 */
   Prostopadl pro = Prostopadl(arguments1);
   sc.pro = pro;
 
@@ -83,7 +84,7 @@ int main() {
   Vector3 vect6 = Vector3(argm6);
   Vector3 vect7 = Vector3(argm7);
   Vector3 vect8 = Vector3(argm8);
-  Vector3 arguments[] = { vect1, vect2, vect3, vect4, vect5, vect6, vect7, vect8};
+  Vector3 arguments[] = { vect1, vect2, vect3, vect4, vect5, vect6, vect7, vect8}; /**< inicjacja prostopadloscianu nr 2 */
   Prostopadl pro2 = Prostopadl(arguments);
   sc.pro2 = pro2;
 
@@ -157,16 +158,6 @@ int main() {
           break;}
       }
     }
-    // if(fig == '1'){
-    //   file = "../datasets/Prostopadl.dat";
-    //   cout << "you have chosen first one" << endl;
-    //   pro = sc.pro;
-    // }
-    // else if(fig == '2'){
-    //   file = "../datasets/Prostopadl1.dat";
-    //   cout << "you have chosen second one" << endl;
-    //   pro = sc.pro2;
-    // }
 
   double arg[][SIZE] = {{1,0,0}, {0,1,0}, {0,0,1}};
   sc.pro.matrixtmp = Matrix3(arg);

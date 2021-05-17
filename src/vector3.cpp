@@ -59,3 +59,63 @@ bool Vector3::operator != (const Vector3 tmp) const{
     }
 }
 
+///<Przeciazenie operatora dodawania wektorow
+    /** 
+     * @param const Vector3 &v 
+     * @return result Vector3
+     */
+    template<> 
+    Vector3 Vector3::operator + (const Vector3 &v){
+    Vector3 result;
+    for (int i = 0; i < 3; ++i) {
+        result[i] = size[i] += v[i];
+    }
+    return result;
+    }
+
+    ///<Przeciazenie operatora odejmowania wektorow
+    /** 
+     * @param const Vector3 &v 
+     * @return result Vector3
+     */ 
+    template<>
+    Vector3 Vector3::operator - (const Vector3 &v){
+    Vector3 result;
+    for (int i = 0; i < 3; ++i) {
+        result[i] = size[i] -= v[i];
+    }
+    return result;
+    }
+
+    ///<Przeciazenie operatora mnozenia wektora razy cyfra
+    /** 
+     * @param const double &tmp - mnoznik 
+     * @return result Vector3
+     */ 
+    template<>
+    Vector3 Vector3::operator * (const double &tmp){
+    Vector3 result;
+    for (int i = 0; i < 3; ++i) {
+        result[i] = size[i] *= tmp;
+    }
+    return result;
+    }
+
+    ///<Przeciazenie operatora dzielenia wektora przez cyfra
+    /** 
+     * @param const double &tmp - dzielnik 
+     * @return result Vector3
+     */ 
+    template<>
+    Vector3 Vector3::operator / (const double &tmp){
+    Vector3 result;
+    if(tmp != 0){
+    for (int i = 0; i < 3; ++i) {
+        result[i] = size[i] / tmp;
+    }}
+    else{
+        throw std::invalid_argument("Division by 0");
+    }
+    return result;
+    }
+

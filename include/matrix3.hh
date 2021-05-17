@@ -1,3 +1,5 @@
+#ifndef MATRIX3_HH
+#define MATRIX3_HH
 #include "matrix.hh"
 
 typedef Matrix<double,3>Matrix3;
@@ -28,6 +30,13 @@ Matrix3 Matrix3::after_y();
 template<>
 Vector3 Matrix3::operator * (Vector3 tmp) const ;
 
+template<>
+Matrix3 Matrix3::operator + (Matrix3 tmp);
+
+template<>
+Matrix3 Matrix3::operator * (Matrix3 sec);
+
+#endif
 
 
 

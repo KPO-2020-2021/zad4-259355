@@ -16,6 +16,24 @@ bool Vector2::operator == (const Vector2 tmp) const ;
 template<>
 bool Vector2::operator != (const Vector2 tmp) const ;
 
+// template<>
+// Vector2 Vector();
+
+// template<>
+// Vector2(double tmp[2]);
+
+template<>
+Vector2 Vector2::operator + (const Vector2 &v);
+
+template<>
+Vector2 Vector2::operator - (const Vector2 &v);
+
+template<>
+Vector2 Vector2::operator * (const double &tmp);
+
+template<>
+Vector2 Vector2::operator / (const double &tmp);
+
 std::istream &operator >> (std::istream &in, Vector2 &tmp);
 std::ostream &operator << (std::ostream &stream, Vector2 const &tmp);
 

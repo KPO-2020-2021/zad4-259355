@@ -48,56 +48,32 @@ public:
      * @param const Vector &v 
      * @return result Vector
      */ 
-    Vector operator + (const Vector &v){
-    Vector result;
-    for (int i = 0; i < SIZE; ++i) {
-        result[i] = size[i] += v[i];
-    }
-    return result;
-    };
+    Vector operator + (const Vector &v);
+    
 
     ///<Przeciazenie operatora odejmowania wektorow
     /** 
      * @param const Vector &v 
      * @return result Vector
      */ 
-    Vector operator - (const Vector &v){
-    Vector result;
-    for (int i = 0; i < SIZE; ++i) {
-        result[i] = size[i] -= v[i];
-    }
-    return result;
-    };
+    Vector operator - (const Vector &v);
+    
 
     ///<Przeciazenie operatora mnozenia wektora razy cyfra
     /** 
      * @param const double &tmp - mnoznik 
      * @return result Vector
      */ 
-    Vector operator * (const double &tmp){
-    Vector result;
-    for (int i = 0; i < SIZE; ++i) {
-        result[i] = size[i] *= tmp;
-    }
-    return result;
-    };
+    Vector operator * (const double &tmp);
+    
 
     ///<Przeciazenie operatora dzielenia wektora przez cyfra
     /** 
      * @param const double &tmp - dzielnik 
      * @return result Vector
      */ 
-    Vector operator / (const double &tmp){
-    Vector result;
-    if(tmp != 0){
-    for (int i = 0; i < SIZE; ++i) {
-        result[i] = size[i] / tmp;
-    }}
-    else{
-        throw std::invalid_argument("Division by 0");
-    }
-    return result;
-    };
+    Vector operator / (const double &tmp);
+    
 
     ///<Funktor wektora
     /** 

@@ -71,3 +71,37 @@ Vector2 Matrix2::operator * (Vector2 tmp) const {
     }
     return result;
 }
+
+///<Przeciazenie operatora dodawania dwoch macierzy
+    /**
+     * @param - macierz tmp
+     * @return - wynik dodawania result
+    */
+template<>
+Matrix2  Matrix2::operator + (Matrix2 tmp){
+    Matrix result;
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 2; ++j) {
+            result(i, j) = this->value[i][j] + tmp(i, j);
+        }
+    }
+    return result;
+}
+
+///<Przeciazenie operatora mnozenia macierzy razy macierz 
+    /**
+     * @param sec - macierz
+     * @return macierz tmp - wynik mnozenia
+     */
+template<>
+Matrix2 Matrix2::operator * (Matrix2 sec){
+    Matrix tmp;
+    for( int i = 0; i < 2; ++i){
+        for( int j = 0; j < 2; ++j){
+            for( int k = 0; k < 2; ++k){
+                tmp(i,j) += this->value[i][k] * sec(j,k);
+            }
+        }
+    }   
+    return tmp;
+    }

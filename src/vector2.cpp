@@ -58,3 +58,63 @@ bool Vector2::operator != (const Vector2 tmp) const{
         return false;
     }
 }
+
+    ///<Przeciazenie operatora dodawania wektorow
+    /** 
+     * @param const Vector2 &v 
+     * @return result Vector2
+     */ 
+    template<>
+    Vector2 Vector2::operator + (const Vector2 &v){
+    Vector2 result;
+    for (int i = 0; i < 2; ++i) {
+        result[i] = size[i] += v[i];
+    }
+    return result;
+    }
+
+    ///<Przeciazenie operatora odejmowania wektorow
+    /** 
+     * @param const Vector2 &v 
+     * @return result Vector2
+     */ 
+    template<>
+    Vector2 Vector2::operator - (const Vector2 &v){
+    Vector2 result;
+    for (int i = 0; i < 2; ++i) {
+        result[i] = size[i] -= v[i];
+    }
+    return result;
+    }
+
+    ///<Przeciazenie operatora mnozenia wektora razy cyfra
+    /** 
+     * @param const double &tmp - mnoznik 
+     * @return result Vector2
+     */ 
+    template<>
+    Vector2 Vector2::operator * (const double &tmp){
+    Vector2 result;
+    for (int i = 0; i < 2; ++i) {
+        result[i] = size[i] *= tmp;
+    }
+    return result;
+    }
+
+    ///<Przeciazenie operatora dzielenia wektora przez cyfra
+    /** 
+     * @param const double &tmp - dzielnik 
+     * @return result Vector2
+     */ 
+    template<>
+    Vector2 Vector2::operator / (const double &tmp){
+    Vector2 result;
+    if(tmp != 0){
+    for (int i = 0; i < 2; ++i) {
+        result[i] = size[i] / tmp;
+    }}
+    else{
+        throw std::invalid_argument("Division by 0");
+    }
+    return result;
+    }

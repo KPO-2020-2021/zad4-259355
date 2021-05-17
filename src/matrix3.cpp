@@ -124,3 +124,36 @@ bool Matrix3::operator == ( const Matrix3 tmp) const {
     }
 }
 
+///<Przeciazenie operatora dodawania dwoch macierzy
+    /**
+     * @param - macierz tmp
+     * @return - wynik dodawania result
+    */
+template<>
+Matrix3 Matrix3::operator + (Matrix3 tmp){
+    Matrix result;
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            result(i, j) = this->value[i][j] + tmp(i, j);
+        }
+    }
+    return result;
+    }
+
+///<Przeciazenie operatora mnozenia macierzy razy macierz 
+    /**
+     * @param sec - macierz
+     * @return macierz tmp - wynik mnozenia
+     */
+template<>
+Matrix3 Matrix3::operator * (Matrix3 sec){
+    Matrix tmp;
+    for( int i = 0; i < 3; ++i){
+        for( int j = 0; j < 3; ++j){
+            for( int k = 0; k < 3; ++k){
+                tmp(i,j) += this->value[i][k] * sec(j,k);
+            }
+        }
+    }   
+    return tmp;
+    }

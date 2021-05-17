@@ -151,6 +151,87 @@ unit_tests/fast:
 	cd /home/adam/Programowanie_Obiektowe/zad4-259355/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/build
 .PHONY : unit_tests/fast
 
+TestMat3.o: TestMat3.cpp.o
+
+.PHONY : TestMat3.o
+
+# target to build an object file
+TestMat3.cpp.o:
+	cd /home/adam/Programowanie_Obiektowe/zad4-259355/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/TestMat3.cpp.o
+.PHONY : TestMat3.cpp.o
+
+TestMat3.i: TestMat3.cpp.i
+
+.PHONY : TestMat3.i
+
+# target to preprocess a source file
+TestMat3.cpp.i:
+	cd /home/adam/Programowanie_Obiektowe/zad4-259355/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/TestMat3.cpp.i
+.PHONY : TestMat3.cpp.i
+
+TestMat3.s: TestMat3.cpp.s
+
+.PHONY : TestMat3.s
+
+# target to generate assembly for a file
+TestMat3.cpp.s:
+	cd /home/adam/Programowanie_Obiektowe/zad4-259355/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/TestMat3.cpp.s
+.PHONY : TestMat3.cpp.s
+
+TestVec2.o: TestVec2.cpp.o
+
+.PHONY : TestVec2.o
+
+# target to build an object file
+TestVec2.cpp.o:
+	cd /home/adam/Programowanie_Obiektowe/zad4-259355/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/TestVec2.cpp.o
+.PHONY : TestVec2.cpp.o
+
+TestVec2.i: TestVec2.cpp.i
+
+.PHONY : TestVec2.i
+
+# target to preprocess a source file
+TestVec2.cpp.i:
+	cd /home/adam/Programowanie_Obiektowe/zad4-259355/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/TestVec2.cpp.i
+.PHONY : TestVec2.cpp.i
+
+TestVec2.s: TestVec2.cpp.s
+
+.PHONY : TestVec2.s
+
+# target to generate assembly for a file
+TestVec2.cpp.s:
+	cd /home/adam/Programowanie_Obiektowe/zad4-259355/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/TestVec2.cpp.s
+.PHONY : TestVec2.cpp.s
+
+TestVec3.o: TestVec3.cpp.o
+
+.PHONY : TestVec3.o
+
+# target to build an object file
+TestVec3.cpp.o:
+	cd /home/adam/Programowanie_Obiektowe/zad4-259355/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/TestVec3.cpp.o
+.PHONY : TestVec3.cpp.o
+
+TestVec3.i: TestVec3.cpp.i
+
+.PHONY : TestVec3.i
+
+# target to preprocess a source file
+TestVec3.cpp.i:
+	cd /home/adam/Programowanie_Obiektowe/zad4-259355/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/TestVec3.cpp.i
+.PHONY : TestVec3.cpp.i
+
+TestVec3.s: TestVec3.cpp.s
+
+.PHONY : TestVec3.s
+
+# target to generate assembly for a file
+TestVec3.cpp.s:
+	cd /home/adam/Programowanie_Obiektowe/zad4-259355/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/TestVec3.cpp.s
+.PHONY : TestVec3.cpp.s
+
 dummy.o: dummy.cpp.o
 
 .PHONY : dummy.o
@@ -216,6 +297,15 @@ help:
 	@echo "... test"
 	@echo "... coverage"
 	@echo "... unit_tests"
+	@echo "... TestMat3.o"
+	@echo "... TestMat3.i"
+	@echo "... TestMat3.s"
+	@echo "... TestVec2.o"
+	@echo "... TestVec2.i"
+	@echo "... TestVec2.s"
+	@echo "... TestVec3.o"
+	@echo "... TestVec3.i"
+	@echo "... TestVec3.s"
 	@echo "... dummy.o"
 	@echo "... dummy.i"
 	@echo "... dummy.s"

@@ -53,16 +53,8 @@ public:
      * @param - macierz tmp
      * @return - wynik dodawania result
     */
-    Matrix operator + (Matrix tmp){
-    Matrix result;
-    for (int i = 0; i < SIZE; ++i) {
-        for (int j = 0; j < SIZE; ++j) {
-            result(i, j) = this->value[i][j] + tmp(i, j);
-        }
-    }
-    return result;
-    };
-
+    Matrix operator + (Matrix tmp);
+    
     ///<Metoda obliczajaca wyznacznik macierz
     /** 
      * @return deter - wyznacznik
@@ -149,17 +141,7 @@ public:
      * @param sec - macierz
      * @return macierz tmp - wynik mnozenia
      */
-    Matrix operator * (Matrix sec){
-    Matrix tmp;
-    for( int i = 0; i < SIZE; ++i){
-        for( int j = 0; j < SIZE; ++j){
-            for( int k = 0; k < SIZE; ++k){
-                tmp(i,j) += this->value[i][k] * sec(j,k);
-            }
-        }
-    }   
-    return tmp;
-    };
+    Matrix operator * (Matrix sec);
 
     ///<Przeciazenie porownania dwoch macierzy
     /**
