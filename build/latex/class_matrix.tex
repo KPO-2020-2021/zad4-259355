@@ -14,19 +14,22 @@ Klasa Macierzy.
 \item 
 \mbox{\hyperlink{class_matrix_a0a2dd2ce4d31060775099033a4e32b23}{Matrix}} ()
 \item 
+\mbox{\Hypertarget{class_matrix_a1864df2e5b08f4ef6d558b0ec1602426}\label{class_matrix_a1864df2e5b08f4ef6d558b0ec1602426}} 
 \mbox{\hyperlink{class_vector}{Vector2}} \mbox{\hyperlink{class_matrix_a1864df2e5b08f4ef6d558b0ec1602426}{operator$\ast$}} (\mbox{\hyperlink{class_vector}{Vector2}} tmp) const
 \begin{DoxyCompactList}\small\item\em Operator mnożenia przez wektor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_vector}{Vector3}} \mbox{\hyperlink{class_matrix_a7ec1360e2fe663cd8e8c9988f06b0c0d}{operator$\ast$}} (\mbox{\hyperlink{class_vector}{Vector3}} tmp) const
+\mbox{\hyperlink{class_vector}{Vector3}} \mbox{\hyperlink{class_matrix_a7c6d412571e9b3e0026b6ddc2cc43e9b}{operator$\ast$}} (\mbox{\hyperlink{class_vector}{Vector3}} tmp) const
 \begin{DoxyCompactList}\small\item\em Operator mnożenia przez wektor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a40ea5a21a87740e59f82671db54599eb}{operator+}} (\mbox{\hyperlink{class_matrix}{Matrix}} tmp)
-\item 
-double \mbox{\hyperlink{class_matrix_a257cbe615c5321c38c30a340e6dfcd44}{determinant}} ()
 \begin{DoxyCompactList}\small\item\em Metoda obliczajaca wyznacznik macierz. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a4791c1bf2e40c89d8a889af18b1577df}{after\+\_\+x}} ()
+double \mbox{\hyperlink{class_matrix_a257cbe615c5321c38c30a340e6dfcd44}{determinant}} ()
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a53dc11828b9921eb15869f0303bfc5bf}{after\+\_\+x}} ()
 \begin{DoxyCompactList}\small\item\em Metoda inicjacji macierzy wartosciami obrotu o os x. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a8607a5dc4a73cddd4e4f616e374038a8}{after\+\_\+y}} ()
+\mbox{\Hypertarget{class_matrix_a1c7717b5d65a2a48a569527c80640dd3}\label{class_matrix_a1c7717b5d65a2a48a569527c80640dd3}} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a1c7717b5d65a2a48a569527c80640dd3}{after\+\_\+y}} ()
 \begin{DoxyCompactList}\small\item\em Metoda inicjacji macierzy wartosciami obrotu o os z. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a8f9aab4706c329c1cdf3a166e89cf9b7}{after\+\_\+z}} ()
+\mbox{\Hypertarget{class_matrix_a0433a9679689b4eaf1ce76353627d291}\label{class_matrix_a0433a9679689b4eaf1ce76353627d291}} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a0433a9679689b4eaf1ce76353627d291}{after\+\_\+z}} ()
 \begin{DoxyCompactList}\small\item\em Metoda zmieniajaca wartosc pola macierzy(angle) z double na radiany. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_matrix_a8528a924805bf90e0096dee5f45ac71e}\label{class_matrix_a8528a924805bf90e0096dee5f45ac71e}} 
 double {\bfseries toradians} ()
@@ -39,7 +42,7 @@ const double \& {\bfseries operator()} (unsigned int row, unsigned int column) c
 \mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a445692f8a0347ddc5e08d9d82e2dd5a1}{operator$\ast$}} (\mbox{\hyperlink{class_matrix}{Matrix}} sec)
 \begin{DoxyCompactList}\small\item\em Przeciazenie operatora mnozenia macierzy razy macierz. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_matrix_a986a8fb06bc765b723a33b8d837e5e80}{operator==}} (const \mbox{\hyperlink{class_matrix}{Matrix}} tmp) const
-\begin{DoxyCompactList}\small\item\em Przeciazenie porownania dwoch macierzy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -66,57 +69,23 @@ Klasa pozwalajaca operowac na argumentach macierzy Klasa jest szablonem ktory dz
 Wypelnia macierz zerami 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_matrix_a4791c1bf2e40c89d8a889af18b1577df}\label{class_matrix_a4791c1bf2e40c89d8a889af18b1577df}} 
+\mbox{\Hypertarget{class_matrix_a53dc11828b9921eb15869f0303bfc5bf}\label{class_matrix_a53dc11828b9921eb15869f0303bfc5bf}} 
 \index{Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}!after\_x@{after\_x}}
 \index{after\_x@{after\_x}!Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}}
 \doxysubsubsection{\texorpdfstring{after\_x()}{after\_x()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix3}} Matrix3\+::after\+\_\+x}
+{\footnotesize\ttfamily template$<$typename type , unsigned int table\+\_\+size$>$ \\
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$\+::after\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Metoda inicjacji macierzy wartosciami obrotu o os x. 
 
-Metoda inicjacji macierzy wartosciami obrotu o os y
-
-Metoda Matrix3D inicjujaca macierz obrotu o os Ox \begin{DoxyReturn}{Returns}
-Prostopadloscian 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_matrix_a8607a5dc4a73cddd4e4f616e374038a8}\label{class_matrix_a8607a5dc4a73cddd4e4f616e374038a8}} 
-\index{Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}!after\_y@{after\_y}}
-\index{after\_y@{after\_y}!Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}}
-\doxysubsubsection{\texorpdfstring{after\_y()}{after\_y()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix3}} Matrix3\+::after\+\_\+y}
-
-
-
-Metoda inicjacji macierzy wartosciami obrotu o os z. 
-
-Metoda Matrix3D inicjujaca macierz obrotu o os Oy \begin{DoxyReturn}{Returns}
-Prostopadloscian 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_matrix_a8f9aab4706c329c1cdf3a166e89cf9b7}\label{class_matrix_a8f9aab4706c329c1cdf3a166e89cf9b7}} 
-\index{Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}!after\_z@{after\_z}}
-\index{after\_z@{after\_z}!Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}}
-\doxysubsubsection{\texorpdfstring{after\_z()}{after\_z()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix3}} Matrix3\+::after\+\_\+z}
-
-
-
-Metoda zmieniajaca wartosc pola macierzy(angle) z double na radiany. 
-
-Metoda Matrix3D inicjujaca macierz obrotu o os Oz \begin{DoxyReturn}{Returns}
-Prostopadloscian 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_matrix_a257cbe615c5321c38c30a340e6dfcd44}\label{class_matrix_a257cbe615c5321c38c30a340e6dfcd44}} 
+Metoda inicjacji macierzy wartosciami obrotu o os y \mbox{\Hypertarget{class_matrix_a257cbe615c5321c38c30a340e6dfcd44}\label{class_matrix_a257cbe615c5321c38c30a340e6dfcd44}} 
 \index{Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}!determinant@{determinant}}
 \index{determinant@{determinant}!Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}}
 \doxysubsubsection{\texorpdfstring{determinant()}{determinant()}}
 {\footnotesize\ttfamily template$<$typename type , unsigned int table\+\_\+size$>$ \\
 double \mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$\+::determinant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Metoda obliczajaca wyznacznik macierz. 
 
 \begin{DoxyReturn}{Returns}
 deter -\/ wyznacznik 
@@ -145,9 +114,9 @@ macierz
 \mbox{\Hypertarget{class_matrix_a445692f8a0347ddc5e08d9d82e2dd5a1}\label{class_matrix_a445692f8a0347ddc5e08d9d82e2dd5a1}} 
 \index{Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}}
-\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename type , unsigned int table\+\_\+size$>$ \\
-\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$}]{sec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$}]{sec }\end{DoxyParamCaption})}
 
 
 
@@ -159,52 +128,29 @@ Przeciazenie operatora mnozenia macierzy razy macierz.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-macierz tmp -\/ wynik mnozenia 
+macierz tmp -\/ wynik mnozenia Przeciazenie porownania dwoch macierzy 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_matrix_a1864df2e5b08f4ef6d558b0ec1602426}\label{class_matrix_a1864df2e5b08f4ef6d558b0ec1602426}} 
+\mbox{\Hypertarget{class_matrix_a7c6d412571e9b3e0026b6ddc2cc43e9b}\label{class_matrix_a7c6d412571e9b3e0026b6ddc2cc43e9b}} 
 \index{Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}}
-\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_vector}{Vector2}} Matrix2\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector2}}}]{tmp }\end{DoxyParamCaption}) const}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename type , unsigned int table\+\_\+size$>$ \\
+\mbox{\hyperlink{class_vector}{Vector3}} \mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}}}]{tmp }\end{DoxyParamCaption}) const}
 
 
 
 Operator mnożenia przez wektor. 
 
-Przeciazenie operatora wejsciowy 
-\begin{DoxyParams}{Parameters}
-{\em Wektor2D} & tmp \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Wektor2D result 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_matrix_a7ec1360e2fe663cd8e8c9988f06b0c0d}\label{class_matrix_a7ec1360e2fe663cd8e8c9988f06b0c0d}} 
-\index{Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}}
-\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_vector}{Vector3}} Matrix3\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}}}]{tmp }\end{DoxyParamCaption}) const}
-
-
-
-Operator mnożenia przez wektor. 
-
-Przeciazenie operatora dodawania dwoch macierzy
-
-Przeciazenie operatora wejsciowy 
-\begin{DoxyParams}{Parameters}
-{\em Wektor3D} & tmp \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Wektor3D result 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_matrix_a40ea5a21a87740e59f82671db54599eb}\label{class_matrix_a40ea5a21a87740e59f82671db54599eb}} 
+Przeciazenie operatora dodawania dwoch macierzy \mbox{\Hypertarget{class_matrix_a40ea5a21a87740e59f82671db54599eb}\label{class_matrix_a40ea5a21a87740e59f82671db54599eb}} 
 \index{Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}!operator+@{operator+}}
 \index{operator+@{operator+}!Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}}
 \doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
 {\footnotesize\ttfamily template$<$typename type , unsigned int table\+\_\+size$>$ \\
-\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$}]{tmp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$}]{tmp }\end{DoxyParamCaption})}
+
+
+
+Metoda obliczajaca wyznacznik macierz. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -220,10 +166,6 @@ Wektor3D result
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
 {\footnotesize\ttfamily template$<$typename type , unsigned int table\+\_\+size$>$ \\
 bool \mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$}]{tmp }\end{DoxyParamCaption}) const}
-
-
-
-Przeciazenie porownania dwoch macierzy. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -249,7 +191,4 @@ kat obrotu prostopadloscianu
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 /home/adam/\+Programowanie\+\_\+\+Obiektowe/zad4-\/259355/include/matrix.\+hh\item 
-/home/adam/\+Programowanie\+\_\+\+Obiektowe/zad4-\/259355/include/matrix2.\+hh\item 
-/home/adam/\+Programowanie\+\_\+\+Obiektowe/zad4-\/259355/include/matrix3.\+hh\item 
-/home/adam/\+Programowanie\+\_\+\+Obiektowe/zad4-\/259355/src/matrix2.\+cpp\item 
-/home/adam/\+Programowanie\+\_\+\+Obiektowe/zad4-\/259355/src/matrix3.\+cpp\end{DoxyCompactItemize}
+/home/adam/\+Programowanie\+\_\+\+Obiektowe/zad4-\/259355/include/matrix2.\+hh\end{DoxyCompactItemize}

@@ -51,6 +51,13 @@ public:
     Vector operator + (const Vector &v);
     
 
+    double toradians(){
+        for(int i = 0; i < size_table; ++i){
+            this->size[i] = (this->size[i] * M_PI)/180;}
+            
+        return *this;
+    };
+
     ///<Przeciazenie operatora odejmowania wektorow
     /** 
      * @param const Vector &v 

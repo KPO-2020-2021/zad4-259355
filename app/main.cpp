@@ -66,7 +66,12 @@ int main() {
   Vector3 vec8 = Vector3(arg8);
   Vector3 arguments1[] = { vec1, vec2, vec3, vec4, vec5, vec6, vec7, vec8}; /**< inicjacja prostopadloscianu nr 1 */
   Prostopadl pro = Prostopadl(arguments1);
-  sc.pro = pro;
+  double mid1[] = {75,62.5,112.5};
+  pro.mid = Vector3(mid1); 
+  sc.pro = Prostopadl(pro);
+  Prostopadl loc;
+  loc = pro - (pro.mid);
+  loc.mid = Vector3(mid1);
 
   double argm1[] = {15,15,20};
   double argm2[] = {-10,15,20};
@@ -86,6 +91,8 @@ int main() {
   Vector3 vect8 = Vector3(argm8);
   Vector3 arguments[] = { vect1, vect2, vect3, vect4, vect5, vect6, vect7, vect8}; /**< inicjacja prostopadloscianu nr 2 */
   Prostopadl pro2 = Prostopadl(arguments);
+  double mid2[] = {75,62.5,112.5};
+  pro2.mid = Vector3(mid2);
   sc.pro2 = pro2;
 
   PzG::LaczeDoGNUPlota  Lacze;  // Ta zmienna jest potrzebna do wizualizacji
@@ -116,12 +123,9 @@ int main() {
   Lacze.UstawZakresY(-300,300);
   Lacze.UstawZakresZ(-300,300);
   const char *file;
-  // sc.pro.Save("../datasets/Prostopadl.dat");
   sc.pro.Save("../datasets/Prostopadl.dat");
   sc.pro2.Save("../datasets/Prostopadl1.dat");
   Lacze.Rysuj();
-
-
   
   cout << "Beginning" << endl;
   int  anglee = 0;
@@ -139,7 +143,6 @@ int main() {
 
   cout << "Choose the figure ('1', '2')" << endl;
     char fig = '_';
-    // cin >> fig;
     while( fig != '1' && fig != '2'){
       cin >> fig;
       switch(fig){
@@ -162,6 +165,9 @@ int main() {
   double arg[][SIZE] = {{1,0,0}, {0,1,0}, {0,0,1}};
   sc.pro.matrixtmp = Matrix3(arg);
   sc.pro2.matrixtmp = Matrix3(arg);
+  Matrix3 mattemp, matturnag;
+  loc.matrixtmp = Matrix3(arg);
+  pro.matrixtmp = Matrix3(arg);
 
   while (choice != 'k'){
     char axle = '_';
@@ -178,9 +184,6 @@ int main() {
 
     switch( choice ){
       case 'o':{ 
-      double arg[][SIZE] = {{1,0,0}, {0,1,0}, {0,0,1}};
-      pro.matrixtmp = Matrix3(arg);
-      
         cout << "Choose axle ( 'x' 'y' 'z') " << endl;
         while(axle != '.'){
           cin >> axle;
@@ -190,13 +193,13 @@ int main() {
           cin >> anglee;
         switch (axle){
             case 'x':
-              pro.turn(anglee,axle);
+              pro.turn(anglee,axle,loc);
               break;
             case 'y':
-              pro.turn(anglee,axle);
+              pro.turn(anglee,axle,loc);
               break;
             case 'z':
-              pro.turn(anglee,axle);
+              pro.turn(anglee,axle,loc);
               break;
             case '.':
               break;
@@ -208,9 +211,11 @@ int main() {
 
         cout << "Choose how many times to turn rectangle: ";
         cin >> howm;
-
+        Matrix3 mathowm = pro.matrixtmp;
+        matturnag = pro.matrixtmp;
         for(int i = 0; i < howm-1; ++i ){
-          pro = pro * pro.matrixtmp;
+          mathowm = mathowm * matturnag;
+          pro = loc * mathowm;
         }
         pro.Save(file);
         Lacze.Rysuj();
@@ -222,13 +227,15 @@ int main() {
           pro.showres3D();
           cout << endl;
         }}
+        mattemp = pro.matrixtmp;
       break;
-      case 't':
+      case 't':{
         cout << "Turn once again" << endl;
-        pro = pro * pro.matrixtmp;
+        mattemp = mattemp * matturnag;
+        pro = loc * mattemp;
         pro.Save(file);
         Lacze.Rysuj();
-        break;
+        break;}
       case 'r':
         cout << "Display rotation matrix" << endl;
         cout << pro.matrixtmp << endl;
@@ -241,7 +248,8 @@ int main() {
         cout << "Vector to move: ";
         cin >> tmp;
         pro.moving(tmp,file, Lacze);
-
+        loc.mid = loc.mid + tmp;
+        pro.mid = loc.mid;
         if(SIZE == 2){
           pro.showres(temp1,temp2, temp3);
           cout << endl;}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lenght_211',['lenght',['../class_prostokat.html#aa14970fe753e902306f4694d4a5a55d0',1,'Prostokat']]]
+  ['lenght_214',['lenght',['../class_prostopadl.html#adad48921b0e29001be7f8d54e81ad444',1,'Prostopadl']]]
 ];

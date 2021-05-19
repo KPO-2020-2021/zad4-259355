@@ -56,10 +56,6 @@ cstdlib
 stdexcept
 -
 
-../include/matrix2.hh
-matrix.hh
-../include/matrix.hh
-
 ../include/matrix3.hh
 matrix.hh
 ../include/matrix.hh
@@ -79,12 +75,4 @@ iomanip
 /home/adam/Programowanie_Obiektowe/zad4-259355/src/Prostopadl.cpp
 Prostopadl.hh
 /home/adam/Programowanie_Obiektowe/zad4-259355/src/Prostopadl.hh
-
-/home/adam/Programowanie_Obiektowe/zad4-259355/src/matrix2.cpp
-matrix2.hh
-/home/adam/Programowanie_Obiektowe/zad4-259355/src/matrix2.hh
-
-/home/adam/Programowanie_Obiektowe/zad4-259355/src/matrix3.cpp
-matrix3.hh
-/home/adam/Programowanie_Obiektowe/zad4-259355/src/matrix3.hh
 

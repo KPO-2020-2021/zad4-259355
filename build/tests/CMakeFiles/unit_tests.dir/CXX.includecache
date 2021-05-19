@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+../include/Prostopadl.hh
+matrix3.hh
+../include/matrix3.hh
+size.hh
+../include/size.hh
+Vector3.hh
+../include/Vector3.hh
+iostream
+-
+iomanip
+-
+../include/lacze_do_gnuplota.hh
+../include/lacze_do_gnuplota.hh
+unistd.h
+-
+fstream
+-
+
 ../include/Vector2.hh
 vector.hh
 ../include/vector.hh
@@ -17,6 +35,14 @@ vector.hh
 ../include/example.h
 ../tests/doctest/doctest.h
 ../tests/doctest/doctest.h
+
+../include/lacze_do_gnuplota.hh
+string
+-
+list
+-
+vector
+-
 
 ../include/matrix.hh
 size.hh
@@ -174,5 +200,21 @@ io.h
 sys/time.h
 -
 unistd.h
+-
+
+/home/adam/Programowanie_Obiektowe/zad4-259355/tests/test1.cpp
+../tests/doctest/doctest.h
+/home/adam/Programowanie_Obiektowe/zad4-259355/tests/doctest/doctest.h
+../tests/doctest/doctest.h
+/home/adam/Programowanie_Obiektowe/zad4-259355/tests/doctest/doctest.h
+Prostopadl.hh
+/home/adam/Programowanie_Obiektowe/zad4-259355/tests/Prostopadl.hh
+size.hh
+/home/adam/Programowanie_Obiektowe/zad4-259355/tests/size.hh
+example.h
+/home/adam/Programowanie_Obiektowe/zad4-259355/tests/example.h
+cmath
+-
+fstream
 -
 

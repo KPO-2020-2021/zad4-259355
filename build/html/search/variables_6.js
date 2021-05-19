@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['slen_213',['slen',['../class_prostokat.html#a36de224601e0b8cccea8e0fee2e0eb3b',1,'Prostokat']]]
+  ['slen_217',['slen',['../class_prostopadl.html#aed02cf3cb572db0dda09bc76b08005ea',1,'Prostopadl']]]
 ];

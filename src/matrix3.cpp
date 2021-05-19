@@ -151,9 +151,25 @@ Matrix3 Matrix3::operator * (Matrix3 sec){
     for( int i = 0; i < 3; ++i){
         for( int j = 0; j < 3; ++j){
             for( int k = 0; k < 3; ++k){
-                tmp(i,j) += this->value[i][k] * sec(j,k);
+                tmp(i,j) += this->value[i][k] * sec(k,j);
             }
         }
     }   
     return tmp;
     }
+
+template<>
+Matrix<double,4> Matrix3::TurnAndTrans(Vector3 tmp){
+    Matrix<double,4> mat4;
+
+    for(int i = 0; i < 3; ++i){
+        for(int j = 0; j < 3; ++j){
+            mat4(i,j) = this->value[i][j];
+        }
+    }
+    mat4(3,3) = 1;
+    for(int k = 0; k < 3; ++k){
+        mat4(3,k) = tmp[k];
+    }
+    return mat4;
+}

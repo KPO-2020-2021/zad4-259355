@@ -98,9 +98,8 @@ public:
 
     ///<Metoda zmieniajaca wartosc pola macierzy(angle) z double na radiany
     double toradians(){
-
-    this->angle = (this->angle * M_PI)/180;
-    return this->angle;
+        this->angle = (this->angle * M_PI)/180;
+        return this->angle;
     };
 
     // Matrix init(char tmp, double num, Prostopadl &pr);
@@ -149,6 +148,9 @@ public:
      */ 
     bool operator == ( const Matrix tmp) const;
 
+    Matrix<double,4> TurnAndTrans(Vector3 tmp);
+
+    Matrix fill(Vector3 angles, Vector3 vec3);
 };
 
 // std::istream &operator>>(std::istream &in, Matrix &mat);

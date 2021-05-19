@@ -96,14 +96,27 @@ const double &Prostopadl::operator () (unsigned int row, unsigned int column) co
 Prostopadl Prostopadl::operator * (const Matrix3 &matrix){
     Prostopadl result;
     for (int i = 0; i < NOPOINTS; ++i){
-            result.pro[i] = matrix * this->pro[i];
-            // if( SIZE == 3){
-            // result(i,2) = matrix(0,2) * this->pro[i][0] + matrix(1,2) *  this->pro[i][1] + matrix(2,2) * this->pro[i][2];
+        result.pro[i] = (matrix * this->pro[i]) + this->mid;
     }
-    // }
     result.matrixtmp = this->matrixtmp;
+    result.angles = this->angles;
     return result;
 }
+
+/**
+ * Przeciazenie operatora mnozenia wierzcholkow razy macierz  
+ * @param const macierz 4D
+ * @return Prostopadloscian result
+ */ 
+// Prostopadl Prostopadl::operator * (const Matrix<double,4> &matrix){
+//     Prostopadl result;
+//     for (int i = 0; i < NOPOINTS; ++i){
+//         result.pro[i] = (matrix * this->pro[i]) + this->mid;
+//     }
+//     result.matrixtmp = this->matrixtmp;
+//     result.angles = this->angles;
+//     return result;
+// }
 
 /**
  * Funkcja przyjmujaca jako argument wektor i zmieniajaca wartosci wspolrzednych Prostopadla (przesuniecie o wektor)
@@ -115,9 +128,6 @@ Prostopadl Prostopadl::move(const Vector3 &vec){
         for (int j = 0; j < SIZE; ++j){
         this->pro[i][j] += vec[j];
     }}
-    
-    // this->Save(sNazwaPliku);
-    // Lacze.Rysuj();
     return *this;
 }
 
@@ -300,34 +310,58 @@ void Prostopadl::showres3D(){
  * @param double const ang - kat
  * @param char which - os 
  */
-void Prostopadl::turn(double const ang, char which){
+void Prostopadl::turn(double const ang, char which, Prostopadl &loc){
     Matrix3 matrixx,matrixy,matrixz;
+    double anglx,angly,anglz;
     if(SIZE != 3){
         matrixx.toradians();
         *this = *this * matrixx.after_x();
     }
     else{
         if( which == 'x'){
+
+            this->angles[0] += ang;
             matrixx.angle = ang;
+            anglx = this->angles[0];
+
             matrixx.toradians();
-            *this = *this * matrixx.after_x();
-            this->matrixtmp = matrixx.after_x() * this->matrixtmp;
+            this->matrixtmp = this->matrixtmp * matrixx.after_x();
+
+            this->angles[0] = anglx;
         }
         else if( which == 'y'){
-            matrixy.angle = ang;
+
+            this->angles[1] += ang;
+            matrixy.angle = ang;  
+            angly = this->angles[1];          
+            
             matrixy.toradians();
-            *this = *this * matrixy.after_y();
-            this->matrixtmp = matrixy.after_y() * this->matrixtmp;
+            this->matrixtmp = this->matrixtmp * matrixy.after_y();
+
+            this->angles[1] = angly;
+
         }
         else if( which == 'z'){
+
+            this->angles[2] += ang;
             matrixz.angle = ang;
+            anglz = this->angles[2];
+
             matrixz.toradians();
-            *this = *this * matrixz.after_z();
-            this->matrixtmp = matrixz.after_z() * this->matrixtmp;
+            this->matrixtmp = this->matrixtmp * matrixz.after_z();
+
+            this->angles[2] = anglz;
         }
         else{
             std::cout << "Wrong option operation dumped" << std::endl;
     }} 
+    loc.matrixtmp = matrixtmp;
+    loc.angles = angles;
+    *this = loc * matrixtmp;
+}
+
+void Prostopadl::turnagain(){
+
 }
 
 /**
@@ -363,10 +397,11 @@ bool Prostopadl::Save(const char *sNazwaPliku)
  */
 void Prostopadl::turning(Prostopadl &pro, const char *sNazwaPliku, double const ang, double const howm, PzG::LaczeDoGNUPlota Lacze, char which)
 {
+  Prostopadl loc;  
   if(howm < 5){
     for(int i = 0; i < howm; ++i){
         for(int k = 0; k < abs(ang); ++k){
-            pro.turn(ang/abs(ang), which);
+            pro.turn(ang/abs(ang), which,loc);
             pro.Save(sNazwaPliku);
             usleep(4000);
             Lacze.Rysuj(); 
@@ -375,7 +410,7 @@ void Prostopadl::turning(Prostopadl &pro, const char *sNazwaPliku, double const 
         }
     }
   else{
-      pro.turn(ang, which);
+      pro.turn(ang, which,loc);
       pro.Save(sNazwaPliku);
       Lacze.Rysuj();
   }
@@ -393,7 +428,22 @@ bool Prostopadl::operator == (const Prostopadl &Pr){
     else{
         return false;
     }
-    }
+}
 
+Prostopadl Prostopadl::operator + (const Vector3 vec2){
+    for (int i = 0; i < NOPOINTS; ++i){
+        for (int j = 0; j < SIZE; ++j){
+            this->pro[i][j] = this->pro[i][j] + vec2[j];
+        }}
+    return *this;
+}
+
+Prostopadl Prostopadl::operator - (const Vector3 vec2){
+    for (int i = 0; i < NOPOINTS; ++i){
+        for (int j = 0; j < SIZE; ++j){
+            this->pro[i][j] = this->pro[i][j] - vec2[j];
+        }}
+    return *this;
+}
 
 

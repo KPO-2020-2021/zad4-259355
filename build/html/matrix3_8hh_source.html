@@ -69,48 +69,58 @@ $(function() {
 <div class="title">matrix3.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;matrix.hh&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">typedef</span> <a class="code" href="class_matrix.html">Matrix&lt;double,3&gt;</a><a class="code" href="class_matrix.html">Matrix3</a>;</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MATRIX3_HH</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MATRIX3_HH</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;matrix.hh&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//Definicje metod szczegolnych gdy dzialamy na Macierzach3D</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//Przeciazenie operatora porownania</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//Metody obrotu wokol osi (x,y,z)</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//Przeciazenie operatora wejscia i wyjscia</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//Przeciazenie operatora mnozenia macierzy3D razy Vector3D</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;std::istream &amp;operator&gt;&gt;(std::istream &amp;in, <a class="code" href="class_matrix.html">Matrix3</a> &amp;mat);</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">typedef</span> <a class="code" href="class_matrix.html">Matrix&lt;double,3&gt;</a><a class="code" href="class_matrix.html">Matrix3</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//Definicje metod szczegolnych gdy dzialamy na Macierzach3D</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//Przeciazenie operatora porownania</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//Metody obrotu wokol osi (x,y,z)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//Przeciazenie operatora wejscia i wyjscia</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//Przeciazenie operatora mnozenia macierzy3D razy Vector3D</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;std::ostream &amp;operator&lt;&lt;(std::ostream &amp;out, <a class="code" href="class_matrix.html">Matrix3</a> <span class="keyword">const</span> &amp;mat);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;std::istream &amp;operator&gt;&gt;(std::istream &amp;in, <a class="code" href="class_matrix.html">Matrix3</a> &amp;mat);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_matrix.html#a986a8fb06bc765b723a33b8d837e5e80">Matrix3::operator == </a>( <span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix3</a> tmp) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="class_matrix.html">Matrix3</a> <a class="code" href="class_matrix.html#a8f9aab4706c329c1cdf3a166e89cf9b7">Matrix3::after_z</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<a class="code" href="class_matrix.html">Matrix3</a> <a class="code" href="class_matrix.html#a4791c1bf2e40c89d8a889af18b1577df">Matrix3::after_x</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<a class="code" href="class_matrix.html">Matrix3</a> <a class="code" href="class_matrix.html#a8607a5dc4a73cddd4e4f616e374038a8">Matrix3::after_y</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="class_vector.html">Vector3</a> <a class="code" href="class_matrix.html#a1864df2e5b08f4ef6d558b0ec1602426">Matrix3::operator * </a>(<a class="code" href="class_vector.html">Vector3</a> tmp) <span class="keyword">const</span> ;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;std::ostream &amp;operator&lt;&lt;(std::ostream &amp;out, <a class="code" href="class_matrix.html">Matrix3</a> <span class="keyword">const</span> &amp;mat);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_matrix.html#a986a8fb06bc765b723a33b8d837e5e80">Matrix3::operator == </a>( <span class="keyword">const</span> <a class="code" href="class_matrix.html">Matrix3</a> tmp) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="class_matrix.html">Matrix3</a> <a class="code" href="class_matrix.html#a0433a9679689b4eaf1ce76353627d291">Matrix3::after_z</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<a class="code" href="class_matrix.html">Matrix3</a> <a class="code" href="class_matrix.html#a53dc11828b9921eb15869f0303bfc5bf">Matrix3::after_x</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<a class="code" href="class_matrix.html">Matrix3</a> <a class="code" href="class_matrix.html#a1c7717b5d65a2a48a569527c80640dd3">Matrix3::after_y</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<a class="code" href="class_vector.html">Vector3</a> <a class="code" href="class_matrix.html#a1864df2e5b08f4ef6d558b0ec1602426">Matrix3::operator * </a>(<a class="code" href="class_vector.html">Vector3</a> tmp) <span class="keyword">const</span> ;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<a class="code" href="class_matrix.html">Matrix3</a> <a class="code" href="class_matrix.html#a40ea5a21a87740e59f82671db54599eb">Matrix3::operator + </a>(<a class="code" href="class_matrix.html">Matrix3</a> tmp);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="class_matrix.html">Matrix3</a> <a class="code" href="class_matrix.html#a1864df2e5b08f4ef6d558b0ec1602426">Matrix3::operator * </a>(<a class="code" href="class_matrix.html">Matrix3</a> sec);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_matrix_html_a8607a5dc4a73cddd4e4f616e374038a8"><div class="ttname"><a href="class_matrix.html#a8607a5dc4a73cddd4e4f616e374038a8">Matrix::after_y</a></div><div class="ttdeci">Matrix after_y()</div><div class="ttdoc">Metoda inicjacji macierzy wartosciami obrotu o os z.</div><div class="ttdef"><b>Definition:</b> matrix3.cpp:77</div></div>
-<div class="ttc" id="aclass_matrix_html_a986a8fb06bc765b723a33b8d837e5e80"><div class="ttname"><a href="class_matrix.html#a986a8fb06bc765b723a33b8d837e5e80">Matrix::operator==</a></div><div class="ttdeci">bool operator==(const Matrix tmp) const</div><div class="ttdoc">Przeciazenie porownania dwoch macierzy.</div></div>
-<div class="ttc" id="aclass_matrix_html_a1864df2e5b08f4ef6d558b0ec1602426"><div class="ttname"><a href="class_matrix.html#a1864df2e5b08f4ef6d558b0ec1602426">Matrix::operator*</a></div><div class="ttdeci">Vector2 operator*(Vector2 tmp) const</div><div class="ttdoc">Operator mnożenia przez wektor.</div><div class="ttdef"><b>Definition:</b> matrix2.cpp:65</div></div>
-<div class="ttc" id="aclass_matrix_html_a4791c1bf2e40c89d8a889af18b1577df"><div class="ttname"><a href="class_matrix.html#a4791c1bf2e40c89d8a889af18b1577df">Matrix::after_x</a></div><div class="ttdeci">Matrix after_x()</div><div class="ttdoc">Metoda inicjacji macierzy wartosciami obrotu o os x.</div><div class="ttdef"><b>Definition:</b> matrix3.cpp:93</div></div>
-<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdoc">Klasa Macierzy.</div><div class="ttdef"><b>Definition:</b> vector.hh:17</div></div>
-<div class="ttc" id="aclass_matrix_html_a8f9aab4706c329c1cdf3a166e89cf9b7"><div class="ttname"><a href="class_matrix.html#a8f9aab4706c329c1cdf3a166e89cf9b7">Matrix::after_z</a></div><div class="ttdeci">Matrix after_z()</div><div class="ttdoc">Metoda zmieniajaca wartosc pola macierzy(angle) z double na radiany.</div><div class="ttdef"><b>Definition:</b> matrix3.cpp:60</div></div>
+<div class="ttc" id="aclass_matrix_html_a986a8fb06bc765b723a33b8d837e5e80"><div class="ttname"><a href="class_matrix.html#a986a8fb06bc765b723a33b8d837e5e80">Matrix&lt; double, 3 &gt;::operator==</a></div><div class="ttdeci">bool operator==(const Matrix tmp) const</div></div>
+<div class="ttc" id="aclass_matrix_html_a40ea5a21a87740e59f82671db54599eb"><div class="ttname"><a href="class_matrix.html#a40ea5a21a87740e59f82671db54599eb">Matrix&lt; double, 3 &gt;::operator+</a></div><div class="ttdeci">Matrix operator+(Matrix tmp)</div><div class="ttdoc">Metoda obliczajaca wyznacznik macierz.</div></div>
+<div class="ttc" id="aclass_matrix_html_a1864df2e5b08f4ef6d558b0ec1602426"><div class="ttname"><a href="class_matrix.html#a1864df2e5b08f4ef6d558b0ec1602426">Matrix&lt; double, 3 &gt;::operator*</a></div><div class="ttdeci">Vector2 operator*(Vector2 tmp) const</div><div class="ttdoc">Operator mnożenia przez wektor.</div></div>
+<div class="ttc" id="aclass_matrix_html_a0433a9679689b4eaf1ce76353627d291"><div class="ttname"><a href="class_matrix.html#a0433a9679689b4eaf1ce76353627d291">Matrix&lt; double, 3 &gt;::after_z</a></div><div class="ttdeci">Matrix after_z()</div><div class="ttdoc">Metoda zmieniajaca wartosc pola macierzy(angle) z double na radiany.</div></div>
+<div class="ttc" id="aclass_matrix_html_a53dc11828b9921eb15869f0303bfc5bf"><div class="ttname"><a href="class_matrix.html#a53dc11828b9921eb15869f0303bfc5bf">Matrix&lt; double, 3 &gt;::after_x</a></div><div class="ttdeci">Matrix after_x()</div><div class="ttdoc">Metoda inicjacji macierzy wartosciami obrotu o os x.</div></div>
+<div class="ttc" id="aclass_matrix_html_a1c7717b5d65a2a48a569527c80640dd3"><div class="ttname"><a href="class_matrix.html#a1c7717b5d65a2a48a569527c80640dd3">Matrix&lt; double, 3 &gt;::after_y</a></div><div class="ttdeci">Matrix after_y()</div><div class="ttdoc">Metoda inicjacji macierzy wartosciami obrotu o os z.</div></div>
+<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector&lt; double, 3 &gt;</a></div></div>
 <div class="ttc" id="aclass_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix&lt; double, 3 &gt;</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

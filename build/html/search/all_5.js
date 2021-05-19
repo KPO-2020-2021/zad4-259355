@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['high_35',['high',['../class_prostokat.html#afb353866a4bb8932e7ee7d43e6c288e8',1,'Prostokat']]]
+  ['high_35',['high',['../class_prostopadl.html#a87d904f6b6826cdf76c1e3d63404d7e0',1,'Prostopadl']]]
 ];

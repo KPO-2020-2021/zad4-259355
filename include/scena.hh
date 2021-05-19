@@ -10,12 +10,12 @@
  * 
  */
 class scena{
-    public:
 
+    public:
     Prostopadl pro;
-    Prostopadl troj;
+    
     Prostopadl pro2;
-    Prostopadl troj2;
+    
 };
 
 #endif

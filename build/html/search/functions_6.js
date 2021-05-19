@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lenght2_133',['lenght2',['../class_prostokat.html#a64f00dcbd3a9bbfaf948a35dcb00f904',1,'Prostokat']]],
-  ['lenght3d_134',['lenght3D',['../class_prostokat.html#a63516bfa5d694405c7b49d99bd76607c',1,'Prostokat']]]
+  ['lenght2_136',['lenght2',['../class_prostopadl.html#a26d916da2c217a4307a6305e08878f94',1,'Prostopadl']]],
+  ['lenght3d_137',['lenght3D',['../class_prostopadl.html#a2f78c5d80c5f1c14c228f0b64c6c24bf',1,'Prostopadl']]]
 ];
