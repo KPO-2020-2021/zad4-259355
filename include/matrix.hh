@@ -111,11 +111,11 @@ public:
      * @return macierz
      */ 
     double  &operator () (unsigned int row, unsigned int column){
-        if (row >= SIZE) {
+        if (row >= table_size) {
         throw std::out_of_range("Error: Macierz jest poza zasiegiem");
     }
 
-    if (column >= SIZE) {
+    if (column >= table_size) {
         throw std::out_of_range("Error: Macierz jest poza zasiegiem"); 
     }
 
@@ -123,12 +123,12 @@ public:
     };
     
     const double &operator () (unsigned int row, unsigned int column) const{
-        if (row >= SIZE) {
+        if (row >= table_size) {
         std::cout << "Error: Macierz jest poza zasiegiem";
         exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
     }
 
-    if (column >= SIZE) {
+    if (column >= table_size) {
         std::cout << "Error: Macierz jest poza zasiegiem";
         exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
     }
@@ -151,6 +151,8 @@ public:
     Matrix<double,4> TurnAndTrans(Vector3 tmp);
 
     Matrix fill(Vector3 angles, Vector3 vec3);
+
+    Matrix Rot_and_trans(double a, double b, double g, Vector3 trans);
 };
 
 // std::istream &operator>>(std::istream &in, Matrix &mat);

@@ -49,8 +49,6 @@ class Prostopadl {
 
   Matrix3 matrixtmp;  /**< Macierz obrotu */
 
-  void turnagain(); /**< Funkcja obracajaca prostopadloscian jeszcze raz */
-
   Prostopadl operator * (const Matrix3 &matrix); ///< Przeciazenie operatora mnozenia wierzcholkow Prostopadla razy macierz
 
   Prostopadl move (const Vector3 &vec);  ///<Metoda przesuniecia prostopadloscianu o wektor

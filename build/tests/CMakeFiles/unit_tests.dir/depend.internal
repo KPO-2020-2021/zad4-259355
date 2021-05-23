@@ -7,6 +7,7 @@ tests/CMakeFiles/unit_tests.dir/TestMat3.cpp.o
  ../include/example.h
  ../include/matrix.hh
  ../include/matrix3.hh
+ ../include/matrix4.hh
  ../include/size.hh
  ../include/vector.hh
  /home/adam/Programowanie_Obiektowe/zad4-259355/tests/TestMat3.cpp

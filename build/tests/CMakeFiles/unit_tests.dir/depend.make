@@ -6,6 +6,7 @@ tests/CMakeFiles/unit_tests.dir/TestMat3.cpp.o: ../include/Vector3.hh
 tests/CMakeFiles/unit_tests.dir/TestMat3.cpp.o: ../include/example.h
 tests/CMakeFiles/unit_tests.dir/TestMat3.cpp.o: ../include/matrix.hh
 tests/CMakeFiles/unit_tests.dir/TestMat3.cpp.o: ../include/matrix3.hh
+tests/CMakeFiles/unit_tests.dir/TestMat3.cpp.o: ../include/matrix4.hh
 tests/CMakeFiles/unit_tests.dir/TestMat3.cpp.o: ../include/size.hh
 tests/CMakeFiles/unit_tests.dir/TestMat3.cpp.o: ../include/vector.hh
 tests/CMakeFiles/unit_tests.dir/TestMat3.cpp.o: ../tests/TestMat3.cpp

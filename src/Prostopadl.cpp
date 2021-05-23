@@ -108,15 +108,27 @@ Prostopadl Prostopadl::operator * (const Matrix3 &matrix){
  * @param const macierz 4D
  * @return Prostopadloscian result
  */ 
-// Prostopadl Prostopadl::operator * (const Matrix<double,4> &matrix){
-//     Prostopadl result;
-//     for (int i = 0; i < NOPOINTS; ++i){
-//         result.pro[i] = (matrix * this->pro[i]) + this->mid;
-//     }
-//     result.matrixtmp = this->matrixtmp;
-//     result.angles = this->angles;
-//     return result;
-// }
+Prostopadl Prostopadl::operator * (const Matrix<double,4> &matrix){
+    Prostopadl result;
+    Matrix3 matrtmp;
+    Vector3 vectmp;
+    for( int i = 0; i < 3; ++i){
+        vectmp[i] = matrix(3,i);
+        for( int j = 0; j < 3; ++j){
+            matrtmp(i,j) = matrix(i,j);
+        }
+    }
+    for (int i = 0; i < NOPOINTS; ++i){
+        result.pro[i] = (matrtmp * this->pro[i]) + this->mid;
+    }
+    for (int i = 0; i < NOPOINTS; ++i){
+        for( int j = 0; j < 3; ++j){
+            result.pro[i][j] = this->pro[i][j] + vectmp[j];
+        }}
+    result.matrixtmp = this->matrixtmp;
+    result.angles = this->angles;
+    return result;
+}
 
 /**
  * Funkcja przyjmujaca jako argument wektor i zmieniajaca wartosci wspolrzednych Prostopadla (przesuniecie o wektor)
@@ -358,10 +370,6 @@ void Prostopadl::turn(double const ang, char which, Prostopadl &loc){
     loc.matrixtmp = matrixtmp;
     loc.angles = angles;
     *this = loc * matrixtmp;
-}
-
-void Prostopadl::turnagain(){
-
 }
 
 /**
