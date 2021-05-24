@@ -64,6 +64,10 @@ stdexcept
 matrix.hh
 ../include/matrix.hh
 
+../include/matrix4.hh
+matrix.hh
+../include/matrix.hh
+
 ../include/size.hh
 
 ../include/vector.hh
@@ -74,6 +78,22 @@ iostream
 math.h
 -
 iomanip
+-
+
+/home/adam/Programowanie_Obiektowe/zad4-259355/tests/TestMat3.cpp
+../tests/doctest/doctest.h
+/home/adam/Programowanie_Obiektowe/zad4-259355/tests/doctest/doctest.h
+matrix3.hh
+/home/adam/Programowanie_Obiektowe/zad4-259355/tests/matrix3.hh
+matrix4.hh
+/home/adam/Programowanie_Obiektowe/zad4-259355/tests/matrix4.hh
+size.hh
+/home/adam/Programowanie_Obiektowe/zad4-259355/tests/size.hh
+example.h
+/home/adam/Programowanie_Obiektowe/zad4-259355/tests/example.h
+cmath
+-
+fstream
 -
 
 /home/adam/Programowanie_Obiektowe/zad4-259355/tests/doctest/doctest.h

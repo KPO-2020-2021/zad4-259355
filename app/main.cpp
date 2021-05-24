@@ -33,7 +33,6 @@ using namespace std;
  * 
  * EDIT: dodane kreowanie wektorow i macierzy plus obsluga lacza do gnuplota
  */
-
 int main() {
   std::cout << "Project Rotation 3D based on C++ Boiler Plate v"
             << PROJECT_VERSION_MAJOR /*duże zmiany, najczęściej brak kompatybilności wstecz */

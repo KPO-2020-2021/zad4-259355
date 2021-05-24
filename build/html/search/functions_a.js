@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['rotacjax_154',['RotacjaX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#addf0b844f626f3f5220de70efcbbdbb3',1,'PzG::LaczeDoGNUPlota']]],
-  ['rotacjaz_155',['RotacjaZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9dac73754fab10644b287756003e9c79',1,'PzG::LaczeDoGNUPlota']]],
-  ['rysuj_156',['Rysuj',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335',1,'PzG::LaczeDoGNUPlota']]],
-  ['rysujdopliku_157',['RysujDoPliku',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#addae9ac156ae2fb227f792faff3aa148',1,'PzG::LaczeDoGNUPlota']]]
+  ['rot_5fand_5ftrans_157',['Rot_and_trans',['../class_matrix.html#a5a9de0d8cfc9504042123d269c95b2d0',1,'Matrix']]],
+  ['rotacjax_158',['RotacjaX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#addf0b844f626f3f5220de70efcbbdbb3',1,'PzG::LaczeDoGNUPlota']]],
+  ['rotacjaz_159',['RotacjaZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9dac73754fab10644b287756003e9c79',1,'PzG::LaczeDoGNUPlota']]],
+  ['rysuj_160',['Rysuj',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335',1,'PzG::LaczeDoGNUPlota']]],
+  ['rysujdopliku_161',['RysujDoPliku',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#addae9ac156ae2fb227f792faff3aa148',1,'PzG::LaczeDoGNUPlota']]]
 ];

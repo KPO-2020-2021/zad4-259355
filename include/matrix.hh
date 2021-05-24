@@ -122,15 +122,19 @@ public:
     return value[row][column];
     };
     
+    ///<Operator indeksowania Macierzy 
+    /**
+     * @param int row - ilosc wierszy
+     * @param int column - ilosc kolumn
+     * @return macierz
+     */ 
     const double &operator () (unsigned int row, unsigned int column) const{
         if (row >= table_size) {
-        std::cout << "Error: Macierz jest poza zasiegiem";
-        exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
+        throw std::out_of_range("Error: Macierz jest poza zasiegiem");
     }
 
     if (column >= table_size) {
-        std::cout << "Error: Macierz jest poza zasiegiem";
-        exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
+        throw std::out_of_range("Error: Macierz jest poza zasiegiem"); 
     }
     return value[row][column];
     };
@@ -147,10 +151,6 @@ public:
      * @param tmp - macierz
      */ 
     bool operator == ( const Matrix tmp) const;
-
-    Matrix<double,4> TurnAndTrans(Vector3 tmp);
-
-    Matrix fill(Vector3 angles, Vector3 vec3);
 
     Matrix Rot_and_trans(double a, double b, double g, Vector3 trans);
 };

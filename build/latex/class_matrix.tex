@@ -36,12 +36,13 @@ double {\bfseries toradians} ()
 \item 
 double \& \mbox{\hyperlink{class_matrix_a208ca707164635ca6b25b352bbe55770}{operator()}} (unsigned int row, unsigned int column)
 \begin{DoxyCompactList}\small\item\em $<$Operator indeksowania Macierzy \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_matrix_ac1be904a2cc82ccd1fd12f2d17afbb7f}\label{class_matrix_ac1be904a2cc82ccd1fd12f2d17afbb7f}} 
-const double \& {\bfseries operator()} (unsigned int row, unsigned int column) const
-\item 
+const double \& \mbox{\hyperlink{class_matrix_ac1be904a2cc82ccd1fd12f2d17afbb7f}{operator()}} (unsigned int row, unsigned int column) const
+\begin{DoxyCompactList}\small\item\em Operator indeksowania Macierzy. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a445692f8a0347ddc5e08d9d82e2dd5a1}{operator$\ast$}} (\mbox{\hyperlink{class_matrix}{Matrix}} sec)
 \begin{DoxyCompactList}\small\item\em Przeciazenie operatora mnozenia macierzy razy macierz. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_matrix_a986a8fb06bc765b723a33b8d837e5e80}{operator==}} (const \mbox{\hyperlink{class_matrix}{Matrix}} tmp) const
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a5a9de0d8cfc9504042123d269c95b2d0}{Rot\+\_\+and\+\_\+trans}} (double a, double b, double g, \mbox{\hyperlink{class_vector}{Vector3}} trans)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -93,13 +94,34 @@ deter -\/ wyznacznik
 \mbox{\Hypertarget{class_matrix_a208ca707164635ca6b25b352bbe55770}\label{class_matrix_a208ca707164635ca6b25b352bbe55770}} 
 \index{Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}!operator()@{operator()}}
 \index{operator()@{operator()}!Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename type , unsigned int table\+\_\+size$>$ \\
 double\& \mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int}]{row,  }\item[{unsigned int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 $<$Operator indeksowania Macierzy 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & row -\/ ilosc wierszy \\
+\hline
+{\em int} & column -\/ ilosc kolumn \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+macierz 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_matrix_ac1be904a2cc82ccd1fd12f2d17afbb7f}\label{class_matrix_ac1be904a2cc82ccd1fd12f2d17afbb7f}} 
+\index{Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename type , unsigned int table\+\_\+size$>$ \\
+const double\& \mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int}]{row,  }\item[{unsigned int}]{column }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator indeksowania Macierzy. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -172,6 +194,26 @@ bool \mbox{\hyperlink{class_matrix}{Matrix}}$<$ type, table\+\_\+size $>$\+::ope
 {\em tmp} & -\/ macierz \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_matrix_a5a9de0d8cfc9504042123d269c95b2d0}\label{class_matrix_a5a9de0d8cfc9504042123d269c95b2d0}} 
+\index{Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}!Rot\_and\_trans@{Rot\_and\_trans}}
+\index{Rot\_and\_trans@{Rot\_and\_trans}!Matrix$<$ type, table\_size $>$@{Matrix$<$ type, table\_size $>$}}
+\doxysubsubsection{\texorpdfstring{Rot\_and\_trans()}{Rot\_and\_trans()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix4}} Matrix4\+::\+Rot\+\_\+and\+\_\+trans (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{g,  }\item[{\mbox{\hyperlink{class_vector}{Vector3}}}]{trans }\end{DoxyParamCaption})}
+
+Funkcja wypelniajaca macierz 4x4 odpowiednio obrotem o os x o kat alfa, os y o kat beta, os z o kat gamma oraz translacje o wektor vec3 
+\begin{DoxyParams}{Parameters}
+{\em double} & a -\/ kat alpha \\
+\hline
+{\em double} & b -\/ kat beta \\
+\hline
+{\em double} & g -\/ kat gamma \\
+\hline
+{\em Vector3} & trans -\/ wektor translacji \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Matrix4 result 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}
@@ -191,4 +233,5 @@ kat obrotu prostopadloscianu
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 /home/adam/\+Programowanie\+\_\+\+Obiektowe/zad4-\/259355/include/matrix.\+hh\item 
-/home/adam/\+Programowanie\+\_\+\+Obiektowe/zad4-\/259355/include/matrix2.\+hh\end{DoxyCompactItemize}
+/home/adam/\+Programowanie\+\_\+\+Obiektowe/zad4-\/259355/include/matrix2.\+hh\item 
+/home/adam/\+Programowanie\+\_\+\+Obiektowe/zad4-\/259355/include/matrix4.\+hh\end{DoxyCompactItemize}

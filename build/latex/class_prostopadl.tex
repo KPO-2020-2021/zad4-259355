@@ -18,6 +18,8 @@ Klasa Prostopadloscianu.
 \begin{DoxyCompactList}\small\item\em Przeciazenie operatora mnozenia wierzcholkow Prostopadla razy macierz. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_prostopadl}{Prostopadl}} \mbox{\hyperlink{class_prostopadl_a14012554ee30503029f443474b4ab1cf}{move}} (const \mbox{\hyperlink{class_vector}{Vector3}} \&vec)
 \begin{DoxyCompactList}\small\item\em Metoda przesuniecia prostopadloscianu o wektor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_prostopadl}{Prostopadl}} \mbox{\hyperlink{class_prostopadl_af37e75f85f2260062dc378b10a1e3a53}{operator$\ast$}} (const \mbox{\hyperlink{class_matrix}{Matrix}}$<$ double, 4 $>$ \&matrix)
+\begin{DoxyCompactList}\small\item\em Przeciazenei operatora mnozenia wierzcholkow razy macierz wspolna translacji i obrotu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_prostopadl_ae6f41649b67b428840e8353d813b2484}{moving}} (\mbox{\hyperlink{class_vector}{Vector3}} \&vec, const char $\ast$s\+Nazwa\+Pliku, \mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}} Lacze)
 \begin{DoxyCompactList}\small\item\em Animacja przesuniecia. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_prostopadl_a3fb9ec47b03c18dd949672611c2ea79e}\label{class_prostopadl_a3fb9ec47b03c18dd949672611c2ea79e}} 
@@ -32,7 +34,7 @@ const double \& \mbox{\hyperlink{class_prostopadl_a05630b0424e47050a9fb3963331f7
 \begin{DoxyCompactList}\small\item\em Odpowiednie operatory indeksowania i poruszania sie po wierzcholkach prostopadloscianu. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{class_vector}{Vector3}} \& \mbox{\hyperlink{class_prostopadl_a0739be63408233c28fb4e32bc7f7bc84}{operator()}} (unsigned int row) const
 \begin{DoxyCompactList}\small\item\em Odpowiednie operatory indeksowania i poruszania sie po wierzcholkach prostopadloscianu. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_prostopadl_a7c96c253f8fe9f7cae55d6683b9347ee}{turn}} (double const ang, char which)
+void \mbox{\hyperlink{class_prostopadl_a75cb261f920b7ca9346b2c9b1a1d223e}{turn}} (double const ang, char which, \mbox{\hyperlink{class_prostopadl}{Prostopadl}} \&loc)
 \begin{DoxyCompactList}\small\item\em Metoda obrotu prostopadloscianu o dany kat i os. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_prostopadl_a25abdb62783512b14eac67b90bbb710d}{turning}} (\mbox{\hyperlink{class_prostopadl}{Prostopadl}} \&pro, const char $\ast$s\+Nazwa\+Pliku, double const ang, double const howm, \mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}} Lacze, char which)
 \item 
@@ -61,6 +63,10 @@ double \mbox{\hyperlink{class_prostopadl_a87d904f6b6826cdf76c1e3d63404d7e0}{high
 double \mbox{\hyperlink{class_prostopadl_adad48921b0e29001be7f8d54e81ad444}{lenght}} \mbox{[}3\mbox{]}\mbox{[}4\mbox{]}
 \item 
 \mbox{\hyperlink{class_vector}{Vector3}} \mbox{\hyperlink{class_prostopadl_a18c2db464a1f777df6413c3acfa1af1b}{mid}}
+\item 
+\mbox{\hyperlink{class_vector}{Vector3}} \mbox{\hyperlink{class_prostopadl_ab637af3712649b21bc1641d86f17b953}{angles}}
+\item 
+\mbox{\hyperlink{class_vector}{Vector3}} \mbox{\hyperlink{class_prostopadl_adcf231bbc1530d2dd119b064f187dca5}{anglesagain}}
 \item 
 \mbox{\hyperlink{class_matrix}{Matrix3}} \mbox{\hyperlink{class_prostopadl_a5d4ef20e3a75300a1e64d449ad7e6963}{matrixtmp}}
 \end{DoxyCompactItemize}
@@ -213,7 +219,7 @@ Tablica wierzcholkow
 \mbox{\Hypertarget{class_prostopadl_ad761f098e0ed1b50ddc40887f33d7896}\label{class_prostopadl_ad761f098e0ed1b50ddc40887f33d7896}} 
 \index{Prostopadl@{Prostopadl}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!Prostopadl@{Prostopadl}}
-\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_prostopadl}{Prostopadl}} Prostopadl\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix3}} \&}]{matrix }\end{DoxyParamCaption})}
 
 
@@ -224,6 +230,25 @@ Przeciazenie operatora mnozenia wierzcholkow razy macierz ~\newline
  
 \begin{DoxyParams}{Parameters}
 {\em const} & macierz 3D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Prostopadloscian result 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_prostopadl_af37e75f85f2260062dc378b10a1e3a53}\label{class_prostopadl_af37e75f85f2260062dc378b10a1e3a53}} 
+\index{Prostopadl@{Prostopadl}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Prostopadl@{Prostopadl}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_prostopadl}{Prostopadl}} Prostopadl\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}}$<$ double, 4 $>$ \&}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Przeciazenei operatora mnozenia wierzcholkow razy macierz wspolna translacji i obrotu. 
+
+Przeciazenie operatora mnozenia wierzcholkow razy macierz ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em const} & macierz 4D \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -280,11 +305,11 @@ Metoda wyswietlania i porownywania dlugosci bokow prostopadloscianu ~\newline
  \begin{DoxyReturn}{Returns}
 Prostopadloscian wypelniony wartoscia 0 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_prostopadl_a7c96c253f8fe9f7cae55d6683b9347ee}\label{class_prostopadl_a7c96c253f8fe9f7cae55d6683b9347ee}} 
+\mbox{\Hypertarget{class_prostopadl_a75cb261f920b7ca9346b2c9b1a1d223e}\label{class_prostopadl_a75cb261f920b7ca9346b2c9b1a1d223e}} 
 \index{Prostopadl@{Prostopadl}!turn@{turn}}
 \index{turn@{turn}!Prostopadl@{Prostopadl}}
 \doxysubsubsection{\texorpdfstring{turn()}{turn()}}
-{\footnotesize\ttfamily void Prostopadl\+::turn (\begin{DoxyParamCaption}\item[{double const}]{ang,  }\item[{char}]{which }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Prostopadl\+::turn (\begin{DoxyParamCaption}\item[{double const}]{ang,  }\item[{char}]{which,  }\item[{\mbox{\hyperlink{class_prostopadl}{Prostopadl}} \&}]{loc }\end{DoxyParamCaption})}
 
 
 
@@ -321,7 +346,19 @@ Funkcja wykonujaca animacje obrotu Prostopadla o dany kat wykonuje sie dla mniej
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_prostopadl_a9c26554e053da4b961a3299a05eec6e0}\label{class_prostopadl_a9c26554e053da4b961a3299a05eec6e0}} 
+\mbox{\Hypertarget{class_prostopadl_ab637af3712649b21bc1641d86f17b953}\label{class_prostopadl_ab637af3712649b21bc1641d86f17b953}} 
+\index{Prostopadl@{Prostopadl}!angles@{angles}}
+\index{angles@{angles}!Prostopadl@{Prostopadl}}
+\doxysubsubsection{\texorpdfstring{angles}{angles}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector}{Vector3}} Prostopadl\+::angles}
+
+katy obrotu \mbox{\Hypertarget{class_prostopadl_adcf231bbc1530d2dd119b064f187dca5}\label{class_prostopadl_adcf231bbc1530d2dd119b064f187dca5}} 
+\index{Prostopadl@{Prostopadl}!anglesagain@{anglesagain}}
+\index{anglesagain@{anglesagain}!Prostopadl@{Prostopadl}}
+\doxysubsubsection{\texorpdfstring{anglesagain}{anglesagain}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector}{Vector3}} Prostopadl\+::anglesagain}
+
+Kat obrotu ponownego \mbox{\Hypertarget{class_prostopadl_a9c26554e053da4b961a3299a05eec6e0}\label{class_prostopadl_a9c26554e053da4b961a3299a05eec6e0}} 
 \index{Prostopadl@{Prostopadl}!blen@{blen}}
 \index{blen@{blen}!Prostopadl@{Prostopadl}}
 \doxysubsubsection{\texorpdfstring{blen}{blen}}

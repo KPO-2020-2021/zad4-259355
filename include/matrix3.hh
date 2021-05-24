@@ -36,8 +36,8 @@ Matrix3 Matrix3::operator + (Matrix3 tmp);
 template<>
 Matrix3 Matrix3::operator * (Matrix3 sec);
 
-template<>
-Matrix<double,4> Matrix3::TurnAndTrans(Vector3 tmp);
+// template<>
+// Matrix<double,4> Matrix3::TurnAndTrans(Vector3 tmp);
 
 #endif
 
